@@ -1,0 +1,190 @@
+{
+    "version": "8.1.0",
+    "tables": {
+        "tt_content": {
+            "elements": {
+                "bttabs": {
+                    "color": "#ff0000",
+                    "colorOverlay": "",
+                    "columns": [
+                        "header",
+                        "tx_mask_5ff515ae37d37",
+                        "tx_mask_tabdisplay",
+                        "tx_mask_b584a078ddbd3",
+                        "tx_mask_tabs"
+                    ],
+                    "description": "Tabelement mit Bootstrap",
+                    "descriptions": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "icon": "fa-wpforms",
+                    "iconOverlay": "",
+                    "key": "bttabs",
+                    "label": "Bt-Tabs",
+                    "labels": [
+                        "Pluginheadline im TYPO3 Backend",
+                        "Modus ausw\u00e4hlen",
+                        "Modus",
+                        "Tabs anlegen",
+                        "Tabs anlegen"
+                    ],
+                    "shortLabel": "",
+                    "sorting": 3
+                }
+            },
+            "sql": {
+                "tx_mask_tabdisplay": {
+                    "tt_content": {
+                        "tx_mask_tabdisplay": "varchar(255) DEFAULT '' NOT NULL"
+                    }
+                },
+                "tx_mask_tabs": {
+                    "tt_content": {
+                        "tx_mask_tabs": "int(11) unsigned DEFAULT '0' NOT NULL"
+                    }
+                }
+            },
+            "tca": {
+                "header": {
+                    "coreField": 1,
+                    "fullKey": "header",
+                    "key": "header",
+                    "type": "string"
+                },
+                "tx_mask_5ff515ae37d37": {
+                    "config": {
+                        "type": "tab"
+                    },
+                    "fullKey": "tx_mask_5ff515ae37d37",
+                    "key": "5ff515ae37d37",
+                    "type": "tab"
+                },
+                "tx_mask_b584a078ddbd3": {
+                    "config": {
+                        "type": "tab"
+                    },
+                    "fullKey": "tx_mask_b584a078ddbd3",
+                    "key": "b584a078ddbd3",
+                    "type": "tab"
+                },
+                "tx_mask_tabdisplay": {
+                    "config": {
+                        "items": [
+                            {
+                                "description": "",
+                                "group": "",
+                                "icon": "",
+                                "label": "Tabs",
+                                "value": "1"
+                            },
+                            {
+                                "description": "",
+                                "group": "",
+                                "icon": "",
+                                "label": "Pills",
+                                "value": "2"
+                            }
+                        ],
+                        "renderType": "selectSingle",
+                        "type": "select"
+                    },
+                    "fullKey": "tx_mask_tabdisplay",
+                    "key": "tabdisplay",
+                    "type": "select"
+                },
+                "tx_mask_tabs": {
+                    "config": {
+                        "appearance": {
+                            "collapseAll": 0,
+                            "enabledControls": {
+                                "dragdrop": 1
+                            },
+                            "expandSingle": 1,
+                            "levelLinksPosition": "top",
+                            "showAllLocalizationLink": 1,
+                            "showPossibleLocalizationRecords": 1
+                        },
+                        "foreign_field": "parentid",
+                        "foreign_sortby": "sorting",
+                        "foreign_table": "--inlinetable--",
+                        "foreign_table_field": "parenttable",
+                        "type": "inline"
+                    },
+                    "fullKey": "tx_mask_tabs",
+                    "key": "tabs",
+                    "type": "inline"
+                }
+            }
+        },
+        "tx_mask_tabs": {
+            "sql": {
+                "tx_mask_tab": {
+                    "tx_mask_tabs": {
+                        "tx_mask_tab": "varchar(255) DEFAULT '' NOT NULL"
+                    }
+                },
+                "tx_mask_tabcontent": {
+                    "tx_mask_tabs": {
+                        "tx_mask_tabcontent": "int(11) unsigned DEFAULT '0' NOT NULL"
+                    }
+                }
+            },
+            "tca": {
+                "tx_mask_tab": {
+                    "config": {
+                        "required": 1,
+                        "size": "45",
+                        "type": "input"
+                    },
+                    "fullKey": "tx_mask_tab",
+                    "inlineParent": "tx_mask_tabs",
+                    "key": "tab",
+                    "label": "Text im Reiter",
+                    "order": 1,
+                    "type": "string"
+                },
+                "tx_mask_tabcontent": {
+                    "cTypes": [
+                        "textmedia"
+                    ],
+                    "config": {
+                        "appearance": {
+                            "collapseAll": 1,
+                            "enabledControls": {
+                                "dragdrop": 1
+                            },
+                            "expandSingle": 1,
+                            "levelLinksPosition": "top",
+                            "newRecordLinkTitle": "Inhalt anlegen",
+                            "showAllLocalizationLink": 1,
+                            "showPossibleLocalizationRecords": 1,
+                            "useSortable": 1
+                        },
+                        "foreign_sortby": "sorting",
+                        "foreign_table": "tt_content",
+                        "overrideChildTca": {
+                            "columns": {
+                                "colPos": {
+                                    "config": {
+                                        "default": 999
+                                    }
+                                }
+                            }
+                        },
+                        "type": "inline"
+                    },
+                    "fullKey": "tx_mask_tabcontent",
+                    "inlineParent": "tx_mask_tabs",
+                    "key": "tabcontent",
+                    "label": "Tabinhalt",
+                    "order": 2,
+                    "type": "content"
+                }
+            }
+        }
+    }
+}

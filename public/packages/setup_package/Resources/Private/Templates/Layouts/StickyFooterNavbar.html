@@ -1,0 +1,75 @@
+<html xmlns:ai="C1\AdaptiveImages\ViewHelpers" xmlns:f="https://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+  data-namespace-typo3-fluid="true">
+<div name="top" class="d-flex flex-column h-100">
+  <header class="py-0 py-lg-5 bg-white {f:if(condition: '{data.backend_layout} == pagets__default_onepage', then: 'fixed-top autohide')}">
+    <div class="container-fluid px-0">
+      <div class="navbar navbar-expand-lg w-100">
+          <div class="container-fluid align-items-start align-items-lg-center justify-content-start justify-content-lg-between px-0" >
+            <f:render partial="Header/Logo" arguments="{_all}"/>          
+              <f:if condition="{data.backend_layout} == 'pagets__default_onepage'">
+            <f:then>
+              <f:render partial="Navigation/Section" arguments="{_all}" />
+            </f:then>
+            <f:else>
+              <f:render partial="Navigation/Mega" arguments="{_all}" />
+            </f:else>
+          </f:if>
+         <f:comment> <f:cObject typoscriptObjectPath="lib.searchbox" /></f:comment>
+          <f:render partial="Navigation/ResponsiveToggler" arguments="{_all}" />
+        </div>
+      </div>
+    </div>
+  </header>
+  <div class="container-fluid px-0 mt-70 mt-lg-0 ">
+    <f:if condition="{data.uid} > 1">
+      <f:render partial="Header/Jumbotron" arguments="{_all}" />
+    </f:if>
+    <f:render section="content" />
+    <f:render partial="Footer/FooterInfo" arguments="{_all}" />
+  </div>
+  <footer class="bg-primary text-white d-flex-column text-center mt-auto pt-30">
+    <f:render partial="Footer/Copyright" arguments="{_all}" />
+  </footer>
+</div>
+
+
+<f:render partial="Footer/ToTop.html" arguments="{_all}" />
+
+<div class="cookie-consent-settings position-fixed" style="z-index: 1045;bottom: 10px; left: 10px;">
+  <button class="cookie-consent-open btn btn-primary border border-white">
+    <f:if condition="EXT:mindshape_cookie_consent.{settings.buttonLabel}">
+      <f:then>{f:translate(key: 'LLL:EXT:mindshape_cookie_consent/Resources/Private/Language/locallang.xlf:label.edit_cookie_settings')} </f:then>
+      <f:else>{f:translate(key: 'LLL:EXT:mindshape_cookie_consent/Resources/Private/Language/locallang.xlf:label.edit_cookie_settings')}</f:else>
+    </f:if>
+  </button>
+</div>
+
+
+<f:if condition="{data.backend_layout} == 'pagets__default_onepage'">
+  <f:asset.script identifier="aos-js" src="https://unpkg.com/aos@2.3.1/dist/aos.js" priority="1" />
+  <f:asset.css identifier="aos-css" href="https://unpkg.com/aos@2.3.1/dist/aos.css" priority="1" />
+  <f:asset.script identifier="aos-init">
+    AOS.init();
+</f:asset.script>
+</f:if>
+<f:asset.script identifier="sw">
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/typo3conf/ext/setup_package/Resources/Public/JavaScript/sw.js')
+    .then(function(registration) {
+      registration.addEventListener('updatefound', function() {
+        // If updatefound is fired, it means that there's
+        // a new service worker being installed.
+        var installingWorker = registration.installing;
+        console.log('A new service worker is being installed:',
+          installingWorker);
+      });
+    })
+    .catch(function(error) {
+      console.log('Service worker registration failed:', error);
+    });
+  } else {
+    console.log('Service workers are not supported.');
+  }
+
+</f:asset.script>
+</html>

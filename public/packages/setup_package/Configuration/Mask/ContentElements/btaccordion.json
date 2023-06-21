@@ -1,0 +1,152 @@
+{
+    "version": "8.1.0",
+    "tables": {
+        "tt_content": {
+            "elements": {
+                "btaccordion": {
+                    "color": "#ff0000",
+                    "colorOverlay": "",
+                    "columns": [
+                        "header",
+                        "tx_mask_812cdf7dec586",
+                        "tx_mask_accordionset"
+                    ],
+                    "description": "Accordion mit Bootstrap",
+                    "descriptions": [
+                        "",
+                        "",
+                        ""
+                    ],
+                    "icon": "fa-tasks",
+                    "iconOverlay": "",
+                    "key": "btaccordion",
+                    "label": "Bt-Accordion",
+                    "labels": [
+                        "Pluginheadline im TYPO3 Backend",
+                        "Accordionelemente",
+                        "Accordiondatensatze"
+                    ],
+                    "shortLabel": "",
+                    "sorting": 2
+                }
+            },
+            "sql": {
+                "tx_mask_accordionset": {
+                    "tt_content": {
+                        "tx_mask_accordionset": "int(11) unsigned DEFAULT '0' NOT NULL"
+                    }
+                }
+            },
+            "tca": {
+                "header": {
+                    "coreField": 1,
+                    "fullKey": "header",
+                    "key": "header",
+                    "type": "string"
+                },
+                "tx_mask_812cdf7dec586": {
+                    "config": {
+                        "type": "tab"
+                    },
+                    "fullKey": "tx_mask_812cdf7dec586",
+                    "key": "812cdf7dec586",
+                    "type": "tab"
+                },
+                "tx_mask_accordionset": {
+                    "config": {
+                        "appearance": {
+                            "collapseAll": 1,
+                            "enabledControls": {
+                                "dragdrop": 1
+                            },
+                            "expandSingle": 1,
+                            "levelLinksPosition": "top",
+                            "newRecordLinkTitle": "Neues Accordionset",
+                            "showAllLocalizationLink": 1,
+                            "showPossibleLocalizationRecords": 1,
+                            "useSortable": 1
+                        },
+                        "foreign_field": "parentid",
+                        "foreign_sortby": "sorting",
+                        "foreign_table": "--inlinetable--",
+                        "foreign_table_field": "parenttable",
+                        "type": "inline"
+                    },
+                    "fullKey": "tx_mask_accordionset",
+                    "key": "accordionset",
+                    "type": "inline"
+                }
+            }
+        },
+        "tx_mask_accordionset": {
+            "sql": {
+                "tx_mask_content": {
+                    "tx_mask_accordionset": {
+                        "tx_mask_content": "int(11) unsigned DEFAULT '0' NOT NULL"
+                    }
+                },
+                "tx_mask_panel": {
+                    "tx_mask_accordionset": {
+                        "tx_mask_panel": "mediumtext"
+                    }
+                }
+            },
+            "tca": {
+                "tx_mask_content": {
+                    "cTypes": [
+                        "textmedia",
+                        "list"
+                    ],
+                    "config": {
+                        "appearance": {
+                            "collapseAll": 1,
+                            "enabledControls": {
+                                "dragdrop": 1
+                            },
+                            "expandSingle": 1,
+                            "levelLinksPosition": "top",
+                            "newRecordLinkTitle": "Inhalt anlegen",
+                            "showAllLocalizationLink": 1,
+                            "showPossibleLocalizationRecords": 1,
+                            "useSortable": 1
+                        },
+                        "foreign_sortby": "sorting",
+                        "foreign_table": "tt_content",
+                        "overrideChildTca": {
+                            "columns": {
+                                "colPos": {
+                                    "config": {
+                                        "default": 999
+                                    }
+                                }
+                            }
+                        },
+                        "type": "inline"
+                    },
+                    "fullKey": "tx_mask_content",
+                    "inlineParent": "tx_mask_accordionset",
+                    "key": "content",
+                    "label": "Inhaltsbereich",
+                    "order": 2,
+                    "type": "content"
+                },
+                "tx_mask_panel": {
+                    "config": {
+                        "cols": "20",
+                        "eval": "trim",
+                        "required": 1,
+                        "rows": "3",
+                        "type": "text",
+                        "wrap": "virtual"
+                    },
+                    "fullKey": "tx_mask_panel",
+                    "inlineParent": "tx_mask_accordionset",
+                    "key": "panel",
+                    "label": "Accordionheadline",
+                    "order": 1,
+                    "type": "text"
+                }
+            }
+        }
+    }
+}

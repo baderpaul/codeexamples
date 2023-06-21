@@ -1,0 +1,140 @@
+{
+    "version": "8.1.0",
+    "tables": {
+        "tt_content": {
+            "elements": {
+                "openstreetmap": {
+                    "color": "#ff0000",
+                    "colorOverlay": "",
+                    "columns": [
+                        "header",
+                        "tx_mask_e6806d1d2dd7d",
+                        "tx_mask_latitudeinput",
+                        "tx_mask_longitudeinput",
+                        "tx_mask_zoom"
+                    ],
+                    "description": "Simple OpenStreet Map",
+                    "descriptions": [
+                        "",
+                        "",
+                        "Es k\u00f6nnte sich um eine Zahl mit sechs Stellen hinter dem Punkt handeln",
+                        "Es k\u00f6nnte sich um eine Zahl mit sechs Stellen hinter dem Punkt handeln",
+                        ""
+                    ],
+                    "icon": "fa-binoculars",
+                    "iconOverlay": "",
+                    "key": "openstreetmap",
+                    "label": "OpenStreetMap",
+                    "labels": [
+                        "Pluginheadline im TYPO3 Backend",
+                        "General",
+                        "Latitude",
+                        "Longitude",
+                        "Zoom"
+                    ],
+                    "shortLabel": "",
+                    "sorting": 1
+                }
+            },
+            "sql": {
+                "tx_mask_latitudeinput": {
+                    "tt_content": {
+                        "tx_mask_latitudeinput": "varchar(255) DEFAULT '' NOT NULL"
+                    }
+                },
+                "tx_mask_longitudeinput": {
+                    "tt_content": {
+                        "tx_mask_longitudeinput": "varchar(255) DEFAULT '' NOT NULL"
+                    }
+                },
+                "tx_mask_zoom": {
+                    "tt_content": {
+                        "tx_mask_zoom": "varchar(255) DEFAULT '' NOT NULL"
+                    }
+                }
+            },
+            "tca": {
+                "header": {
+                    "coreField": 1,
+                    "fullKey": "header",
+                    "key": "header",
+                    "type": "string"
+                },
+                "tx_mask_e6806d1d2dd7d": {
+                    "config": {
+                        "type": "tab"
+                    },
+                    "fullKey": "tx_mask_e6806d1d2dd7d",
+                    "key": "e6806d1d2dd7d",
+                    "type": "tab"
+                },
+                "tx_mask_latitudeinput": {
+                    "config": {
+                        "eval": "nospace",
+                        "max": "9",
+                        "placeholder": "z.B. 47.849900",
+                        "required": 1,
+                        "size": "10",
+                        "type": "input"
+                    },
+                    "fullKey": "tx_mask_latitudeinput",
+                    "key": "latitudeinput",
+                    "type": "string"
+                },
+                "tx_mask_longitudeinput": {
+                    "config": {
+                        "max": "9",
+                        "placeholder": "z.B. 12.058030",
+                        "required": 1,
+                        "size": "10",
+                        "type": "input"
+                    },
+                    "fullKey": "tx_mask_longitudeinput",
+                    "key": "longitudeinput",
+                    "type": "string"
+                },
+                "tx_mask_zoom": {
+                    "config": {
+                        "items": [
+                            {
+                                "description": "",
+                                "group": "",
+                                "icon": "",
+                                "label": "14",
+                                "value": "14"
+                            },
+                            {
+                                "description": "",
+                                "group": "",
+                                "icon": "",
+                                "label": "15",
+                                "value": "15"
+                            },
+                            {
+                                "description": "",
+                                "group": "",
+                                "icon": "",
+                                "label": "16",
+                                "value": "16"
+                            },
+                            {
+                                "description": "",
+                                "group": "",
+                                "icon": "",
+                                "label": "17",
+                                "value": "17"
+                            }
+                        ],
+                        "maxitems": "1",
+                        "minitems": "1",
+                        "renderType": "selectSingle",
+                        "type": "select"
+                    },
+                    "fullKey": "tx_mask_zoom",
+                    "key": "zoom",
+                    "type": "select"
+                }
+            }
+        }
+    }
+}

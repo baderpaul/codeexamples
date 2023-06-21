@@ -1,0 +1,199 @@
+{
+    "version": "8.1.0",
+    "tables": {
+        "tt_content": {
+            "elements": {
+                "socialmedia": {
+                    "color": "#ff0000",
+                    "colorOverlay": "",
+                    "columns": [
+                        "header",
+                        "tx_mask_e5397fcf46cb4",
+                        "tx_mask_socialmedia"
+                    ],
+                    "description": "Icons mit Links zu Socialmediachannels",
+                    "descriptions": [
+                        "",
+                        "",
+                        ""
+                    ],
+                    "icon": "fa-external-link-square",
+                    "iconOverlay": "",
+                    "key": "socialmedia",
+                    "label": "Socialmedia",
+                    "labels": [
+                        "Pluginheadline im TYPO3 Backend",
+                        "Socialmedialinks",
+                        "Datensatz erstellen"
+                    ],
+                    "shortLabel": "",
+                    "sorting": 4
+                }
+            },
+            "sql": {
+                "tx_mask_socialmedia": {
+                    "tt_content": {
+                        "tx_mask_socialmedia": "int(11) unsigned DEFAULT '0' NOT NULL"
+                    }
+                }
+            },
+            "tca": {
+                "header": {
+                    "coreField": 1,
+                    "fullKey": "header",
+                    "key": "header",
+                    "type": "string"
+                },
+                "tx_mask_e5397fcf46cb4": {
+                    "config": {
+                        "type": "tab"
+                    },
+                    "fullKey": "tx_mask_e5397fcf46cb4",
+                    "key": "e5397fcf46cb4",
+                    "type": "tab"
+                },
+                "tx_mask_socialmedia": {
+                    "config": {
+                        "appearance": {
+                            "collapseAll": 1,
+                            "enabledControls": {
+                                "dragdrop": 1
+                            },
+                            "expandSingle": 1,
+                            "levelLinksPosition": "bottom",
+                            "newRecordLinkTitle": "Socialmediadatensatz anlegen",
+                            "showAllLocalizationLink": 1,
+                            "showPossibleLocalizationRecords": 1,
+                            "useSortable": 1
+                        },
+                        "behaviour": {
+                            "allowLanguageSynchronization": 1
+                        },
+                        "foreign_field": "parentid",
+                        "foreign_sortby": "sorting",
+                        "foreign_table": "--inlinetable--",
+                        "foreign_table_field": "parenttable",
+                        "type": "inline"
+                    },
+                    "fullKey": "tx_mask_socialmedia",
+                    "key": "socialmedia",
+                    "type": "inline"
+                }
+            }
+        },
+        "tx_mask_socialmedia": {
+            "sql": {
+                "tx_mask_selectsocialmedia": {
+                    "tx_mask_socialmedia": {
+                        "tx_mask_selectsocialmedia": "varchar(255) DEFAULT '' NOT NULL"
+                    }
+                },
+                "tx_mask_socialmedialink": {
+                    "tx_mask_socialmedia": {
+                        "tx_mask_socialmedialink": "varchar(255) DEFAULT '' NOT NULL"
+                    }
+                },
+                "tx_mask_socialmediatitel": {
+                    "tx_mask_socialmedia": {
+                        "tx_mask_socialmediatitel": "varchar(255) DEFAULT '' NOT NULL"
+                    }
+                }
+            },
+            "tca": {
+                "tx_mask_selectsocialmedia": {
+                    "config": {
+                        "items": [
+                            {
+                                "description": "",
+                                "group": "",
+                                "icon": "",
+                                "label": "Ausw\u00e4hlen",
+                                "value": ""
+                            },
+                            {
+                                "description": "",
+                                "group": "",
+                                "icon": "",
+                                "label": "1",
+                                "value": "facebook"
+                            },
+                            {
+                                "description": "",
+                                "group": "",
+                                "icon": "",
+                                "label": "2",
+                                "value": "twitter"
+                            },
+                            {
+                                "description": "",
+                                "group": "",
+                                "icon": "",
+                                "label": "3",
+                                "value": "youtube"
+                            },
+                            {
+                                "description": "",
+                                "group": "",
+                                "icon": "",
+                                "label": "4",
+                                "value": "instagram"
+                            },
+                            {
+                                "description": "",
+                                "group": "",
+                                "icon": "",
+                                "label": "5",
+                                "value": "linkedin"
+                            },
+                            {
+                                "description": "",
+                                "group": "",
+                                "icon": "",
+                                "label": "6",
+                                "value": "whatsapp"
+                            }
+                        ],
+                        "maxitems": "1",
+                        "renderType": "selectSingle",
+                        "type": "select"
+                    },
+                    "description": "Pro Datensatz kann nur ein Medium ausgew\u00e4hlt werden.",
+                    "fullKey": "tx_mask_selectsocialmedia",
+                    "inlineParent": "tx_mask_socialmedia",
+                    "key": "selectsocialmedia",
+                    "label": "Socialmedium f\u00fcr Bootstrap Icons ausw\u00e4hlen",
+                    "order": 3,
+                    "type": "select"
+                },
+                "tx_mask_socialmedialink": {
+                    "config": {
+                        "allowedTypes": [
+                            "url",
+                            "record",
+                            "telephone"
+                        ],
+                        "type": "link"
+                    },
+                    "fullKey": "tx_mask_socialmedialink",
+                    "inlineParent": "tx_mask_socialmedia",
+                    "key": "socialmedialink",
+                    "label": "Link zum Socialmedium",
+                    "order": 2,
+                    "type": "link"
+                },
+                "tx_mask_socialmediatitel": {
+                    "config": {
+                        "type": "input"
+                    },
+                    "description": "Wird im Backend angezeigt.",
+                    "fullKey": "tx_mask_socialmediatitel",
+                    "inlineParent": "tx_mask_socialmedia",
+                    "key": "socialmediatitel",
+                    "label": "Titel f\u00fcr Datensatz",
+                    "order": 1,
+                    "type": "string"
+                }
+            }
+        }
+    }
+}

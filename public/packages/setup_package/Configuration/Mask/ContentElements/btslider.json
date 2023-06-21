@@ -1,0 +1,435 @@
+{
+    "version": "8.1.0",
+    "tables": {
+        "tt_content": {
+            "elements": {
+                "btslider": {
+                    "color": "#ff0000",
+                    "colorOverlay": "",
+                    "columns": [
+                        "header",
+                        "tx_mask_88ce58722c211",
+                        "tx_mask_modus",
+                        "tx_mask_carouselcontrol",
+                        "tx_mask_carouselindicator",
+                        "tx_mask_indicatorthumbnail",
+                        "tx_mask_cac150c26ff6b",
+                        "tx_mask_slideimages"
+                    ],
+                    "description": "Slider mit Bootstrap 5 und animiertem Text",
+                    "descriptions": [
+                        "",
+                        "Allgemeine Einstellungen",
+                        "fade oder slide",
+                        "",
+                        "",
+                        "",
+                        "Einzelne Slidelemente erstellen.",
+                        ""
+                    ],
+                    "icon": "fa-arrows-h",
+                    "iconOverlay": "",
+                    "key": "btslider",
+                    "label": "Bt-Slider",
+                    "labels": [
+                        "Pluginheadline im TYPO3 Backend",
+                        "General",
+                        "Modus w\u00e4hlen",
+                        "Prev Next einblenden",
+                        "Buttons f\u00fcr die vorhandenen Bilder anzeigen",
+                        "Buttons als Thumbnail aus den Bildern generieren",
+                        "Slideelemente",
+                        "Bilder"
+                    ],
+                    "shortLabel": "",
+                    "sorting": 1
+                }
+            },
+            "sql": {
+                "tx_mask_carouselcontrol": {
+                    "tt_content": {
+                        "tx_mask_carouselcontrol": "int(11) DEFAULT '0' NOT NULL"
+                    }
+                },
+                "tx_mask_carouselindicator": {
+                    "tt_content": {
+                        "tx_mask_carouselindicator": "int(11) DEFAULT '0' NOT NULL"
+                    }
+                },
+                "tx_mask_indicatorthumbnail": {
+                    "tt_content": {
+                        "tx_mask_indicatorthumbnail": "int(11) DEFAULT '0' NOT NULL"
+                    }
+                },
+                "tx_mask_modus": {
+                    "tt_content": {
+                        "tx_mask_modus": "varchar(255) DEFAULT '' NOT NULL"
+                    }
+                },
+                "tx_mask_slideimages": {
+                    "tt_content": {
+                        "tx_mask_slideimages": "int(11) unsigned DEFAULT '0' NOT NULL"
+                    }
+                }
+            },
+            "tca": {
+                "header": {
+                    "coreField": 1,
+                    "fullKey": "header",
+                    "key": "header",
+                    "type": "string"
+                },
+                "tx_mask_88ce58722c211": {
+                    "config": {
+                        "type": "tab"
+                    },
+                    "fullKey": "tx_mask_88ce58722c211",
+                    "key": "88ce58722c211",
+                    "type": "tab"
+                },
+                "tx_mask_cac150c26ff6b": {
+                    "config": {
+                        "type": "tab"
+                    },
+                    "fullKey": "tx_mask_cac150c26ff6b",
+                    "key": "cac150c26ff6b",
+                    "type": "tab"
+                },
+                "tx_mask_carouselcontrol": {
+                    "config": {
+                        "behaviour": {
+                            "allowLanguageSynchronization": 1
+                        },
+                        "items": [],
+                        "type": "check"
+                    },
+                    "fullKey": "tx_mask_carouselcontrol",
+                    "key": "carouselcontrol",
+                    "type": "check"
+                },
+                "tx_mask_carouselindicator": {
+                    "config": {
+                        "behaviour": {
+                            "allowLanguageSynchronization": 1
+                        },
+                        "items": [],
+                        "type": "check"
+                    },
+                    "fullKey": "tx_mask_carouselindicator",
+                    "key": "carouselindicator",
+                    "type": "check"
+                },
+                "tx_mask_indicatorthumbnail": {
+                    "config": {
+                        "behaviour": {
+                            "allowLanguageSynchronization": 1
+                        },
+                        "items": [],
+                        "type": "check"
+                    },
+                    "fullKey": "tx_mask_indicatorthumbnail",
+                    "key": "indicatorthumbnail",
+                    "type": "check"
+                },
+                "tx_mask_modus": {
+                    "config": {
+                        "behaviour": {
+                            "allowLanguageSynchronization": 1
+                        },
+                        "fieldWizard": {
+                            "selectIcons": {
+                                "disabled": 1
+                            }
+                        },
+                        "items": [
+                            {
+                                "description": "",
+                                "group": "",
+                                "icon": "",
+                                "label": "slide",
+                                "value": "1"
+                            },
+                            {
+                                "description": "",
+                                "group": "",
+                                "icon": "",
+                                "label": "fade",
+                                "value": "2"
+                            }
+                        ],
+                        "renderType": "selectMultipleSideBySide",
+                        "type": "select"
+                    },
+                    "fullKey": "tx_mask_modus",
+                    "key": "modus",
+                    "type": "select"
+                },
+                "tx_mask_slideimages": {
+                    "config": {
+                        "appearance": {
+                            "collapseAll": 1,
+                            "enabledControls": {
+                                "delete": 1,
+                                "dragdrop": 1,
+                                "hide": 1,
+                                "info": 1,
+                                "localize": 1,
+                                "new": 1,
+                                "sort": 1
+                            },
+                            "expandSingle": 1,
+                            "levelLinksPosition": "top",
+                            "newRecordLinkTitle": "Datensatz anlegen",
+                            "showAllLocalizationLink": 1,
+                            "showNewRecordLink": 1,
+                            "showPossibleLocalizationRecords": 1,
+                            "useSortable": 1
+                        },
+                        "foreign_field": "parentid",
+                        "foreign_sortby": "sorting",
+                        "foreign_table": "--inlinetable--",
+                        "foreign_table_field": "parenttable",
+                        "type": "inline"
+                    },
+                    "fullKey": "tx_mask_slideimages",
+                    "key": "slideimages",
+                    "type": "inline"
+                }
+            }
+        },
+        "tx_mask_slideimages": {
+            "palettes": {
+                "tx_mask_a30a82d02df19": {
+                    "description": "Jede Zeile einzeln wird animiert eingeblendet.",
+                    "label": "Slogan zum Bild",
+                    "showitem": [
+                        "tx_mask_slogan_big",
+                        "tx_mask_slogan_small",
+                        "tx_mask_006ebdc1011b4",
+                        "tx_mask_slogan_cta"
+                    ]
+                }
+            },
+            "sql": {
+                "tx_mask_header": {
+                    "tx_mask_slideimages": {
+                        "tx_mask_header": "varchar(255) DEFAULT '' NOT NULL"
+                    }
+                },
+                "tx_mask_slideitem": {
+                    "tx_mask_slideimages": {
+                        "tx_mask_slideitem": "int(11) unsigned DEFAULT '0' NOT NULL"
+                    }
+                },
+                "tx_mask_slogan_big": {
+                    "tx_mask_slideimages": {
+                        "tx_mask_slogan_big": "mediumtext"
+                    }
+                },
+                "tx_mask_slogan_cta": {
+                    "tx_mask_slideimages": {
+                        "tx_mask_slogan_cta": "int(11) unsigned DEFAULT '0' NOT NULL"
+                    }
+                },
+                "tx_mask_slogan_small": {
+                    "tx_mask_slideimages": {
+                        "tx_mask_slogan_small": "mediumtext"
+                    }
+                }
+            },
+            "tca": {
+                "tx_mask_006ebdc1011b4": {
+                    "config": {
+                        "type": "linebreak"
+                    },
+                    "fullKey": "tx_mask_006ebdc1011b4",
+                    "inPalette": 1,
+                    "inlineParent": "tx_mask_a30a82d02df19",
+                    "key": "006ebdc1011b4",
+                    "order": 3,
+                    "type": "linebreak"
+                },
+                "tx_mask_a30a82d02df19": {
+                    "config": {
+                        "type": "palette"
+                    },
+                    "description": "Jede Zeile einzeln wird animiert eingeblendet.",
+                    "fullKey": "tx_mask_a30a82d02df19",
+                    "inlineParent": "tx_mask_slideimages",
+                    "key": "a30a82d02df19",
+                    "label": "Slogan zum Bild",
+                    "order": 3,
+                    "type": "palette"
+                },
+                "tx_mask_header": {
+                    "config": {
+                        "size": "45",
+                        "type": "input"
+                    },
+                    "description": "Wird im TYPO3 Backend angezeigt.",
+                    "fullKey": "tx_mask_header",
+                    "inlineParent": "tx_mask_slideimages",
+                    "key": "header",
+                    "label": "Bildtitel im TYPO3 Backend",
+                    "order": 1,
+                    "type": "string"
+                },
+                "tx_mask_slideitem": {
+                    "allowedFileExtensions": "gif,jpg,jpeg,tif,tiff,bmp,pcx,tga,png,pdf,ai,svg,webp",
+                    "config": {
+                        "appearance": {
+                            "elementBrowserEnabled": 1,
+                            "enabledControls": {
+                                "delete": 1,
+                                "dragdrop": 1,
+                                "hide": 1,
+                                "info": 1,
+                                "localize": 1,
+                                "sort": 0
+                            },
+                            "expandSingle": 1,
+                            "fileUploadAllowed": 1,
+                            "showAllLocalizationLink": 1,
+                            "showPossibleLocalizationRecords": 1,
+                            "showSynchronizationLink": 0,
+                            "useSortable": 1
+                        },
+                        "maxitems": "",
+                        "minitems": ""
+                    },
+                    "fullKey": "tx_mask_slideitem",
+                    "imageoverlayPalette": 1,
+                    "inlineParent": "tx_mask_slideimages",
+                    "key": "slideitem",
+                    "label": "Bild",
+                    "order": 2,
+                    "type": "file"
+                },
+                "tx_mask_slogan_big": {
+                    "config": {
+                        "behaviour": {
+                            "allowLanguageSynchronization": 1
+                        },
+                        "type": "text",
+                        "wrap": "virtual"
+                    },
+                    "description": "Text gro\u00df - wird einzeln animiert",
+                    "fullKey": "tx_mask_slogan_big",
+                    "inPalette": 1,
+                    "inlineParent": "tx_mask_a30a82d02df19",
+                    "key": "slogan_big",
+                    "label": "Slogantext gro\u00df",
+                    "order": 1,
+                    "type": "text"
+                },
+                "tx_mask_slogan_cta": {
+                    "config": {
+                        "appearance": {
+                            "collapseAll": 0,
+                            "enabledControls": {
+                                "delete": 1,
+                                "dragdrop": 1,
+                                "hide": 1,
+                                "info": 1,
+                                "localize": 1,
+                                "new": 1,
+                                "sort": 1
+                            },
+                            "expandSingle": 1,
+                            "levelLinksPosition": "top",
+                            "newRecordLinkTitle": "Datensatz anlegen",
+                            "showAllLocalizationLink": 1,
+                            "showNewRecordLink": 1,
+                            "showPossibleLocalizationRecords": 1,
+                            "showSynchronizationLink": 1,
+                            "useSortable": 1
+                        },
+                        "foreign_field": "parentid",
+                        "foreign_sortby": "sorting",
+                        "foreign_table": "--inlinetable--",
+                        "foreign_table_field": "parenttable",
+                        "maxitems": "2",
+                        "type": "inline"
+                    },
+                    "description": "Buttons mit Call to action link anlegen",
+                    "fullKey": "tx_mask_slogan_cta",
+                    "inPalette": 1,
+                    "inlineParent": "tx_mask_a30a82d02df19",
+                    "key": "slogan_cta",
+                    "label": "CTA Button",
+                    "order": 4,
+                    "type": "inline"
+                },
+                "tx_mask_slogan_small": {
+                    "config": {
+                        "behaviour": {
+                            "allowLanguageSynchronization": 1
+                        },
+                        "type": "text",
+                        "wrap": "virtual"
+                    },
+                    "description": "Text klein - wird einzeln animiert",
+                    "fullKey": "tx_mask_slogan_small",
+                    "inPalette": 1,
+                    "inlineParent": "tx_mask_a30a82d02df19",
+                    "key": "slogan_small",
+                    "label": "Slogantext klein",
+                    "order": 2,
+                    "type": "text"
+                }
+            }
+        },
+        "tx_mask_slogan_cta": {
+            "sql": {
+                "tx_mask_cta_label": {
+                    "tx_mask_slogan_cta": {
+                        "tx_mask_cta_label": "varchar(255) DEFAULT '' NOT NULL"
+                    }
+                },
+                "tx_mask_cta_target": {
+                    "tx_mask_slogan_cta": {
+                        "tx_mask_cta_target": "varchar(255) DEFAULT '' NOT NULL"
+                    }
+                }
+            },
+            "tca": {
+                "tx_mask_cta_label": {
+                    "config": {
+                        "behaviour": {
+                            "allowLanguageSynchronization": 1
+                        },
+                        "size": "50",
+                        "type": "input"
+                    },
+                    "fullKey": "tx_mask_cta_label",
+                    "inlineParent": "tx_mask_slogan_cta",
+                    "key": "cta_label",
+                    "label": "Linklabel",
+                    "order": 2,
+                    "type": "string"
+                },
+                "tx_mask_cta_target": {
+                    "config": {
+                        "allowedTypes": [
+                            "page",
+                            "file",
+                            "url",
+                            "record"
+                        ],
+                        "behaviour": {
+                            "allowLanguageSynchronization": 1
+                        },
+                        "type": "link"
+                    },
+                    "description": "Linkziel ausw\u00e4hlen",
+                    "fullKey": "tx_mask_cta_target",
+                    "inlineParent": "tx_mask_slogan_cta",
+                    "key": "cta_target",
+                    "label": "Linkziel",
+                    "order": 1,
+                    "type": "link"
+                }
+            }
+        }
+    }
+}

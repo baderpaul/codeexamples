@@ -1,0 +1,16 @@
+<section id="c{data.uid}" class="w-100
+{f:if(condition: '{flexform.backgroundcolor} == 1', then: ' bg-primary text-white')}
+{f:if(condition: '{flexform.backgroundcolor} == 2', then: ' bg-secondary text-light')}
+{f:if(condition: '{flexform.backgroundcolor} == 3', then: ' bg-light text-dark')}
+" data-aos="zoom-in" data-aos-duration="2000">
+    <div class="g-0
+{f:if(condition: '{data.layout} == 0', then: ' container-fluid px-0')}
+{f:if(condition: '{data.layout} == 1', then: ' container-md mx-auto px-20')}
+{f:if(condition: '{data.layout} == 2', then: ' container-lg mx-auto px-20')}
+{f:if(condition: '{data.layout} == 3', then: 'container-fluid px-20')}
+" >
+    <f:for each="{sectionWrapper}" as="child">
+        <f:format.raw>{child.renderedContent}</f:format.raw>
+    </f:for>
+    </div>
+   </section>

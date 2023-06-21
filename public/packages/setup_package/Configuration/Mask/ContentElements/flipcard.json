@@ -1,0 +1,911 @@
+{
+    "version": "8.1.0",
+    "tables": {
+        "tt_content": {
+            "elements": {
+                "flipcard": {
+                    "color": "#ff0000",
+                    "colorOverlay": "#ff0000",
+                    "columns": [
+                        "header",
+                        "tx_mask_d903f94a5444f",
+                        "tx_mask_flipcard",
+                        "tx_mask_cc8e978d55b",
+                        "tx_mask_4ddc7cea95ec8",
+                        "tx_mask_08e3689a5bb24"
+                    ],
+                    "description": "Responsive FlipCardelemente als Group",
+                    "descriptions": [
+                        "",
+                        "",
+                        "",
+                        "Anzahl f\u00fcr Desktop-, Tablet und Mobileansicht ausw\u00e4hlen.",
+                        "Anzahl der Cardselemente die innerhalb einer Reihe je Device angezeigt werden sollen.",
+                        ""
+                    ],
+                    "icon": "fa-address-card",
+                    "iconOverlay": "fa-address-card",
+                    "key": "flipcard",
+                    "label": "FlipCard",
+                    "labels": [
+                        "Pluginheadline im TYPO3 Backend",
+                        "Flipcardelemente",
+                        "FlipCards anlegen",
+                        "Responsives Verhalten",
+                        "Anzahl der Flip-Cards",
+                        "Flip-Cardspacing"
+                    ],
+                    "shortLabel": "",
+                    "sorting": 1
+                }
+            },
+            "palettes": {
+                "tx_mask_08e3689a5bb24": {
+                    "description": "",
+                    "label": "Flip-Cardspacing",
+                    "showitem": [
+                        "tx_mask_flipcardspace_mobile",
+                        "tx_mask_flipcardspace_tablet",
+                        "tx_mask_flipcardspace_desktop",
+                        "tx_mask_28811c3c8221e"
+                    ]
+                },
+                "tx_mask_4ddc7cea95ec8": {
+                    "description": "Anzahl der Cardselemente die innerhalb einer Reihe je Device angezeigt werden sollen.",
+                    "label": "Anzahl der Flip-Cards",
+                    "showitem": [
+                        "tx_mask_flip_responsive_xs",
+                        "tx_mask_flip_responsive_sm",
+                        "tx_mask_flip_responsive_md",
+                        "tx_mask_db7053a836c09",
+                        "tx_mask_flip_responsive_lg",
+                        "tx_mask_flip_responsive_xl",
+                        "tx_mask_flip_responsive_xxl"
+                    ]
+                }
+            },
+            "sql": {
+                "tx_mask_flip_responsive_lg": {
+                    "tt_content": {
+                        "tx_mask_flip_responsive_lg": "varchar(255) DEFAULT '' NOT NULL"
+                    }
+                },
+                "tx_mask_flip_responsive_md": {
+                    "tt_content": {
+                        "tx_mask_flip_responsive_md": "varchar(255) DEFAULT '' NOT NULL"
+                    }
+                },
+                "tx_mask_flip_responsive_sm": {
+                    "tt_content": {
+                        "tx_mask_flip_responsive_sm": "varchar(255) DEFAULT '' NOT NULL"
+                    }
+                },
+                "tx_mask_flip_responsive_xl": {
+                    "tt_content": {
+                        "tx_mask_flip_responsive_xl": "varchar(255) DEFAULT '' NOT NULL"
+                    }
+                },
+                "tx_mask_flip_responsive_xs": {
+                    "tt_content": {
+                        "tx_mask_flip_responsive_xs": "varchar(255) DEFAULT '' NOT NULL"
+                    }
+                },
+                "tx_mask_flip_responsive_xxl": {
+                    "tt_content": {
+                        "tx_mask_flip_responsive_xxl": "varchar(255) DEFAULT '' NOT NULL"
+                    }
+                },
+                "tx_mask_flipcard": {
+                    "tt_content": {
+                        "tx_mask_flipcard": "int(11) unsigned DEFAULT '0' NOT NULL"
+                    }
+                },
+                "tx_mask_flipcardspace_desktop": {
+                    "tt_content": {
+                        "tx_mask_flipcardspace_desktop": "varchar(255) DEFAULT '' NOT NULL"
+                    }
+                },
+                "tx_mask_flipcardspace_mobile": {
+                    "tt_content": {
+                        "tx_mask_flipcardspace_mobile": "varchar(255) DEFAULT '' NOT NULL"
+                    }
+                },
+                "tx_mask_flipcardspace_tablet": {
+                    "tt_content": {
+                        "tx_mask_flipcardspace_tablet": "varchar(255) DEFAULT '' NOT NULL"
+                    }
+                }
+            },
+            "tca": {
+                "header": {
+                    "coreField": 1,
+                    "fullKey": "header",
+                    "key": "header",
+                    "type": "string"
+                },
+                "tx_mask_08e3689a5bb24": {
+                    "config": {
+                        "type": "palette"
+                    },
+                    "fullKey": "tx_mask_08e3689a5bb24",
+                    "key": "08e3689a5bb24",
+                    "type": "palette"
+                },
+                "tx_mask_28811c3c8221e": {
+                    "config": {
+                        "type": "linebreak"
+                    },
+                    "description": {
+                        "flipcard": ""
+                    },
+                    "fullKey": "tx_mask_28811c3c8221e",
+                    "inPalette": 1,
+                    "inlineParent": {
+                        "flipcard": "tx_mask_08e3689a5bb24"
+                    },
+                    "key": "28811c3c8221e",
+                    "label": {
+                        "flipcard": ""
+                    },
+                    "order": {
+                        "flipcard": 4
+                    },
+                    "type": "linebreak"
+                },
+                "tx_mask_4ddc7cea95ec8": {
+                    "config": {
+                        "type": "palette"
+                    },
+                    "fullKey": "tx_mask_4ddc7cea95ec8",
+                    "key": "4ddc7cea95ec8",
+                    "type": "palette"
+                },
+                "tx_mask_cc8e978d55b": {
+                    "config": {
+                        "type": "tab"
+                    },
+                    "fullKey": "tx_mask_cc8e978d55b",
+                    "key": "cc8e978d55b",
+                    "type": "tab"
+                },
+                "tx_mask_d903f94a5444f": {
+                    "config": {
+                        "type": "tab"
+                    },
+                    "fullKey": "tx_mask_d903f94a5444f",
+                    "key": "d903f94a5444f",
+                    "type": "tab"
+                },
+                "tx_mask_db7053a836c09": {
+                    "config": {
+                        "type": "linebreak"
+                    },
+                    "description": {
+                        "flipcard": ""
+                    },
+                    "fullKey": "tx_mask_db7053a836c09",
+                    "inPalette": 1,
+                    "inlineParent": {
+                        "flipcard": "tx_mask_4ddc7cea95ec8"
+                    },
+                    "key": "db7053a836c09",
+                    "label": {
+                        "flipcard": ""
+                    },
+                    "order": {
+                        "flipcard": 4
+                    },
+                    "type": "linebreak"
+                },
+                "tx_mask_flip_responsive_lg": {
+                    "config": {
+                        "fieldWizard": {
+                            "selectIcons": {
+                                "disabled": 1
+                            }
+                        },
+                        "items": [
+                            {
+                                "description": "",
+                                "group": "",
+                                "icon": "",
+                                "label": "Ausw\u00e4hlen",
+                                "value": ""
+                            },
+                            {
+                                "description": "",
+                                "group": "",
+                                "icon": "",
+                                "label": "3",
+                                "value": "row-cols-lg-3"
+                            },
+                            {
+                                "description": "",
+                                "group": "",
+                                "icon": "",
+                                "label": "4",
+                                "value": "row-cols-lg-4"
+                            }
+                        ],
+                        "renderType": "selectSingle",
+                        "type": "select"
+                    },
+                    "description": {
+                        "flipcard": ""
+                    },
+                    "fullKey": "tx_mask_flip_responsive_lg",
+                    "inPalette": 1,
+                    "inlineParent": {
+                        "flipcard": "tx_mask_4ddc7cea95ec8"
+                    },
+                    "key": "flip_responsive_lg",
+                    "label": {
+                        "flipcard": "Anzahl Cards Desktop lg > 992px"
+                    },
+                    "order": {
+                        "flipcard": 5
+                    },
+                    "type": "select"
+                },
+                "tx_mask_flip_responsive_md": {
+                    "config": {
+                        "fieldWizard": {
+                            "selectIcons": {
+                                "disabled": 1
+                            }
+                        },
+                        "items": [
+                            {
+                                "description": "",
+                                "group": "",
+                                "icon": "",
+                                "label": "Ausw\u00e4hlen",
+                                "value": ""
+                            },
+                            {
+                                "description": "",
+                                "group": "",
+                                "icon": "",
+                                "label": "2",
+                                "value": "row-cols-md-2"
+                            },
+                            {
+                                "description": "",
+                                "group": "",
+                                "icon": "",
+                                "label": "3",
+                                "value": "row-cols-md-3"
+                            },
+                            {
+                                "description": "",
+                                "group": "",
+                                "icon": "",
+                                "label": "4",
+                                "value": "row-cols-md-4"
+                            }
+                        ],
+                        "renderType": "selectSingle",
+                        "type": "select"
+                    },
+                    "description": {
+                        "flipcard": ""
+                    },
+                    "fullKey": "tx_mask_flip_responsive_md",
+                    "inPalette": 1,
+                    "inlineParent": {
+                        "flipcard": "tx_mask_4ddc7cea95ec8"
+                    },
+                    "key": "flip_responsive_md",
+                    "label": {
+                        "flipcard": "Anzahl Cards Tablet md < 768px"
+                    },
+                    "order": {
+                        "flipcard": 3
+                    },
+                    "type": "select"
+                },
+                "tx_mask_flip_responsive_sm": {
+                    "config": {
+                        "fieldWizard": {
+                            "selectIcons": {
+                                "disabled": 1
+                            }
+                        },
+                        "items": [
+                            {
+                                "description": "",
+                                "group": "",
+                                "icon": "",
+                                "label": "Ausw\u00e4hlen",
+                                "value": ""
+                            },
+                            {
+                                "description": "",
+                                "group": "",
+                                "icon": "",
+                                "label": "1",
+                                "value": "row-cols-sm-1"
+                            },
+                            {
+                                "description": "",
+                                "group": "",
+                                "icon": "",
+                                "label": "2",
+                                "value": "row-cols-sm-2"
+                            },
+                            {
+                                "description": "",
+                                "group": "",
+                                "icon": "",
+                                "label": "3",
+                                "value": "row-cols-sm-3"
+                            }
+                        ],
+                        "renderType": "selectSingle",
+                        "type": "select"
+                    },
+                    "description": {
+                        "flipcard": ""
+                    },
+                    "fullKey": "tx_mask_flip_responsive_sm",
+                    "inPalette": 1,
+                    "inlineParent": {
+                        "flipcard": "tx_mask_4ddc7cea95ec8"
+                    },
+                    "key": "flip_responsive_sm",
+                    "label": {
+                        "flipcard": "Anzahl Cards Mobile sm > 576px "
+                    },
+                    "order": {
+                        "flipcard": 2
+                    },
+                    "type": "select"
+                },
+                "tx_mask_flip_responsive_xl": {
+                    "config": {
+                        "fieldWizard": {
+                            "selectIcons": {
+                                "disabled": 1
+                            }
+                        },
+                        "items": [
+                            {
+                                "description": "",
+                                "group": "",
+                                "icon": "",
+                                "label": "Ausw\u00e4hlen",
+                                "value": ""
+                            },
+                            {
+                                "description": "",
+                                "group": "",
+                                "icon": "",
+                                "label": "3",
+                                "value": "row-cols-xl-3"
+                            },
+                            {
+                                "description": "",
+                                "group": "",
+                                "icon": "",
+                                "label": "4",
+                                "value": "row-cols-xl-4"
+                            },
+                            {
+                                "description": "",
+                                "group": "",
+                                "icon": "",
+                                "label": "5",
+                                "value": "row-cols-xl-5"
+                            }
+                        ],
+                        "renderType": "selectSingle",
+                        "type": "select"
+                    },
+                    "description": {
+                        "flipcard": ""
+                    },
+                    "fullKey": "tx_mask_flip_responsive_xl",
+                    "inPalette": 1,
+                    "inlineParent": {
+                        "flipcard": "tx_mask_4ddc7cea95ec8"
+                    },
+                    "key": "flip_responsive_xl",
+                    "label": {
+                        "flipcard": "Anzahl Cards Desktop xl > 1200px"
+                    },
+                    "order": {
+                        "flipcard": 6
+                    },
+                    "type": "select"
+                },
+                "tx_mask_flip_responsive_xs": {
+                    "config": {
+                        "fieldWizard": {
+                            "selectIcons": {
+                                "disabled": 1
+                            }
+                        },
+                        "items": [
+                            {
+                                "description": "",
+                                "group": "",
+                                "icon": "",
+                                "label": "Ausw\u00e4hlen",
+                                "value": ""
+                            },
+                            {
+                                "description": "",
+                                "group": "",
+                                "icon": "",
+                                "label": "1",
+                                "value": "row-cols-1"
+                            },
+                            {
+                                "description": "",
+                                "group": "",
+                                "icon": "",
+                                "label": "2",
+                                "value": "row-cols-2"
+                            },
+                            {
+                                "description": "",
+                                "group": "",
+                                "icon": "",
+                                "label": "3",
+                                "value": "row-cols-3"
+                            }
+                        ],
+                        "renderType": "selectSingle",
+                        "type": "select"
+                    },
+                    "description": {
+                        "flipcard": ""
+                    },
+                    "fullKey": "tx_mask_flip_responsive_xs",
+                    "inPalette": 1,
+                    "inlineParent": {
+                        "flipcard": "tx_mask_4ddc7cea95ec8"
+                    },
+                    "key": "flip_responsive_xs",
+                    "label": {
+                        "flipcard": "Anzahl Cards Mobile kleiner 576px"
+                    },
+                    "order": {
+                        "flipcard": 1
+                    },
+                    "type": "select"
+                },
+                "tx_mask_flip_responsive_xxl": {
+                    "config": {
+                        "fieldWizard": {
+                            "selectIcons": {
+                                "disabled": 1
+                            }
+                        },
+                        "items": [
+                            {
+                                "description": "",
+                                "group": "",
+                                "icon": "",
+                                "label": "Ausw\u00e4hlen",
+                                "value": ""
+                            },
+                            {
+                                "description": "",
+                                "group": "",
+                                "icon": "",
+                                "label": "4",
+                                "value": "row-cols-xxl-4"
+                            },
+                            {
+                                "description": "",
+                                "group": "",
+                                "icon": "",
+                                "label": "6",
+                                "value": "row-cols-xxl-6"
+                            },
+                            {
+                                "description": "",
+                                "group": "",
+                                "icon": "",
+                                "label": "10",
+                                "value": "row-cols-xxl-10"
+                            }
+                        ],
+                        "renderType": "selectSingle",
+                        "type": "select"
+                    },
+                    "description": {
+                        "flipcard": ""
+                    },
+                    "fullKey": "tx_mask_flip_responsive_xxl",
+                    "inPalette": 1,
+                    "inlineParent": {
+                        "flipcard": "tx_mask_4ddc7cea95ec8"
+                    },
+                    "key": "flip_responsive_xxl",
+                    "label": {
+                        "flipcard": "Anzahl Cards Desktop xxl > 1400px"
+                    },
+                    "order": {
+                        "flipcard": 7
+                    },
+                    "type": "select"
+                },
+                "tx_mask_flipcard": {
+                    "config": {
+                        "appearance": {
+                            "collapseAll": 1,
+                            "enabledControls": {
+                                "delete": 1,
+                                "dragdrop": 1,
+                                "hide": 1,
+                                "info": 1,
+                                "localize": 1,
+                                "new": 1,
+                                "sort": 1
+                            },
+                            "levelLinksPosition": "top",
+                            "showAllLocalizationLink": 1,
+                            "showNewRecordLink": 1,
+                            "showPossibleLocalizationRecords": 1,
+                            "showSynchronizationLink": 1,
+                            "useSortable": 1
+                        },
+                        "foreign_field": "parentid",
+                        "foreign_sortby": "sorting",
+                        "foreign_table": "--inlinetable--",
+                        "foreign_table_field": "parenttable",
+                        "type": "inline"
+                    },
+                    "fullKey": "tx_mask_flipcard",
+                    "key": "flipcard",
+                    "type": "inline"
+                },
+                "tx_mask_flipcardspace_desktop": {
+                    "config": {
+                        "fieldWizard": {
+                            "selectIcons": {
+                                "disabled": 1
+                            }
+                        },
+                        "items": [
+                            {
+                                "description": "",
+                                "group": "",
+                                "icon": "",
+                                "label": "Ausw\u00e4hlen",
+                                "value": ""
+                            },
+                            {
+                                "description": "",
+                                "group": "",
+                                "icon": "",
+                                "label": "20px",
+                                "value": "g-xl-20"
+                            },
+                            {
+                                "description": "",
+                                "group": "",
+                                "icon": "",
+                                "label": "25px",
+                                "value": "g-xl-25"
+                            },
+                            {
+                                "description": "",
+                                "group": "",
+                                "icon": "",
+                                "label": "30px",
+                                "value": "g-xl-30"
+                            },
+                            {
+                                "description": "",
+                                "group": "",
+                                "icon": "",
+                                "label": "40px",
+                                "value": "g-xl-40"
+                            }
+                        ],
+                        "renderType": "selectSingle",
+                        "type": "select"
+                    },
+                    "description": {
+                        "flipcard": ""
+                    },
+                    "fullKey": "tx_mask_flipcardspace_desktop",
+                    "inPalette": 1,
+                    "inlineParent": {
+                        "flipcard": "tx_mask_08e3689a5bb24"
+                    },
+                    "key": "flipcardspace_desktop",
+                    "label": {
+                        "flipcard": "Abst\u00e4nde Desktop"
+                    },
+                    "order": {
+                        "flipcard": 3
+                    },
+                    "type": "select"
+                },
+                "tx_mask_flipcardspace_mobile": {
+                    "config": {
+                        "fieldWizard": {
+                            "selectIcons": {
+                                "disabled": 1
+                            }
+                        },
+                        "items": [
+                            {
+                                "description": "",
+                                "group": "",
+                                "icon": "",
+                                "label": "Ausw\u00e4hlen",
+                                "value": ""
+                            },
+                            {
+                                "description": "",
+                                "group": "",
+                                "icon": "",
+                                "label": "10px",
+                                "value": "g-10"
+                            },
+                            {
+                                "description": "",
+                                "group": "",
+                                "icon": "",
+                                "label": "15px",
+                                "value": "g-15"
+                            },
+                            {
+                                "description": "",
+                                "group": "",
+                                "icon": "",
+                                "label": "20px",
+                                "value": "g-20"
+                            }
+                        ],
+                        "renderType": "selectSingle",
+                        "type": "select"
+                    },
+                    "description": {
+                        "flipcard": ""
+                    },
+                    "fullKey": "tx_mask_flipcardspace_mobile",
+                    "inPalette": 1,
+                    "inlineParent": {
+                        "flipcard": "tx_mask_08e3689a5bb24"
+                    },
+                    "key": "flipcardspace_mobile",
+                    "label": {
+                        "flipcard": "Abst\u00e4nde Mobile"
+                    },
+                    "order": {
+                        "flipcard": 1
+                    },
+                    "type": "select"
+                },
+                "tx_mask_flipcardspace_tablet": {
+                    "config": {
+                        "fieldWizard": {
+                            "selectIcons": {
+                                "disabled": 1
+                            }
+                        },
+                        "items": [
+                            {
+                                "description": "",
+                                "group": "",
+                                "icon": "",
+                                "label": "Ausw\u00e4hlen",
+                                "value": ""
+                            },
+                            {
+                                "description": "",
+                                "group": "",
+                                "icon": "",
+                                "label": "15px",
+                                "value": "g-md-15"
+                            },
+                            {
+                                "description": "",
+                                "group": "",
+                                "icon": "",
+                                "label": "20px",
+                                "value": "g-md-20"
+                            },
+                            {
+                                "description": "",
+                                "group": "",
+                                "icon": "",
+                                "label": "25px",
+                                "value": "g-md-25"
+                            }
+                        ],
+                        "renderType": "selectSingle",
+                        "type": "select"
+                    },
+                    "description": {
+                        "flipcard": ""
+                    },
+                    "fullKey": "tx_mask_flipcardspace_tablet",
+                    "inPalette": 1,
+                    "inlineParent": {
+                        "flipcard": "tx_mask_08e3689a5bb24"
+                    },
+                    "key": "flipcardspace_tablet",
+                    "label": {
+                        "flipcard": "Abst\u00e4nde Tablet"
+                    },
+                    "order": {
+                        "flipcard": 2
+                    },
+                    "type": "select"
+                }
+            }
+        },
+        "tx_mask_flipcard": {
+            "palettes": {
+                "tx_mask_8389b866fefb1": {
+                    "description": "R\u00fcckseite",
+                    "label": "Flipcard Backend",
+                    "showitem": [
+                        "tx_mask_flipcard_back_description",
+                        "tx_mask_a2c0f5eff3a91",
+                        "tx_mask_flipcard_back_link_label",
+                        "tx_mask_flipcard_back_link_target"
+                    ]
+                }
+            },
+            "sql": {
+                "tx_mask_flipcard_back_description": {
+                    "tx_mask_flipcard": {
+                        "tx_mask_flipcard_back_description": "mediumtext"
+                    }
+                },
+                "tx_mask_flipcard_back_link_label": {
+                    "tx_mask_flipcard": {
+                        "tx_mask_flipcard_back_link_label": "varchar(255) DEFAULT '' NOT NULL"
+                    }
+                },
+                "tx_mask_flipcard_back_link_target": {
+                    "tx_mask_flipcard": {
+                        "tx_mask_flipcard_back_link_target": "varchar(255) DEFAULT '' NOT NULL"
+                    }
+                },
+                "tx_mask_flipcard_front_image": {
+                    "tx_mask_flipcard": {
+                        "tx_mask_flipcard_front_image": "int(11) unsigned DEFAULT '0' NOT NULL"
+                    }
+                },
+                "tx_mask_flipcard_front_title": {
+                    "tx_mask_flipcard": {
+                        "tx_mask_flipcard_front_title": "varchar(255) DEFAULT '' NOT NULL"
+                    }
+                }
+            },
+            "tca": {
+                "tx_mask_8389b866fefb1": {
+                    "config": {
+                        "type": "palette"
+                    },
+                    "description": "R\u00fcckseite",
+                    "fullKey": "tx_mask_8389b866fefb1",
+                    "inlineParent": "tx_mask_flipcard",
+                    "key": "8389b866fefb1",
+                    "label": "Flipcard Backend",
+                    "order": 3,
+                    "type": "palette"
+                },
+                "tx_mask_a2c0f5eff3a91": {
+                    "config": {
+                        "type": "linebreak"
+                    },
+                    "fullKey": "tx_mask_a2c0f5eff3a91",
+                    "inPalette": 1,
+                    "inlineParent": "tx_mask_8389b866fefb1",
+                    "key": "a2c0f5eff3a91",
+                    "order": 2,
+                    "type": "linebreak"
+                },
+                "tx_mask_flipcard_back_description": {
+                    "config": {
+                        "enableRichtext": 1,
+                        "richtextConfiguration": "mask",
+                        "type": "text"
+                    },
+                    "fullKey": "tx_mask_flipcard_back_description",
+                    "inPalette": 1,
+                    "inlineParent": "tx_mask_8389b866fefb1",
+                    "key": "flipcard_back_description",
+                    "label": "Beschreibungstext",
+                    "order": 1,
+                    "type": "richtext"
+                },
+                "tx_mask_flipcard_back_link_label": {
+                    "config": {
+                        "placeholder": "Text f\u00fcr den Link eingeben",
+                        "size": "30",
+                        "type": "input"
+                    },
+                    "fullKey": "tx_mask_flipcard_back_link_label",
+                    "inPalette": 1,
+                    "inlineParent": "tx_mask_8389b866fefb1",
+                    "key": "flipcard_back_link_label",
+                    "label": "Linklabel",
+                    "order": 3,
+                    "type": "string"
+                },
+                "tx_mask_flipcard_back_link_target": {
+                    "config": {
+                        "allowedTypes": [
+                            "page",
+                            "file",
+                            "url",
+                            "email",
+                            "record"
+                        ],
+                        "mode": 0,
+                        "placeholder": "Linkziel w\u00e4hlen.",
+                        "size": "50",
+                        "type": "link"
+                    },
+                    "fullKey": "tx_mask_flipcard_back_link_target",
+                    "inPalette": 1,
+                    "inlineParent": "tx_mask_8389b866fefb1",
+                    "key": "flipcard_back_link_target",
+                    "label": "Linkziel ausw\u00e4hlen",
+                    "order": 4,
+                    "type": "link"
+                },
+                "tx_mask_flipcard_front_image": {
+                    "config": {
+                        "appearance": {
+                            "elementBrowserEnabled": 1,
+                            "enabledControls": {
+                                "delete": 1,
+                                "dragdrop": 1,
+                                "hide": 1,
+                                "info": 1,
+                                "localize": 1,
+                                "sort": 0
+                            },
+                            "fileUploadAllowed": 1,
+                            "showAllLocalizationLink": 1,
+                            "showPossibleLocalizationRecords": 0,
+                            "showSynchronizationLink": 0,
+                            "useSortable": 1
+                        },
+                        "behaviour": {
+                            "allowLanguageSynchronization": 0
+                        },
+                        "maxitems": "1",
+                        "minitems": ""
+                    },
+                    "description": "Hintergrundbild der Vorderseite",
+                    "fullKey": "tx_mask_flipcard_front_image",
+                    "imageoverlayPalette": 1,
+                    "inlineParent": "tx_mask_flipcard",
+                    "key": "flipcard_front_image",
+                    "label": "Hintergrundbild",
+                    "order": 2,
+                    "type": "file"
+                },
+                "tx_mask_flipcard_front_title": {
+                    "config": {
+                        "behaviour": {
+                            "allowLanguageSynchronization": 1
+                        },
+                        "placeholder": "Title eingeben",
+                        "size": "30",
+                        "type": "input"
+                    },
+                    "fullKey": "tx_mask_flipcard_front_title",
+                    "inlineParent": "tx_mask_flipcard",
+                    "key": "flipcard_front_title",
+                    "label": "Cardtitle",
+                    "order": 1,
+                    "type": "string"
+                }
+            }
+        }
+    }
+}

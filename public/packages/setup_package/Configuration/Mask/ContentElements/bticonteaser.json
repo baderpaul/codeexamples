@@ -1,0 +1,496 @@
+{
+    "version": "8.1.0",
+    "tables": {
+        "tt_content": {
+            "elements": {
+                "bticonteaser": {
+                    "color": "#ff0000",
+                    "colorOverlay": "",
+                    "columns": [
+                        "header",
+                        "tx_mask_5ef8a0584078b",
+                        "tx_mask_iconteasermodus",
+                        "tx_mask_iconteaseralignment",
+                        "tx_mask_iconteasersize",
+                        "tx_mask_iconteaserctabuttonsameheight",
+                        "tx_mask_8810fbb3a710f",
+                        "tx_mask_iconteaserdesktop",
+                        "tx_mask_iconteasertablet",
+                        "tx_mask_iconteasermobile",
+                        "tx_mask_122e10ae0142b",
+                        "tx_mask_teaseritems"
+                    ],
+                    "description": "Teaser mit Icon, kurzem Text und Link.",
+                    "descriptions": [
+                        "",
+                        "Icon ober- od. unterhalb.  Iconsize, Textausrichtung",
+                        "",
+                        "Ist diese Einstellung aktiviert wird der Teaser zentriert angezeigt. Default ist der Teaser linksb\u00fcndig angeordnet.",
+                        "",
+                        "",
+                        "Auswahl wie viele Teaser innerhalb einer Reihe bei Mobile-, Tablet- oder Desktopview angezeigt werden.",
+                        "",
+                        "",
+                        "",
+                        "Einzelne Teaser anlegen",
+                        "Einzelne Teaser mit icon Text und Link anlegen."
+                    ],
+                    "icon": "fa-life-bouy",
+                    "iconOverlay": "",
+                    "key": "bticonteaser",
+                    "label": "Bt-IconTeaser",
+                    "labels": [
+                        "Pluginheadline im TYPO3 Backend",
+                        "Iconteaser General",
+                        "Modus ausw\u00e4hlen",
+                        "Teaserinhalt zentrieren",
+                        "Gr\u00f6\u00dfe des Icons",
+                        "CTA Buttons auf gleiche H\u00f6he setzen.",
+                        "Responsives verhalten",
+                        "Anzahl Desktopansicht",
+                        "Anzahl Tabletansicht",
+                        "Anzahl Mobileansicht",
+                        "Teaser anlegen",
+                        "Teaseritems "
+                    ],
+                    "shortLabel": "",
+                    "sorting": 0
+                }
+            },
+            "sql": {
+                "tx_mask_iconteaseralignment": {
+                    "tt_content": {
+                        "tx_mask_iconteaseralignment": "int(11) DEFAULT '0' NOT NULL"
+                    }
+                },
+                "tx_mask_iconteaserctabuttonsameheight": {
+                    "tt_content": {
+                        "tx_mask_iconteaserctabuttonsameheight": "int(11) DEFAULT '0' NOT NULL"
+                    }
+                },
+                "tx_mask_iconteaserdesktop": {
+                    "tt_content": {
+                        "tx_mask_iconteaserdesktop": "varchar(255) DEFAULT '' NOT NULL"
+                    }
+                },
+                "tx_mask_iconteasermobile": {
+                    "tt_content": {
+                        "tx_mask_iconteasermobile": "varchar(255) DEFAULT '' NOT NULL"
+                    }
+                },
+                "tx_mask_iconteasermodus": {
+                    "tt_content": {
+                        "tx_mask_iconteasermodus": "int(11) DEFAULT '0' NOT NULL"
+                    }
+                },
+                "tx_mask_iconteasersize": {
+                    "tt_content": {
+                        "tx_mask_iconteasersize": "varchar(255) DEFAULT '' NOT NULL"
+                    }
+                },
+                "tx_mask_iconteasertablet": {
+                    "tt_content": {
+                        "tx_mask_iconteasertablet": "varchar(255) DEFAULT '' NOT NULL"
+                    }
+                },
+                "tx_mask_teaseritems": {
+                    "tt_content": {
+                        "tx_mask_teaseritems": "int(11) unsigned DEFAULT '0' NOT NULL"
+                    }
+                }
+            },
+            "tca": {
+                "header": {
+                    "coreField": 1,
+                    "fullKey": "header",
+                    "key": "header",
+                    "type": "string"
+                },
+                "tx_mask_122e10ae0142b": {
+                    "config": {
+                        "type": "tab"
+                    },
+                    "fullKey": "tx_mask_122e10ae0142b",
+                    "key": "122e10ae0142b",
+                    "type": "tab"
+                },
+                "tx_mask_5ef8a0584078b": {
+                    "config": {
+                        "type": "tab"
+                    },
+                    "fullKey": "tx_mask_5ef8a0584078b",
+                    "key": "5ef8a0584078b",
+                    "type": "tab"
+                },
+                "tx_mask_8810fbb3a710f": {
+                    "config": {
+                        "type": "tab"
+                    },
+                    "fullKey": "tx_mask_8810fbb3a710f",
+                    "key": "8810fbb3a710f",
+                    "type": "tab"
+                },
+                "tx_mask_iconteaseralignment": {
+                    "config": {
+                        "behaviour": {
+                            "allowLanguageSynchronization": 1
+                        },
+                        "items": [
+                            {
+                                "label": "zentrieren"
+                            }
+                        ],
+                        "renderType": "checkboxToggle",
+                        "type": "check"
+                    },
+                    "fullKey": "tx_mask_iconteaseralignment",
+                    "key": "iconteaseralignment",
+                    "type": "check"
+                },
+                "tx_mask_iconteaserctabuttonsameheight": {
+                    "config": {
+                        "items": [
+                            {
+                                "label": "CTA auf selber H\u00f6he"
+                            }
+                        ],
+                        "renderType": "checkboxToggle",
+                        "type": "check"
+                    },
+                    "fullKey": "tx_mask_iconteaserctabuttonsameheight",
+                    "key": "iconteaserctabuttonsameheight",
+                    "type": "check"
+                },
+                "tx_mask_iconteaserdesktop": {
+                    "config": {
+                        "items": [
+                            {
+                                "description": "",
+                                "group": "",
+                                "icon": "",
+                                "label": "Ausw\u00e4hlen",
+                                "value": ""
+                            },
+                            {
+                                "description": "",
+                                "group": "",
+                                "icon": "",
+                                "label": "3",
+                                "value": "row-cols-lg-3"
+                            },
+                            {
+                                "description": "",
+                                "group": "",
+                                "icon": "",
+                                "label": "4",
+                                "value": "row-cols-lg-4"
+                            },
+                            {
+                                "description": "",
+                                "group": "",
+                                "icon": "",
+                                "label": "5",
+                                "value": "row-cols-lg-5"
+                            }
+                        ],
+                        "renderType": "selectSingle",
+                        "type": "select"
+                    },
+                    "fullKey": "tx_mask_iconteaserdesktop",
+                    "key": "iconteaserdesktop",
+                    "type": "select"
+                },
+                "tx_mask_iconteasermobile": {
+                    "config": {
+                        "items": [
+                            {
+                                "description": "",
+                                "group": "",
+                                "icon": "",
+                                "label": "Ausw\u00e4hlen",
+                                "value": ""
+                            },
+                            {
+                                "description": "",
+                                "group": "",
+                                "icon": "",
+                                "label": "1",
+                                "value": "row-cols-1"
+                            },
+                            {
+                                "description": "",
+                                "group": "",
+                                "icon": "",
+                                "label": "2",
+                                "value": "row-cols-2"
+                            }
+                        ],
+                        "renderType": "selectSingle",
+                        "type": "select"
+                    },
+                    "fullKey": "tx_mask_iconteasermobile",
+                    "key": "iconteasermobile",
+                    "type": "select"
+                },
+                "tx_mask_iconteasermodus": {
+                    "config": {
+                        "behaviour": {
+                            "allowLanguageSynchronization": 0
+                        },
+                        "items": [
+                            {
+                                "label": "Oberhalb",
+                                "value": "1"
+                            },
+                            {
+                                "label": "Unterhalb",
+                                "value": "2"
+                            }
+                        ],
+                        "type": "radio"
+                    },
+                    "fullKey": "tx_mask_iconteasermodus",
+                    "key": "iconteasermodus",
+                    "type": "radio"
+                },
+                "tx_mask_iconteasersize": {
+                    "config": {
+                        "behaviour": {
+                            "allowLanguageSynchronization": 1
+                        },
+                        "items": [
+                            {
+                                "description": "",
+                                "group": "",
+                                "icon": "",
+                                "label": "Klein",
+                                "value": "feature-icon-sm"
+                            },
+                            {
+                                "description": "",
+                                "group": "",
+                                "icon": "",
+                                "label": "Mittel",
+                                "value": "feature-icon-md"
+                            },
+                            {
+                                "description": "",
+                                "group": "",
+                                "icon": "",
+                                "label": "Gro\u00df",
+                                "value": "feature-icon-lg"
+                            }
+                        ],
+                        "maxitems": "1",
+                        "renderType": "selectSingle",
+                        "type": "select"
+                    },
+                    "fullKey": "tx_mask_iconteasersize",
+                    "key": "iconteasersize",
+                    "type": "select"
+                },
+                "tx_mask_iconteasertablet": {
+                    "config": {
+                        "items": [
+                            {
+                                "description": "",
+                                "group": "",
+                                "icon": "",
+                                "label": "Ausw\u00e4hlen",
+                                "value": ""
+                            },
+                            {
+                                "description": "",
+                                "group": "",
+                                "icon": "",
+                                "label": "2",
+                                "value": "row-cols-md-2"
+                            },
+                            {
+                                "description": "",
+                                "group": "",
+                                "icon": "",
+                                "label": "3",
+                                "value": "row-cols-md-3"
+                            }
+                        ],
+                        "renderType": "selectSingle",
+                        "type": "select"
+                    },
+                    "fullKey": "tx_mask_iconteasertablet",
+                    "key": "iconteasertablet",
+                    "type": "select"
+                },
+                "tx_mask_teaseritems": {
+                    "config": {
+                        "appearance": {
+                            "collapseAll": 1,
+                            "enabledControls": {
+                                "dragdrop": 1
+                            },
+                            "expandSingle": 1,
+                            "levelLinksPosition": "both",
+                            "newRecordLinkTitle": "Teaseritem anlegen",
+                            "showAllLocalizationLink": 1,
+                            "showPossibleLocalizationRecords": 1,
+                            "useSortable": 1
+                        },
+                        "behaviour": {
+                            "allowLanguageSynchronization": 1
+                        },
+                        "foreign_field": "parentid",
+                        "foreign_sortby": "sorting",
+                        "foreign_table": "--inlinetable--",
+                        "foreign_table_field": "parenttable",
+                        "type": "inline"
+                    },
+                    "fullKey": "tx_mask_teaseritems",
+                    "key": "teaseritems",
+                    "type": "inline"
+                }
+            }
+        },
+        "tx_mask_teaseritems": {
+            "sql": {
+                "tx_mask_iconteaserheadline": {
+                    "tx_mask_teaseritems": {
+                        "tx_mask_iconteaserheadline": "varchar(255) DEFAULT '' NOT NULL"
+                    }
+                },
+                "tx_mask_iconteaserlink": {
+                    "tx_mask_teaseritems": {
+                        "tx_mask_iconteaserlink": "varchar(255) DEFAULT '' NOT NULL"
+                    }
+                },
+                "tx_mask_iconteaserlinkall": {
+                    "tx_mask_teaseritems": {
+                        "tx_mask_iconteaserlinkall": "int(11) DEFAULT '0' NOT NULL"
+                    }
+                },
+                "tx_mask_iconteaserlinklabel": {
+                    "tx_mask_teaseritems": {
+                        "tx_mask_iconteaserlinklabel": "varchar(255) DEFAULT '' NOT NULL"
+                    }
+                },
+                "tx_mask_iconteasertext": {
+                    "tx_mask_teaseritems": {
+                        "tx_mask_iconteasertext": "mediumtext"
+                    }
+                },
+                "tx_mask_svgidentifier": {
+                    "tx_mask_teaseritems": {
+                        "tx_mask_svgidentifier": "varchar(255) DEFAULT '' NOT NULL"
+                    }
+                }
+            },
+            "tca": {
+                "tx_mask_iconteaserheadline": {
+                    "config": {
+                        "behaviour": {
+                            "allowLanguageSynchronization": 1
+                        },
+                        "placeholder": "Headline anlegen",
+                        "size": "48",
+                        "type": "input"
+                    },
+                    "description": "Wird mit dem HTML Element H4 angezeigt",
+                    "fullKey": "tx_mask_iconteaserheadline",
+                    "inlineParent": "tx_mask_teaseritems",
+                    "key": "iconteaserheadline",
+                    "label": "Kurze Headline des Teasers",
+                    "order": 1,
+                    "type": "string"
+                },
+                "tx_mask_iconteaserlink": {
+                    "config": {
+                        "allowedTypes": [
+                            "page",
+                            "file",
+                            "url",
+                            "record"
+                        ],
+                        "size": "48",
+                        "type": "link"
+                    },
+                    "description": "Linkziel ausw\u00e4hlen",
+                    "fullKey": "tx_mask_iconteaserlink",
+                    "inlineParent": "tx_mask_teaseritems",
+                    "key": "iconteaserlink",
+                    "label": "Linkziel",
+                    "order": 5,
+                    "type": "link"
+                },
+                "tx_mask_iconteaserlinkall": {
+                    "config": {
+                        "behaviour": {
+                            "allowLanguageSynchronization": 1
+                        },
+                        "items": [
+                            {
+                                "label": "Ganzen Teaser verlinken"
+                            }
+                        ],
+                        "renderType": "checkboxToggle",
+                        "type": "check"
+                    },
+                    "fullKey": "tx_mask_iconteaserlinkall",
+                    "inlineParent": "tx_mask_teaseritems",
+                    "key": "iconteaserlinkall",
+                    "label": "Ganzen Teaser verlinken",
+                    "order": 6,
+                    "type": "check"
+                },
+                "tx_mask_iconteaserlinklabel": {
+                    "config": {
+                        "behaviour": {
+                            "allowLanguageSynchronization": 1
+                        },
+                        "size": "48",
+                        "type": "input"
+                    },
+                    "fullKey": "tx_mask_iconteaserlinklabel",
+                    "inlineParent": "tx_mask_teaseritems",
+                    "key": "iconteaserlinklabel",
+                    "label": "Text f\u00fcr Linklabel",
+                    "order": 4,
+                    "type": "string"
+                },
+                "tx_mask_iconteasertext": {
+                    "config": {
+                        "behaviour": {
+                            "allowLanguageSynchronization": 1
+                        },
+                        "enableRichtext": 1,
+                        "richtextConfiguration": "mask",
+                        "type": "text"
+                    },
+                    "description": "Kurzer Beschreibungstext.",
+                    "fullKey": "tx_mask_iconteasertext",
+                    "inlineParent": "tx_mask_teaseritems",
+                    "key": "iconteasertext",
+                    "label": "Teasertext",
+                    "order": 3,
+                    "type": "richtext"
+                },
+                "tx_mask_svgidentifier": {
+                    "config": {
+                        "behaviour": {
+                            "allowLanguageSynchronization": 1
+                        },
+                        "eval": "trim",
+                        "placeholder": "Beispiel plus-square-fill",
+                        "size": "48",
+                        "type": "input"
+                    },
+                    "description": "Der Identifier f\u00fcr den Icon kann von https:\/\/icons.getbootstrap.com\/ kopiert werden.\nEinfach den Text unterhalb des gew\u00fcnschten Icons kopieren und in das Eingabefeld eintragen",
+                    "fullKey": "tx_mask_svgidentifier",
+                    "inlineParent": "tx_mask_teaseritems",
+                    "key": "svgidentifier",
+                    "label": "Iconidentifier",
+                    "order": 2,
+                    "type": "string"
+                }
+            }
+        }
+    }
+}

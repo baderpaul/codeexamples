@@ -1,0 +1,39 @@
+options{
+    RTESmallWidth = 700
+    RTESmallHeight = 400
+}
+
+options {
+    clearCache.pages = 1
+}
+
+#Pagetree background color
+#-------------------------------------------------------------------------------
+    options.pageTree{
+    backgroundColor
+    {
+        54 = #a03956
+        16 = #a4393c
+        2 = #a85239
+        4 = #ad703a
+        74 = #b1903a
+        47 = #b5b23a
+        9 = #9
+        cf6f6
+        75 = #8e
+        e0e0
+        70 = #bff3d8
+    }
+    showPageIdWithTitle = 1
+}
+
+#
+# Set new pages & CE visible
+#
+#-------------------------------------------------------------------------------
+
+    TCAdefaults {
+    page.hidden = 0
+        content.hidden = 0
+        tx_news.hidden = 0
+}

@@ -1,0 +1,24 @@
+base: 'http://codeexamples.ddev.site/'
+languages:
+  -
+    title: English
+    enabled: true
+    locale: en_GB
+    base: /en/
+    websiteTitle: Codeexamples
+    navigationTitle: English
+    flag: gb
+    languageId: 0
+  -
+    title: Deutsch
+    enabled: true
+    locale: de_DE
+    base: /
+    websiteTitle: Codebeispiele
+    navigationTitle: Deutsch
+    fallbackType: strict
+    fallbacks: ''
+    flag: de
+    languageId: 1
+rootPageId: 1
+websiteTitle: ''
