@@ -159,6 +159,7 @@ class ComposerStaticInitdbaab69dc1e6b5fa1c189eec74c006cd
         ),
         'B' => 
         array (
+            'Bo\\CustomDashboardWidgets\\' => 26,
             'Base32\\' => 7,
             'BaconQrCode\\' => 12,
         ),
@@ -544,6 +545,10 @@ class ComposerStaticInitdbaab69dc1e6b5fa1c189eec74c006cd
         'DASPRiD\\Enum\\' => 
         array (
             0 => __DIR__ . '/..' . '/dasprid/enum/src',
+        ),
+        'Bo\\CustomDashboardWidgets\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/o-ba/custom_dashboard_widgets/Classes',
         ),
         'Base32\\' => 
         array (

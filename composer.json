@@ -45,6 +45,7 @@
 		"typo3/cms-tstemplate": "^12.4.0",
 		"typo3/cms-viewpage": "^12.4.0",
 		"typo3/cms-webhooks": "^12.4.0",
-		"techdivision/setup-package": "^2.0"
+		"techdivision/setup-package": "^2.0",
+		"o-ba/custom_dashboard_widgets": "^1.3"
 	}
 }
