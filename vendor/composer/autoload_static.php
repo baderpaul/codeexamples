@@ -131,6 +131,7 @@ class ComposerStaticInitdbaab69dc1e6b5fa1c189eec74c006cd
         'M' => 
         array (
             'Masterminds\\' => 12,
+            'MASK\\Mask\\' => 10,
         ),
         'G' => 
         array (
@@ -140,6 +141,7 @@ class ComposerStaticInitdbaab69dc1e6b5fa1c189eec74c006cd
         ),
         'F' => 
         array (
+            'FriendsOfTYPO3\\FontawesomeProvider\\' => 35,
             'Firebase\\JWT\\' => 13,
         ),
         'E' => 
@@ -162,6 +164,7 @@ class ComposerStaticInitdbaab69dc1e6b5fa1c189eec74c006cd
             'Bo\\CustomDashboardWidgets\\' => 26,
             'Base32\\' => 7,
             'BaconQrCode\\' => 12,
+            'B13\\Container\\' => 14,
         ),
     );
 
@@ -494,6 +497,10 @@ class ComposerStaticInitdbaab69dc1e6b5fa1c189eec74c006cd
         array (
             0 => __DIR__ . '/..' . '/masterminds/html5/src',
         ),
+        'MASK\\Mask\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/mask/mask/Classes',
+        ),
         'GuzzleHttp\\Psr7\\' => 
         array (
             0 => __DIR__ . '/..' . '/guzzlehttp/psr7/src',
@@ -505,6 +512,10 @@ class ComposerStaticInitdbaab69dc1e6b5fa1c189eec74c006cd
         'GuzzleHttp\\' => 
         array (
             0 => __DIR__ . '/..' . '/guzzlehttp/guzzle/src',
+        ),
+        'FriendsOfTYPO3\\FontawesomeProvider\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/friendsoftypo3/fontawesome-provider/Classes',
         ),
         'Firebase\\JWT\\' => 
         array (
@@ -557,6 +568,10 @@ class ComposerStaticInitdbaab69dc1e6b5fa1c189eec74c006cd
         'BaconQrCode\\' => 
         array (
             0 => __DIR__ . '/..' . '/bacon/bacon-qr-code/src',
+        ),
+        'B13\\Container\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/b13/container/Classes',
         ),
     );
 

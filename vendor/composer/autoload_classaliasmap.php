@@ -40,6 +40,7 @@ return array (
     'typo3\\cms\\recordlist\\view\\folderutilityrenderer' => 'TYPO3\\CMS\\Backend\\View\\FolderUtilityRenderer',
     'typo3\\cms\\frontend\\service\\typolinkcodecservice' => 'TYPO3\\CMS\\Core\\LinkHandling\\TypoLinkCodecService',
     'typo3\\cms\\frontend\\typolink\\linkresultfactory' => 'TYPO3\\CMS\\Frontend\\Typolink\\LinkFactory',
+    'typo3\\cms\\core\\imaging\\iconprovider\\fontawesomeiconprovider' => 'FriendsOfTYPO3\\FontawesomeProvider\\Imaging\\IconProvider\\FontawesomeIconProvider',
   ),
   'classNameToAliasMapping' => 
   array (
@@ -188,6 +189,10 @@ return array (
     'TYPO3\\CMS\\Frontend\\Typolink\\LinkFactory' => 
     array (
       'typo3\\cms\\frontend\\typolink\\linkresultfactory' => 'typo3\\cms\\frontend\\typolink\\linkresultfactory',
+    ),
+    'FriendsOfTYPO3\\FontawesomeProvider\\Imaging\\IconProvider\\FontawesomeIconProvider' => 
+    array (
+      'typo3\\cms\\core\\imaging\\iconprovider\\fontawesomeiconprovider' => 'typo3\\cms\\core\\imaging\\iconprovider\\fontawesomeiconprovider',
     ),
   ),
 );

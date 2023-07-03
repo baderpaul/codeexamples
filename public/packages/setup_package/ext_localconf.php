@@ -4,6 +4,8 @@ defined('TYPO3') or die();
 use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 
 $packageKey = "setup_package";
+$GLOBALS['TYPO3_CONF_VARS']['SYS']['features']['overrideSharedFields'] = true;
+
 /***************
  * overrite default news files
  */

@@ -37,6 +37,21 @@ return [
             'automaticInstallation' => '1',
             'offlineMode' => '0',
         ],
+        'mask' => [
+            'backend' => 'EXT:setup_package/Resources/Private/Templates/Plugins/Mask/Backend/Preview/',
+            'backend_layouts_folder' => 'EXT:setup_package/Configuration/Mask/BackendLayouts/',
+            'backendlayout_pids' => '0',
+            'content' => 'EXT:setup_package/Resources/Private/Templates/Plugins/Mask/',
+            'content_elements_folder' => 'EXT:setup_package/Configuration/Mask/ContentElements/',
+            'json' => '',
+            'layouts' => 'EXT:setup_package/Resources/Private/Templates/Plugins/Mask/',
+            'layouts_backend' => 'EXT:setup_package/Resources/Private/Templates/Plugins/Mask/Backend/',
+            'loader_identifier' => 'json-split',
+            'override_shared_fields' => '0',
+            'partials' => 'EXT:setup_package/Resources/Private/Templates/Plugins/Mask/',
+            'partials_backend' => 'EXT:setup_package/Resources/Private/Templates/Plugins/Mask/Backend/',
+            'preview' => 'EXT:setup_package/Resources/Private/Templates/Plugins/Mask/Backend/',
+        ],
     ],
     'FE' => [
         'cacheHash' => [

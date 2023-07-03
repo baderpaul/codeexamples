@@ -87,9 +87,11 @@ return array(
     'PhpParser\\' => array($vendorDir . '/nikic/php-parser/lib/PhpParser'),
     'PHPStan\\PhpDocParser\\' => array($vendorDir . '/phpstan/phpdoc-parser/src'),
     'Masterminds\\' => array($vendorDir . '/masterminds/html5/src'),
+    'MASK\\Mask\\' => array($vendorDir . '/mask/mask/Classes'),
     'GuzzleHttp\\Psr7\\' => array($vendorDir . '/guzzlehttp/psr7/src'),
     'GuzzleHttp\\Promise\\' => array($vendorDir . '/guzzlehttp/promises/src'),
     'GuzzleHttp\\' => array($vendorDir . '/guzzlehttp/guzzle/src'),
+    'FriendsOfTYPO3\\FontawesomeProvider\\' => array($vendorDir . '/friendsoftypo3/fontawesome-provider/Classes'),
     'Firebase\\JWT\\' => array($vendorDir . '/firebase/php-jwt/src'),
     'Egulias\\EmailValidator\\' => array($vendorDir . '/egulias/email-validator/src'),
     'Doctrine\\Instantiator\\' => array($vendorDir . '/doctrine/instantiator/src/Doctrine/Instantiator'),
@@ -103,4 +105,5 @@ return array(
     'Bo\\CustomDashboardWidgets\\' => array($vendorDir . '/o-ba/custom_dashboard_widgets/Classes'),
     'Base32\\' => array($vendorDir . '/christian-riesen/base32/src'),
     'BaconQrCode\\' => array($vendorDir . '/bacon/bacon-qr-code/src'),
+    'B13\\Container\\' => array($vendorDir . '/b13/container/Classes'),
 );

@@ -3,13 +3,22 @@
         'name' => 'typo3/cms-base-distribution',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => '3d6bde02aae3ae681e37e3a24f682f3aacac41ee',
+        'reference' => '72ae8f02d79145e5ee6fe845f88a3458c440ce11',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
         'dev' => true,
     ),
     'versions' => array(
+        'b13/container' => array(
+            'pretty_version' => '2.2.3',
+            'version' => '2.2.3.0',
+            'reference' => 'dcbcad029995455487753aaa52ecf6a9b5f08392',
+            'type' => 'typo3-cms-extension',
+            'install_path' => __DIR__ . '/../b13/container',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
         'bacon/bacon-qr-code' => array(
             'pretty_version' => '2.0.8',
             'version' => '2.0.8.0',
@@ -133,6 +142,15 @@
             'aliases' => array(),
             'dev_requirement' => false,
         ),
+        'friendsoftypo3/fontawesome-provider' => array(
+            'pretty_version' => 'v1.0.3',
+            'version' => '1.0.3.0',
+            'reference' => '4b269a4c719d4d18e80340e5317c4959a83c7abc',
+            'type' => 'typo3-cms-extension',
+            'install_path' => __DIR__ . '/../friendsoftypo3/fontawesome-provider',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
         'guzzlehttp/guzzle' => array(
             'pretty_version' => '7.7.0',
             'version' => '7.7.0.0',
@@ -180,6 +198,15 @@
             'replaced' => array(
                 0 => '*',
             ),
+        ),
+        'mask/mask' => array(
+            'pretty_version' => 'v8.2.3',
+            'version' => '8.2.3.0',
+            'reference' => 'd4d14a641e65164a099eec3d93353f96ed418b02',
+            'type' => 'typo3-cms-extension',
+            'install_path' => __DIR__ . '/../mask/mask',
+            'aliases' => array(),
+            'dev_requirement' => false,
         ),
         'masterminds/html5' => array(
             'pretty_version' => '2.8.0',
@@ -763,10 +790,22 @@
             'aliases' => array(),
             'dev_requirement' => false,
         ),
+        'typo3-ter/container' => array(
+            'dev_requirement' => false,
+            'replaced' => array(
+                0 => '2.2.3',
+            ),
+        ),
         'typo3-ter/custom_dashboard_widgets' => array(
             'dev_requirement' => false,
             'replaced' => array(
                 0 => '1.3.0',
+            ),
+        ),
+        'typo3-ter/mask' => array(
+            'dev_requirement' => false,
+            'replaced' => array(
+                0 => 'v8.2.3',
             ),
         ),
         'typo3/class-alias-loader' => array(
@@ -796,7 +835,7 @@
         'typo3/cms-base-distribution' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => '3d6bde02aae3ae681e37e3a24f682f3aacac41ee',
+            'reference' => '72ae8f02d79145e5ee6fe845f88a3458c440ce11',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),

@@ -1,6 +1,72 @@
 {
     "packages": [
         {
+            "name": "b13/container",
+            "version": "2.2.3",
+            "version_normalized": "2.2.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/b13/container.git",
+                "reference": "dcbcad029995455487753aaa52ecf6a9b5f08392"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/b13/container/zipball/dcbcad029995455487753aaa52ecf6a9b5f08392",
+                "reference": "dcbcad029995455487753aaa52ecf6a9b5f08392",
+                "shasum": ""
+            },
+            "require": {
+                "doctrine/dbal": "~2.13.1 || ~3.4",
+                "typo3/cms-backend": "^11.5 || ^12.4 || ^10.4"
+            },
+            "replace": {
+                "typo3-ter/container": "self.version"
+            },
+            "require-dev": {
+                "b13/container-example": "dev-master",
+                "codeception/codeception": "^5.0 || ^4.1",
+                "codeception/module-asserts": "^3.0 || ^1.0",
+                "codeception/module-db": "^3.0 || ^1.0",
+                "codeception/module-webdriver": "^3.1 || ^1.0",
+                "friendsofphp/php-cs-fixer": "~3.9.0",
+                "ichhabrecht/content-defender": "^3.2",
+                "phpstan/phpstan": "^1.4.8",
+                "typo3/cms-fluid-styled-content": "^11.5 || ^12.4",
+                "typo3/cms-info": "^11.5 || ^12.4",
+                "typo3/cms-install": "^11.5 || ^12.4",
+                "typo3/cms-workspaces": "^11.5 || ^12.4",
+                "typo3/coding-standards": "^0.5.0",
+                "typo3/testing-framework": "^7"
+            },
+            "time": "2023-06-14T08:47:27+00:00",
+            "type": "typo3-cms-extension",
+            "extra": {
+                "typo3/cms": {
+                    "cms-package-dir": "{$vendor-dir}/typo3/cms",
+                    "web-dir": ".Build/Web",
+                    "app-dir": ".Build",
+                    "extension-key": "container"
+                }
+            },
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "B13\\Container\\": "Classes/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "description": "Create Custom Container Content Elements for TYPO3",
+            "homepage": "https://b13.com",
+            "support": {
+                "issues": "https://github.com/b13/container/issues",
+                "source": "https://github.com/b13/container/tree/2.2.3"
+            },
+            "install-path": "../b13/container"
+        },
+        {
             "name": "bacon/bacon-qr-code",
             "version": "2.0.8",
             "version_normalized": "2.0.8.0",
@@ -944,6 +1010,72 @@
             "install-path": "../firebase/php-jwt"
         },
         {
+            "name": "friendsoftypo3/fontawesome-provider",
+            "version": "v1.0.3",
+            "version_normalized": "1.0.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/FriendsOfTYPO3/fontawesome-provider.git",
+                "reference": "4b269a4c719d4d18e80340e5317c4959a83c7abc"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/FriendsOfTYPO3/fontawesome-provider/zipball/4b269a4c719d4d18e80340e5317c4959a83c7abc",
+                "reference": "4b269a4c719d4d18e80340e5317c4959a83c7abc",
+                "shasum": ""
+            },
+            "require": {
+                "ext-simplexml": "*",
+                "typo3/cms-backend": "^11.5 || ^12.0 || 12.*.*@dev",
+                "typo3/cms-core": "^11.5 || ^12.0 || 12.*.*@dev"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^3.14",
+                "phpstan/phpstan": "^1.9",
+                "phpstan/phpstan-phpunit": "^1.3",
+                "phpunit/phpunit": "^10.0"
+            },
+            "time": "2023-04-25T06:35:56+00:00",
+            "type": "typo3-cms-extension",
+            "extra": {
+                "typo3/class-alias-loader": {
+                    "class-alias-maps": [
+                        "Migrations/Code/ClassAliasMap.php"
+                    ]
+                },
+                "typo3/cms": {
+                    "Package": {
+                        "serviceProvider": "FriendsOfTYPO3\\FontawesomeProvider\\ServiceProvider"
+                    },
+                    "app-dir": ".build",
+                    "extension-key": "fontawesome_provider",
+                    "web-dir": ".build/public"
+                }
+            },
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "FriendsOfTYPO3\\FontawesomeProvider\\": "Classes/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Andreas Fernandez",
+                    "email": "a.fernandez@scripting-base.de"
+                }
+            ],
+            "description": "Integrates legacy FontawesomeIconProvider and FontAwesome 4.7",
+            "support": {
+                "issues": "https://github.com/FriendsOfTYPO3/fontawesome-provider/issues",
+                "source": "https://github.com/FriendsOfTYPO3/fontawesome-provider/tree/v1.0.3"
+            },
+            "install-path": "../friendsoftypo3/fontawesome-provider"
+        },
+        {
             "name": "guzzlehttp/guzzle",
             "version": "7.7.0",
             "version_normalized": "7.7.0.0",
@@ -1344,6 +1476,105 @@
                 "source": "https://github.com/lolli42/FineDiff/tree/1.0.2"
             },
             "install-path": "../lolli42/finediff"
+        },
+        {
+            "name": "mask/mask",
+            "version": "v8.2.3",
+            "version_normalized": "8.2.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Gernott/mask.git",
+                "reference": "d4d14a641e65164a099eec3d93353f96ed418b02"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Gernott/mask/zipball/d4d14a641e65164a099eec3d93353f96ed418b02",
+                "reference": "d4d14a641e65164a099eec3d93353f96ed418b02",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "friendsoftypo3/fontawesome-provider": "^1.0",
+                "php": "^7.4 || ^8.0",
+                "typo3/cms-backend": "^11.5.0 || ^12.4",
+                "typo3/cms-core": "^11.5.0 || ^12.4",
+                "typo3/cms-fluid": "^11.5.0 || ^12.4",
+                "typo3/cms-fluid-styled-content": "^11.5.0 || ^12.4"
+            },
+            "replace": {
+                "typo3-ter/mask": "self.version"
+            },
+            "require-dev": {
+                "bnf/phpstan-psr-container": "^1.0",
+                "friendsofphp/php-cs-fixer": "^3.4",
+                "friendsoftypo3/phpstan-typo3": "^0.9.0",
+                "phpstan/phpstan": "^1.4",
+                "phpstan/phpstan-phpunit": "^1.0",
+                "phpunit/phpunit": "^9.6.3",
+                "typo3/coding-standards": "^0.6",
+                "typo3/testing-framework": "7.x-dev"
+            },
+            "suggest": {
+                "b13/container": "Allows creating container elements to place your Mask elements into.",
+                "gridelementsteam/gridelements": "Allows creating container elements to place your Mask elements into."
+            },
+            "time": "2023-06-20T14:24:34+00:00",
+            "type": "typo3-cms-extension",
+            "extra": {
+                "typo3/cms": {
+                    "extension-key": "mask",
+                    "web-dir": ".Build/Web"
+                }
+            },
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "MASK\\Mask\\": "Classes/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "WEBprofil - Gernot Ploiner e.U.",
+                    "email": "office@webprofil.at",
+                    "homepage": "https://www.webprofil.at",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Nikita Hovratov",
+                    "email": "info@nikita-hovratov.de",
+                    "homepage": "https://www.nikita-hovratov.de",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Create your own content elements and page templates. Easy to use, even without programming skills because of the comfortable drag and drop user interface. Stored in structured database tables. Style your frontend with Fluid tags. Ideal, if you want to switch from Templavoila.",
+            "homepage": "https://extensions.typo3.org/extension/mask",
+            "keywords": [
+                "TYPO3 CMS",
+                "contentelements",
+                "mask",
+                "wizard"
+            ],
+            "support": {
+                "chat": "https://typo3.slack.com/archives/C0FD5F6P2",
+                "docs": "https://docs.typo3.org/p/mask/mask/main/en-us/",
+                "issues": "https://github.com/gernott/mask/issues/",
+                "source": "https://github.com/gernott/mask"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/sponsors/nhovratov",
+                    "type": "Nikita Hovratov (Developer)"
+                },
+                {
+                    "url": "https://github.com/sponsors/Gernott",
+                    "type": "WEBprofil - Gernot Ploiner e.U. (Founder)"
+                }
+            ],
+            "install-path": "../mask/mask"
         },
         {
             "name": "masterminds/html5",
