@@ -4994,6 +4994,9 @@ textarea.form-control-lg {
 .m-12 {
   margin: 0.75rem; }
 
+.m-13 {
+  margin: 0.8125rem; }
+
 .m-15 {
   margin: 0.9375rem; }
 
@@ -5088,6 +5091,10 @@ textarea.form-control-lg {
 .mx-12 {
   margin-right: 0.75rem;
   margin-left: 0.75rem; }
+
+.mx-13 {
+  margin-right: 0.8125rem;
+  margin-left: 0.8125rem; }
 
 .mx-15 {
   margin-right: 0.9375rem;
@@ -5201,6 +5208,10 @@ textarea.form-control-lg {
   margin-top: 0.75rem;
   margin-bottom: 0.75rem; }
 
+.my-13 {
+  margin-top: 0.8125rem;
+  margin-bottom: 0.8125rem; }
+
 .my-15 {
   margin-top: 0.9375rem;
   margin-bottom: 0.9375rem; }
@@ -5302,6 +5313,9 @@ textarea.form-control-lg {
 .mt-12 {
   margin-top: 0.75rem; }
 
+.mt-13 {
+  margin-top: 0.8125rem; }
+
 .mt-15 {
   margin-top: 0.9375rem; }
 
@@ -5385,6 +5399,9 @@ textarea.form-control-lg {
 
 .me-12 {
   margin-right: 0.75rem; }
+
+.me-13 {
+  margin-right: 0.8125rem; }
 
 .me-15 {
   margin-right: 0.9375rem; }
@@ -5470,6 +5487,9 @@ textarea.form-control-lg {
 .mb-12 {
   margin-bottom: 0.75rem; }
 
+.mb-13 {
+  margin-bottom: 0.8125rem; }
+
 .mb-15 {
   margin-bottom: 0.9375rem; }
 
@@ -5554,6 +5574,9 @@ textarea.form-control-lg {
 .ms-12 {
   margin-left: 0.75rem; }
 
+.ms-13 {
+  margin-left: 0.8125rem; }
+
 .ms-15 {
   margin-left: 0.9375rem; }
 
@@ -5637,6 +5660,9 @@ textarea.form-control-lg {
 
 .p-12 {
   padding: 0.75rem; }
+
+.p-13 {
+  padding: 0.8125rem; }
 
 .p-15 {
   padding: 0.9375rem; }
@@ -5729,6 +5755,10 @@ textarea.form-control-lg {
 .px-12 {
   padding-right: 0.75rem;
   padding-left: 0.75rem; }
+
+.px-13 {
+  padding-right: 0.8125rem;
+  padding-left: 0.8125rem; }
 
 .px-15 {
   padding-right: 0.9375rem;
@@ -5838,6 +5868,10 @@ textarea.form-control-lg {
   padding-top: 0.75rem;
   padding-bottom: 0.75rem; }
 
+.py-13 {
+  padding-top: 0.8125rem;
+  padding-bottom: 0.8125rem; }
+
 .py-15 {
   padding-top: 0.9375rem;
   padding-bottom: 0.9375rem; }
@@ -5935,6 +5969,9 @@ textarea.form-control-lg {
 .pt-12 {
   padding-top: 0.75rem; }
 
+.pt-13 {
+  padding-top: 0.8125rem; }
+
 .pt-15 {
   padding-top: 0.9375rem; }
 
@@ -6015,6 +6052,9 @@ textarea.form-control-lg {
 
 .pe-12 {
   padding-right: 0.75rem; }
+
+.pe-13 {
+  padding-right: 0.8125rem; }
 
 .pe-15 {
   padding-right: 0.9375rem; }
@@ -6097,6 +6137,9 @@ textarea.form-control-lg {
 .pb-12 {
   padding-bottom: 0.75rem; }
 
+.pb-13 {
+  padding-bottom: 0.8125rem; }
+
 .pb-15 {
   padding-bottom: 0.9375rem; }
 
@@ -6177,6 +6220,9 @@ textarea.form-control-lg {
 
 .ps-12 {
   padding-left: 0.75rem; }
+
+.ps-13 {
+  padding-left: 0.8125rem; }
 
 .ps-15 {
   padding-left: 0.9375rem; }
@@ -6259,6 +6305,9 @@ textarea.form-control-lg {
 .gap-12 {
   gap: 0.75rem; }
 
+.gap-13 {
+  gap: 0.8125rem; }
+
 .gap-15 {
   gap: 0.9375rem; }
 
@@ -6340,6 +6389,9 @@ textarea.form-control-lg {
 .row-gap-12 {
   row-gap: 0.75rem; }
 
+.row-gap-13 {
+  row-gap: 0.8125rem; }
+
 .row-gap-15 {
   row-gap: 0.9375rem; }
 
@@ -6420,6 +6472,9 @@ textarea.form-control-lg {
 
 .column-gap-12 {
   column-gap: 0.75rem; }
+
+.column-gap-13 {
+  column-gap: 0.8125rem; }
 
 .column-gap-15 {
   column-gap: 0.9375rem; }
@@ -7396,6 +7451,9 @@ textarea.form-control-lg {
   .m-sm-12 {
     margin: 0.75rem; }
 
+  .m-sm-13 {
+    margin: 0.8125rem; }
+
   .m-sm-15 {
     margin: 0.9375rem; }
 
@@ -7490,6 +7548,10 @@ textarea.form-control-lg {
   .mx-sm-12 {
     margin-right: 0.75rem;
     margin-left: 0.75rem; }
+
+  .mx-sm-13 {
+    margin-right: 0.8125rem;
+    margin-left: 0.8125rem; }
 
   .mx-sm-15 {
     margin-right: 0.9375rem;
@@ -7603,6 +7665,10 @@ textarea.form-control-lg {
     margin-top: 0.75rem;
     margin-bottom: 0.75rem; }
 
+  .my-sm-13 {
+    margin-top: 0.8125rem;
+    margin-bottom: 0.8125rem; }
+
   .my-sm-15 {
     margin-top: 0.9375rem;
     margin-bottom: 0.9375rem; }
@@ -7704,6 +7770,9 @@ textarea.form-control-lg {
   .mt-sm-12 {
     margin-top: 0.75rem; }
 
+  .mt-sm-13 {
+    margin-top: 0.8125rem; }
+
   .mt-sm-15 {
     margin-top: 0.9375rem; }
 
@@ -7787,6 +7856,9 @@ textarea.form-control-lg {
 
   .me-sm-12 {
     margin-right: 0.75rem; }
+
+  .me-sm-13 {
+    margin-right: 0.8125rem; }
 
   .me-sm-15 {
     margin-right: 0.9375rem; }
@@ -7872,6 +7944,9 @@ textarea.form-control-lg {
   .mb-sm-12 {
     margin-bottom: 0.75rem; }
 
+  .mb-sm-13 {
+    margin-bottom: 0.8125rem; }
+
   .mb-sm-15 {
     margin-bottom: 0.9375rem; }
 
@@ -7956,6 +8031,9 @@ textarea.form-control-lg {
   .ms-sm-12 {
     margin-left: 0.75rem; }
 
+  .ms-sm-13 {
+    margin-left: 0.8125rem; }
+
   .ms-sm-15 {
     margin-left: 0.9375rem; }
 
@@ -8039,6 +8117,9 @@ textarea.form-control-lg {
 
   .p-sm-12 {
     padding: 0.75rem; }
+
+  .p-sm-13 {
+    padding: 0.8125rem; }
 
   .p-sm-15 {
     padding: 0.9375rem; }
@@ -8131,6 +8212,10 @@ textarea.form-control-lg {
   .px-sm-12 {
     padding-right: 0.75rem;
     padding-left: 0.75rem; }
+
+  .px-sm-13 {
+    padding-right: 0.8125rem;
+    padding-left: 0.8125rem; }
 
   .px-sm-15 {
     padding-right: 0.9375rem;
@@ -8240,6 +8325,10 @@ textarea.form-control-lg {
     padding-top: 0.75rem;
     padding-bottom: 0.75rem; }
 
+  .py-sm-13 {
+    padding-top: 0.8125rem;
+    padding-bottom: 0.8125rem; }
+
   .py-sm-15 {
     padding-top: 0.9375rem;
     padding-bottom: 0.9375rem; }
@@ -8337,6 +8426,9 @@ textarea.form-control-lg {
   .pt-sm-12 {
     padding-top: 0.75rem; }
 
+  .pt-sm-13 {
+    padding-top: 0.8125rem; }
+
   .pt-sm-15 {
     padding-top: 0.9375rem; }
 
@@ -8417,6 +8509,9 @@ textarea.form-control-lg {
 
   .pe-sm-12 {
     padding-right: 0.75rem; }
+
+  .pe-sm-13 {
+    padding-right: 0.8125rem; }
 
   .pe-sm-15 {
     padding-right: 0.9375rem; }
@@ -8499,6 +8594,9 @@ textarea.form-control-lg {
   .pb-sm-12 {
     padding-bottom: 0.75rem; }
 
+  .pb-sm-13 {
+    padding-bottom: 0.8125rem; }
+
   .pb-sm-15 {
     padding-bottom: 0.9375rem; }
 
@@ -8579,6 +8677,9 @@ textarea.form-control-lg {
 
   .ps-sm-12 {
     padding-left: 0.75rem; }
+
+  .ps-sm-13 {
+    padding-left: 0.8125rem; }
 
   .ps-sm-15 {
     padding-left: 0.9375rem; }
@@ -8661,6 +8762,9 @@ textarea.form-control-lg {
   .gap-sm-12 {
     gap: 0.75rem; }
 
+  .gap-sm-13 {
+    gap: 0.8125rem; }
+
   .gap-sm-15 {
     gap: 0.9375rem; }
 
@@ -8742,6 +8846,9 @@ textarea.form-control-lg {
   .row-gap-sm-12 {
     row-gap: 0.75rem; }
 
+  .row-gap-sm-13 {
+    row-gap: 0.8125rem; }
+
   .row-gap-sm-15 {
     row-gap: 0.9375rem; }
 
@@ -8822,6 +8929,9 @@ textarea.form-control-lg {
 
   .column-gap-sm-12 {
     column-gap: 0.75rem; }
+
+  .column-gap-sm-13 {
+    column-gap: 0.8125rem; }
 
   .column-gap-sm-15 {
     column-gap: 0.9375rem; }
@@ -9183,6 +9293,9 @@ textarea.form-control-lg {
   .m-md-12 {
     margin: 0.75rem; }
 
+  .m-md-13 {
+    margin: 0.8125rem; }
+
   .m-md-15 {
     margin: 0.9375rem; }
 
@@ -9277,6 +9390,10 @@ textarea.form-control-lg {
   .mx-md-12 {
     margin-right: 0.75rem;
     margin-left: 0.75rem; }
+
+  .mx-md-13 {
+    margin-right: 0.8125rem;
+    margin-left: 0.8125rem; }
 
   .mx-md-15 {
     margin-right: 0.9375rem;
@@ -9390,6 +9507,10 @@ textarea.form-control-lg {
     margin-top: 0.75rem;
     margin-bottom: 0.75rem; }
 
+  .my-md-13 {
+    margin-top: 0.8125rem;
+    margin-bottom: 0.8125rem; }
+
   .my-md-15 {
     margin-top: 0.9375rem;
     margin-bottom: 0.9375rem; }
@@ -9491,6 +9612,9 @@ textarea.form-control-lg {
   .mt-md-12 {
     margin-top: 0.75rem; }
 
+  .mt-md-13 {
+    margin-top: 0.8125rem; }
+
   .mt-md-15 {
     margin-top: 0.9375rem; }
 
@@ -9574,6 +9698,9 @@ textarea.form-control-lg {
 
   .me-md-12 {
     margin-right: 0.75rem; }
+
+  .me-md-13 {
+    margin-right: 0.8125rem; }
 
   .me-md-15 {
     margin-right: 0.9375rem; }
@@ -9659,6 +9786,9 @@ textarea.form-control-lg {
   .mb-md-12 {
     margin-bottom: 0.75rem; }
 
+  .mb-md-13 {
+    margin-bottom: 0.8125rem; }
+
   .mb-md-15 {
     margin-bottom: 0.9375rem; }
 
@@ -9743,6 +9873,9 @@ textarea.form-control-lg {
   .ms-md-12 {
     margin-left: 0.75rem; }
 
+  .ms-md-13 {
+    margin-left: 0.8125rem; }
+
   .ms-md-15 {
     margin-left: 0.9375rem; }
 
@@ -9826,6 +9959,9 @@ textarea.form-control-lg {
 
   .p-md-12 {
     padding: 0.75rem; }
+
+  .p-md-13 {
+    padding: 0.8125rem; }
 
   .p-md-15 {
     padding: 0.9375rem; }
@@ -9918,6 +10054,10 @@ textarea.form-control-lg {
   .px-md-12 {
     padding-right: 0.75rem;
     padding-left: 0.75rem; }
+
+  .px-md-13 {
+    padding-right: 0.8125rem;
+    padding-left: 0.8125rem; }
 
   .px-md-15 {
     padding-right: 0.9375rem;
@@ -10027,6 +10167,10 @@ textarea.form-control-lg {
     padding-top: 0.75rem;
     padding-bottom: 0.75rem; }
 
+  .py-md-13 {
+    padding-top: 0.8125rem;
+    padding-bottom: 0.8125rem; }
+
   .py-md-15 {
     padding-top: 0.9375rem;
     padding-bottom: 0.9375rem; }
@@ -10124,6 +10268,9 @@ textarea.form-control-lg {
   .pt-md-12 {
     padding-top: 0.75rem; }
 
+  .pt-md-13 {
+    padding-top: 0.8125rem; }
+
   .pt-md-15 {
     padding-top: 0.9375rem; }
 
@@ -10204,6 +10351,9 @@ textarea.form-control-lg {
 
   .pe-md-12 {
     padding-right: 0.75rem; }
+
+  .pe-md-13 {
+    padding-right: 0.8125rem; }
 
   .pe-md-15 {
     padding-right: 0.9375rem; }
@@ -10286,6 +10436,9 @@ textarea.form-control-lg {
   .pb-md-12 {
     padding-bottom: 0.75rem; }
 
+  .pb-md-13 {
+    padding-bottom: 0.8125rem; }
+
   .pb-md-15 {
     padding-bottom: 0.9375rem; }
 
@@ -10366,6 +10519,9 @@ textarea.form-control-lg {
 
   .ps-md-12 {
     padding-left: 0.75rem; }
+
+  .ps-md-13 {
+    padding-left: 0.8125rem; }
 
   .ps-md-15 {
     padding-left: 0.9375rem; }
@@ -10448,6 +10604,9 @@ textarea.form-control-lg {
   .gap-md-12 {
     gap: 0.75rem; }
 
+  .gap-md-13 {
+    gap: 0.8125rem; }
+
   .gap-md-15 {
     gap: 0.9375rem; }
 
@@ -10529,6 +10688,9 @@ textarea.form-control-lg {
   .row-gap-md-12 {
     row-gap: 0.75rem; }
 
+  .row-gap-md-13 {
+    row-gap: 0.8125rem; }
+
   .row-gap-md-15 {
     row-gap: 0.9375rem; }
 
@@ -10609,6 +10771,9 @@ textarea.form-control-lg {
 
   .column-gap-md-12 {
     column-gap: 0.75rem; }
+
+  .column-gap-md-13 {
+    column-gap: 0.8125rem; }
 
   .column-gap-md-15 {
     column-gap: 0.9375rem; }
@@ -10970,6 +11135,9 @@ textarea.form-control-lg {
   .m-lg-12 {
     margin: 0.75rem; }
 
+  .m-lg-13 {
+    margin: 0.8125rem; }
+
   .m-lg-15 {
     margin: 0.9375rem; }
 
@@ -11064,6 +11232,10 @@ textarea.form-control-lg {
   .mx-lg-12 {
     margin-right: 0.75rem;
     margin-left: 0.75rem; }
+
+  .mx-lg-13 {
+    margin-right: 0.8125rem;
+    margin-left: 0.8125rem; }
 
   .mx-lg-15 {
     margin-right: 0.9375rem;
@@ -11177,6 +11349,10 @@ textarea.form-control-lg {
     margin-top: 0.75rem;
     margin-bottom: 0.75rem; }
 
+  .my-lg-13 {
+    margin-top: 0.8125rem;
+    margin-bottom: 0.8125rem; }
+
   .my-lg-15 {
     margin-top: 0.9375rem;
     margin-bottom: 0.9375rem; }
@@ -11278,6 +11454,9 @@ textarea.form-control-lg {
   .mt-lg-12 {
     margin-top: 0.75rem; }
 
+  .mt-lg-13 {
+    margin-top: 0.8125rem; }
+
   .mt-lg-15 {
     margin-top: 0.9375rem; }
 
@@ -11361,6 +11540,9 @@ textarea.form-control-lg {
 
   .me-lg-12 {
     margin-right: 0.75rem; }
+
+  .me-lg-13 {
+    margin-right: 0.8125rem; }
 
   .me-lg-15 {
     margin-right: 0.9375rem; }
@@ -11446,6 +11628,9 @@ textarea.form-control-lg {
   .mb-lg-12 {
     margin-bottom: 0.75rem; }
 
+  .mb-lg-13 {
+    margin-bottom: 0.8125rem; }
+
   .mb-lg-15 {
     margin-bottom: 0.9375rem; }
 
@@ -11530,6 +11715,9 @@ textarea.form-control-lg {
   .ms-lg-12 {
     margin-left: 0.75rem; }
 
+  .ms-lg-13 {
+    margin-left: 0.8125rem; }
+
   .ms-lg-15 {
     margin-left: 0.9375rem; }
 
@@ -11613,6 +11801,9 @@ textarea.form-control-lg {
 
   .p-lg-12 {
     padding: 0.75rem; }
+
+  .p-lg-13 {
+    padding: 0.8125rem; }
 
   .p-lg-15 {
     padding: 0.9375rem; }
@@ -11705,6 +11896,10 @@ textarea.form-control-lg {
   .px-lg-12 {
     padding-right: 0.75rem;
     padding-left: 0.75rem; }
+
+  .px-lg-13 {
+    padding-right: 0.8125rem;
+    padding-left: 0.8125rem; }
 
   .px-lg-15 {
     padding-right: 0.9375rem;
@@ -11814,6 +12009,10 @@ textarea.form-control-lg {
     padding-top: 0.75rem;
     padding-bottom: 0.75rem; }
 
+  .py-lg-13 {
+    padding-top: 0.8125rem;
+    padding-bottom: 0.8125rem; }
+
   .py-lg-15 {
     padding-top: 0.9375rem;
     padding-bottom: 0.9375rem; }
@@ -11911,6 +12110,9 @@ textarea.form-control-lg {
   .pt-lg-12 {
     padding-top: 0.75rem; }
 
+  .pt-lg-13 {
+    padding-top: 0.8125rem; }
+
   .pt-lg-15 {
     padding-top: 0.9375rem; }
 
@@ -11991,6 +12193,9 @@ textarea.form-control-lg {
 
   .pe-lg-12 {
     padding-right: 0.75rem; }
+
+  .pe-lg-13 {
+    padding-right: 0.8125rem; }
 
   .pe-lg-15 {
     padding-right: 0.9375rem; }
@@ -12073,6 +12278,9 @@ textarea.form-control-lg {
   .pb-lg-12 {
     padding-bottom: 0.75rem; }
 
+  .pb-lg-13 {
+    padding-bottom: 0.8125rem; }
+
   .pb-lg-15 {
     padding-bottom: 0.9375rem; }
 
@@ -12153,6 +12361,9 @@ textarea.form-control-lg {
 
   .ps-lg-12 {
     padding-left: 0.75rem; }
+
+  .ps-lg-13 {
+    padding-left: 0.8125rem; }
 
   .ps-lg-15 {
     padding-left: 0.9375rem; }
@@ -12235,6 +12446,9 @@ textarea.form-control-lg {
   .gap-lg-12 {
     gap: 0.75rem; }
 
+  .gap-lg-13 {
+    gap: 0.8125rem; }
+
   .gap-lg-15 {
     gap: 0.9375rem; }
 
@@ -12316,6 +12530,9 @@ textarea.form-control-lg {
   .row-gap-lg-12 {
     row-gap: 0.75rem; }
 
+  .row-gap-lg-13 {
+    row-gap: 0.8125rem; }
+
   .row-gap-lg-15 {
     row-gap: 0.9375rem; }
 
@@ -12396,6 +12613,9 @@ textarea.form-control-lg {
 
   .column-gap-lg-12 {
     column-gap: 0.75rem; }
+
+  .column-gap-lg-13 {
+    column-gap: 0.8125rem; }
 
   .column-gap-lg-15 {
     column-gap: 0.9375rem; }
@@ -12757,6 +12977,9 @@ textarea.form-control-lg {
   .m-xl-12 {
     margin: 0.75rem; }
 
+  .m-xl-13 {
+    margin: 0.8125rem; }
+
   .m-xl-15 {
     margin: 0.9375rem; }
 
@@ -12851,6 +13074,10 @@ textarea.form-control-lg {
   .mx-xl-12 {
     margin-right: 0.75rem;
     margin-left: 0.75rem; }
+
+  .mx-xl-13 {
+    margin-right: 0.8125rem;
+    margin-left: 0.8125rem; }
 
   .mx-xl-15 {
     margin-right: 0.9375rem;
@@ -12964,6 +13191,10 @@ textarea.form-control-lg {
     margin-top: 0.75rem;
     margin-bottom: 0.75rem; }
 
+  .my-xl-13 {
+    margin-top: 0.8125rem;
+    margin-bottom: 0.8125rem; }
+
   .my-xl-15 {
     margin-top: 0.9375rem;
     margin-bottom: 0.9375rem; }
@@ -13065,6 +13296,9 @@ textarea.form-control-lg {
   .mt-xl-12 {
     margin-top: 0.75rem; }
 
+  .mt-xl-13 {
+    margin-top: 0.8125rem; }
+
   .mt-xl-15 {
     margin-top: 0.9375rem; }
 
@@ -13148,6 +13382,9 @@ textarea.form-control-lg {
 
   .me-xl-12 {
     margin-right: 0.75rem; }
+
+  .me-xl-13 {
+    margin-right: 0.8125rem; }
 
   .me-xl-15 {
     margin-right: 0.9375rem; }
@@ -13233,6 +13470,9 @@ textarea.form-control-lg {
   .mb-xl-12 {
     margin-bottom: 0.75rem; }
 
+  .mb-xl-13 {
+    margin-bottom: 0.8125rem; }
+
   .mb-xl-15 {
     margin-bottom: 0.9375rem; }
 
@@ -13317,6 +13557,9 @@ textarea.form-control-lg {
   .ms-xl-12 {
     margin-left: 0.75rem; }
 
+  .ms-xl-13 {
+    margin-left: 0.8125rem; }
+
   .ms-xl-15 {
     margin-left: 0.9375rem; }
 
@@ -13400,6 +13643,9 @@ textarea.form-control-lg {
 
   .p-xl-12 {
     padding: 0.75rem; }
+
+  .p-xl-13 {
+    padding: 0.8125rem; }
 
   .p-xl-15 {
     padding: 0.9375rem; }
@@ -13492,6 +13738,10 @@ textarea.form-control-lg {
   .px-xl-12 {
     padding-right: 0.75rem;
     padding-left: 0.75rem; }
+
+  .px-xl-13 {
+    padding-right: 0.8125rem;
+    padding-left: 0.8125rem; }
 
   .px-xl-15 {
     padding-right: 0.9375rem;
@@ -13601,6 +13851,10 @@ textarea.form-control-lg {
     padding-top: 0.75rem;
     padding-bottom: 0.75rem; }
 
+  .py-xl-13 {
+    padding-top: 0.8125rem;
+    padding-bottom: 0.8125rem; }
+
   .py-xl-15 {
     padding-top: 0.9375rem;
     padding-bottom: 0.9375rem; }
@@ -13698,6 +13952,9 @@ textarea.form-control-lg {
   .pt-xl-12 {
     padding-top: 0.75rem; }
 
+  .pt-xl-13 {
+    padding-top: 0.8125rem; }
+
   .pt-xl-15 {
     padding-top: 0.9375rem; }
 
@@ -13778,6 +14035,9 @@ textarea.form-control-lg {
 
   .pe-xl-12 {
     padding-right: 0.75rem; }
+
+  .pe-xl-13 {
+    padding-right: 0.8125rem; }
 
   .pe-xl-15 {
     padding-right: 0.9375rem; }
@@ -13860,6 +14120,9 @@ textarea.form-control-lg {
   .pb-xl-12 {
     padding-bottom: 0.75rem; }
 
+  .pb-xl-13 {
+    padding-bottom: 0.8125rem; }
+
   .pb-xl-15 {
     padding-bottom: 0.9375rem; }
 
@@ -13940,6 +14203,9 @@ textarea.form-control-lg {
 
   .ps-xl-12 {
     padding-left: 0.75rem; }
+
+  .ps-xl-13 {
+    padding-left: 0.8125rem; }
 
   .ps-xl-15 {
     padding-left: 0.9375rem; }
@@ -14022,6 +14288,9 @@ textarea.form-control-lg {
   .gap-xl-12 {
     gap: 0.75rem; }
 
+  .gap-xl-13 {
+    gap: 0.8125rem; }
+
   .gap-xl-15 {
     gap: 0.9375rem; }
 
@@ -14103,6 +14372,9 @@ textarea.form-control-lg {
   .row-gap-xl-12 {
     row-gap: 0.75rem; }
 
+  .row-gap-xl-13 {
+    row-gap: 0.8125rem; }
+
   .row-gap-xl-15 {
     row-gap: 0.9375rem; }
 
@@ -14183,6 +14455,9 @@ textarea.form-control-lg {
 
   .column-gap-xl-12 {
     column-gap: 0.75rem; }
+
+  .column-gap-xl-13 {
+    column-gap: 0.8125rem; }
 
   .column-gap-xl-15 {
     column-gap: 0.9375rem; }
