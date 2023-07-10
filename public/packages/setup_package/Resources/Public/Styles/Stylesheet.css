@@ -2,7 +2,10 @@
     color: #333;
     font-size: $font-size-base;
     font-weight: $font-style-normal;
+
+
 }*/
+.test {color_#ff000;}
 :root,
 [data-bs-theme="light"] {
   --bs-blue: #2a7da6;
