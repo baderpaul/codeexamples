@@ -187,17 +187,17 @@
         },
         {
             "name": "creifenscheid/db-rector",
-            "version": "v12.0.0",
-            "version_normalized": "12.0.0.0",
+            "version": "v12.1.0",
+            "version_normalized": "12.1.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/creifenscheid/db_rector.git",
-                "reference": "6c0e3a04f8d93f74f268324455cfd933aa4164ea"
+                "reference": "cb74ce3993d68fa9059b2a67ed2e7bb647f7e7a7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/creifenscheid/db_rector/zipball/6c0e3a04f8d93f74f268324455cfd933aa4164ea",
-                "reference": "6c0e3a04f8d93f74f268324455cfd933aa4164ea",
+                "url": "https://api.github.com/repos/creifenscheid/db_rector/zipball/cb74ce3993d68fa9059b2a67ed2e7bb647f7e7a7",
+                "reference": "cb74ce3993d68fa9059b2a67ed2e7bb647f7e7a7",
                 "shasum": ""
             },
             "require": {
@@ -211,7 +211,7 @@
             "require-dev": {
                 "roave/security-advisories": "dev-latest"
             },
-            "time": "2023-06-23T11:35:07+00:00",
+            "time": "2023-07-08T13:34:32+00:00",
             "type": "typo3-cms-extension",
             "extra": {
                 "typo3/cms": {
@@ -237,7 +237,7 @@
             "description": "This TYPO3 extension is an typo3-rector adapter with backend module to refactor sys_template.config data.",
             "support": {
                 "issues": "https://github.com/creifenscheid/db_rector/issues",
-                "source": "https://github.com/creifenscheid/db_rector/tree/v12.0.0"
+                "source": "https://github.com/creifenscheid/db_rector/tree/v12.1.0"
             },
             "install-path": "../creifenscheid/db-rector"
         },

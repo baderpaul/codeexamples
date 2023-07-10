@@ -3,7 +3,7 @@
         'name' => 'typo3/cms-base-distribution',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => '01424b6a85d2fab105750807c3208f7d07642d32',
+        'reference' => '7b2a874458398a807ec9e19cd7a177bf032db32c',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -44,9 +44,9 @@
             ),
         ),
         'creifenscheid/db-rector' => array(
-            'pretty_version' => 'v12.0.0',
-            'version' => '12.0.0.0',
-            'reference' => '6c0e3a04f8d93f74f268324455cfd933aa4164ea',
+            'pretty_version' => 'v12.1.0',
+            'version' => '12.1.0.0',
+            'reference' => 'cb74ce3993d68fa9059b2a67ed2e7bb647f7e7a7',
             'type' => 'typo3-cms-extension',
             'install_path' => __DIR__ . '/../creifenscheid/db-rector',
             'aliases' => array(),
@@ -969,7 +969,7 @@
         'typo3-ter/db-rector' => array(
             'dev_requirement' => false,
             'replaced' => array(
-                0 => 'v12.0.0',
+                0 => 'v12.1.0',
             ),
         ),
         'typo3-ter/mask' => array(
@@ -1005,7 +1005,7 @@
         'typo3/cms-base-distribution' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => '01424b6a85d2fab105750807c3208f7d07642d32',
+            'reference' => '7b2a874458398a807ec9e19cd7a177bf032db32c',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
