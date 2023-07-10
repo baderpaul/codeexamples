@@ -1,5 +1,6 @@
 {
     "version": "8.1.0",
+    "restructuringDone": true,
     "tables": {
         "tt_content": {
             "elements": {
@@ -13,6 +14,77 @@
                         "tx_mask_longitudeinput",
                         "tx_mask_zoom"
                     ],
+                    "columnsOverride": {
+                        "header": {
+                            "config": [],
+                            "fullKey": "header",
+                            "key": "header",
+                            "type": "string"
+                        },
+                        "tx_mask_latitudeinput": {
+                            "config": {
+                                "eval": "nospace",
+                                "max": "9",
+                                "placeholder": "z.B. 47.849900",
+                                "required": 1,
+                                "size": "10"
+                            },
+                            "fullKey": "tx_mask_latitudeinput",
+                            "key": "latitudeinput",
+                            "type": "string"
+                        },
+                        "tx_mask_longitudeinput": {
+                            "config": {
+                                "max": "9",
+                                "placeholder": "z.B. 12.058030",
+                                "required": 1,
+                                "size": "10"
+                            },
+                            "fullKey": "tx_mask_longitudeinput",
+                            "key": "longitudeinput",
+                            "type": "string"
+                        },
+                        "tx_mask_zoom": {
+                            "config": {
+                                "items": [
+                                    {
+                                        "description": "",
+                                        "group": "",
+                                        "icon": "",
+                                        "label": "14",
+                                        "value": "14"
+                                    },
+                                    {
+                                        "description": "",
+                                        "group": "",
+                                        "icon": "",
+                                        "label": "15",
+                                        "value": "15"
+                                    },
+                                    {
+                                        "description": "",
+                                        "group": "",
+                                        "icon": "",
+                                        "label": "16",
+                                        "value": "16"
+                                    },
+                                    {
+                                        "description": "",
+                                        "group": "",
+                                        "icon": "",
+                                        "label": "17",
+                                        "value": "17"
+                                    }
+                                ],
+                                "maxitems": "1",
+                                "minitems": "1",
+                                "renderType": "selectSingle"
+                            },
+                            "fullKey": "tx_mask_zoom",
+                            "key": "zoom",
+                            "type": "select"
+                        }
+                    },
                     "description": "Simple OpenStreet Map",
                     "descriptions": [
                         "",

@@ -1,24 +1,31 @@
 base: 'http://codeexamples.ddev.site/'
 languages:
   -
-    title: English
-    enabled: true
-    locale: en_GB
-    base: /en/
-    websiteTitle: Codeexamples
-    navigationTitle: English
-    flag: gb
-    languageId: 0
-  -
     title: Deutsch
     enabled: true
-    locale: de_DE
+    languageId: 0
     base: /
-    websiteTitle: Codebeispiele
-    navigationTitle: Deutsch
-    fallbackType: strict
-    fallbacks: ''
+    typo3Language: de
+    locale: de_DE.UTF-8
+    iso-639-1: de
+    navigationTitle: DE
+    hreflang: de-DE
+    direction: ''
     flag: de
+  -
+    title: English
+    enabled: true
+    base: /en/
+    locale: en_GB.UTF-8
+    iso-639-1: en
+    typo3Language: default
+    websiteTitle: ''
+    navigationTitle: EN
+    hreflang: en-gb
+    fallbackType: free
+    fallbacks: ''
+    direction: ''
+    flag: gb
     languageId: 1
 rootPageId: 1
 websiteTitle: ''

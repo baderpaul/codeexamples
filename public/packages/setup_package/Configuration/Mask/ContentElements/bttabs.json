@@ -1,5 +1,6 @@
 {
     "version": "8.1.0",
+    "restructuringDone": true,
     "tables": {
         "tt_content": {
             "elements": {
@@ -13,6 +14,38 @@
                         "tx_mask_b584a078ddbd3",
                         "tx_mask_tabs"
                     ],
+                    "columnsOverride": {
+                        "header": {
+                            "config": [],
+                            "fullKey": "header",
+                            "key": "header",
+                            "type": "string"
+                        },
+                        "tx_mask_tabdisplay": {
+                            "config": {
+                                "items": [
+                                    {
+                                        "description": "",
+                                        "group": "",
+                                        "icon": "",
+                                        "label": "Tabs",
+                                        "value": "1"
+                                    },
+                                    {
+                                        "description": "",
+                                        "group": "",
+                                        "icon": "",
+                                        "label": "Pills",
+                                        "value": "2"
+                                    }
+                                ],
+                                "renderType": "selectSingle"
+                            },
+                            "fullKey": "tx_mask_tabdisplay",
+                            "key": "tabdisplay",
+                            "type": "select"
+                        }
+                    },
                     "description": "Tabelement mit Bootstrap",
                     "descriptions": [
                         "",

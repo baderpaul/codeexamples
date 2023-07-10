@@ -31,45 +31,4 @@
     <f:render partial="Footer/Copyright" arguments="{_all}" />
   </footer>
 </div>
-
-
-<f:render partial="Footer/ToTop.html" arguments="{_all}" />
-
-<div class="cookie-consent-settings position-fixed" style="z-index: 1045;bottom: 10px; left: 10px;">
-  <button class="cookie-consent-open btn btn-primary border border-white">
-    <f:if condition="EXT:mindshape_cookie_consent.{settings.buttonLabel}">
-      <f:then>{f:translate(key: 'LLL:EXT:mindshape_cookie_consent/Resources/Private/Language/locallang.xlf:label.edit_cookie_settings')} </f:then>
-      <f:else>{f:translate(key: 'LLL:EXT:mindshape_cookie_consent/Resources/Private/Language/locallang.xlf:label.edit_cookie_settings')}</f:else>
-    </f:if>
-  </button>
-</div>
-
-
-<f:if condition="{data.backend_layout} == 'pagets__default_onepage'">
-  <f:asset.script identifier="aos-js" src="https://unpkg.com/aos@2.3.1/dist/aos.js" priority="1" />
-  <f:asset.css identifier="aos-css" href="https://unpkg.com/aos@2.3.1/dist/aos.css" priority="1" />
-  <f:asset.script identifier="aos-init">
-    AOS.init();
-</f:asset.script>
-</f:if>
-<f:asset.script identifier="sw">
-  if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('/typo3conf/ext/setup_package/Resources/Public/JavaScript/sw.js')
-    .then(function(registration) {
-      registration.addEventListener('updatefound', function() {
-        // If updatefound is fired, it means that there's
-        // a new service worker being installed.
-        var installingWorker = registration.installing;
-        console.log('A new service worker is being installed:',
-          installingWorker);
-      });
-    })
-    .catch(function(error) {
-      console.log('Service worker registration failed:', error);
-    });
-  } else {
-    console.log('Service workers are not supported.');
-  }
-
-</f:asset.script>
 </html>

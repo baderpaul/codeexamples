@@ -35,14 +35,14 @@ TCEFORM.pages {
 TCEFORM.tt_content {
     # layouts in ce
     layout {
-        disabled = 0
+        disabled = 1
         #removeItems = 0,1,2,3
-        altLabels {
-            0 = Fullscreenansicht wählen
-            1 = Fullscreen nur Mobile
-            2 = Fullscreen nur Mobile/Tablet
-            3 = Fullscreen von Mobile bis Desktop
-        }
+        #altLabels {
+        #    0 = Fullscreenansicht wählen
+        #    1 = Fullscreen nur Mobile
+        #    2 = Fullscreen nur Mobile/Tablet
+        #    3 = Fullscreen von Mobile bis Desktop
+        #}
        # addItems {
        #     4 = Bis Laptop/Desktop ≥992px
        #     5 = Bis Desktop ≥1200px

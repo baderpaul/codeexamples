@@ -1,5 +1,6 @@
 {
     "version": "8.1.0",
+    "restructuringDone": true,
     "tables": {
         "tt_content": {
             "elements": {
@@ -14,6 +15,408 @@
                         "tx_mask_5ce0133bf327b",
                         "tx_mask_cbb62f76ad907"
                     ],
+                    "columnsOverride": {
+                        "header": {
+                            "config": [],
+                            "fullKey": "header",
+                            "key": "header",
+                            "type": "string"
+                        },
+                        "tx_mask_cardspace_desktop": {
+                            "config": {
+                                "fieldWizard": {
+                                    "selectIcons": {
+                                        "disabled": 1
+                                    }
+                                },
+                                "items": [
+                                    {
+                                        "description": "",
+                                        "group": "",
+                                        "icon": "",
+                                        "label": "",
+                                        "value": ""
+                                    },
+                                    {
+                                        "description": "",
+                                        "group": "",
+                                        "icon": "",
+                                        "label": "Ausw\u00e4hlen",
+                                        "value": ""
+                                    },
+                                    {
+                                        "description": "",
+                                        "group": "",
+                                        "icon": "",
+                                        "label": "20px",
+                                        "value": "g-xl-20"
+                                    },
+                                    {
+                                        "description": "",
+                                        "group": "",
+                                        "icon": "",
+                                        "label": "25px",
+                                        "value": "g-xl-25"
+                                    },
+                                    {
+                                        "description": "",
+                                        "group": "",
+                                        "icon": "",
+                                        "label": "30px",
+                                        "value": "g-xl-30"
+                                    },
+                                    {
+                                        "description": "",
+                                        "group": "",
+                                        "icon": "",
+                                        "label": "40px",
+                                        "value": "g-xl-40"
+                                    }
+                                ],
+                                "renderType": "selectSingle"
+                            },
+                            "fullKey": "tx_mask_cardspace_desktop",
+                            "key": "cardspace_desktop",
+                            "type": "select"
+                        },
+                        "tx_mask_cardspace_mobile": {
+                            "config": {
+                                "fieldWizard": {
+                                    "selectIcons": {
+                                        "disabled": 1
+                                    }
+                                },
+                                "items": [
+                                    {
+                                        "description": "",
+                                        "group": "",
+                                        "icon": "",
+                                        "label": "Ausw\u00e4hlen",
+                                        "value": ""
+                                    },
+                                    {
+                                        "description": "",
+                                        "group": "",
+                                        "icon": "",
+                                        "label": "10px",
+                                        "value": "g-10"
+                                    },
+                                    {
+                                        "description": "",
+                                        "group": "",
+                                        "icon": "",
+                                        "label": "15px",
+                                        "value": "g-15"
+                                    },
+                                    {
+                                        "description": "",
+                                        "group": "",
+                                        "icon": "",
+                                        "label": "20px",
+                                        "value": "g-20"
+                                    }
+                                ],
+                                "renderType": "selectSingle"
+                            },
+                            "fullKey": "tx_mask_cardspace_mobile",
+                            "key": "cardspace_mobile",
+                            "type": "select"
+                        },
+                        "tx_mask_cardspace_tablet": {
+                            "config": {
+                                "fieldWizard": {
+                                    "selectIcons": {
+                                        "disabled": 1
+                                    }
+                                },
+                                "items": [
+                                    {
+                                        "description": "",
+                                        "group": "",
+                                        "icon": "",
+                                        "label": "Ausw\u00e4hlen",
+                                        "value": ""
+                                    },
+                                    {
+                                        "description": "",
+                                        "group": "",
+                                        "icon": "",
+                                        "label": "15px",
+                                        "value": "g-md-15"
+                                    },
+                                    {
+                                        "description": "",
+                                        "group": "",
+                                        "icon": "",
+                                        "label": "20px",
+                                        "value": "g-md-20"
+                                    },
+                                    {
+                                        "description": "",
+                                        "group": "",
+                                        "icon": "",
+                                        "label": "25px",
+                                        "value": "g-md-25"
+                                    }
+                                ],
+                                "renderType": "selectSingle"
+                            },
+                            "fullKey": "tx_mask_cardspace_tablet",
+                            "key": "cardspace_tablet",
+                            "type": "select"
+                        },
+                        "tx_mask_responsive_lg": {
+                            "config": {
+                                "fieldWizard": {
+                                    "selectIcons": {
+                                        "disabled": 1
+                                    }
+                                },
+                                "items": [
+                                    {
+                                        "description": "",
+                                        "group": "",
+                                        "icon": "",
+                                        "label": "Ausw\u00e4hlen",
+                                        "value": ""
+                                    },
+                                    {
+                                        "description": "",
+                                        "group": "",
+                                        "icon": "",
+                                        "label": "3",
+                                        "value": "row-cols-lg-3"
+                                    },
+                                    {
+                                        "description": "",
+                                        "group": "",
+                                        "icon": "",
+                                        "label": "4",
+                                        "value": "row-cols-lg-4"
+                                    }
+                                ],
+                                "renderType": "selectSingle"
+                            },
+                            "fullKey": "tx_mask_responsive_lg",
+                            "key": "responsive_lg",
+                            "type": "select"
+                        },
+                        "tx_mask_responsive_md": {
+                            "config": {
+                                "fieldWizard": {
+                                    "selectIcons": {
+                                        "disabled": 1
+                                    }
+                                },
+                                "items": [
+                                    {
+                                        "description": "",
+                                        "group": "",
+                                        "icon": "",
+                                        "label": "Ausw\u00e4hlen",
+                                        "value": ""
+                                    },
+                                    {
+                                        "description": "",
+                                        "group": "",
+                                        "icon": "",
+                                        "label": "2",
+                                        "value": "row-cols-md-2"
+                                    },
+                                    {
+                                        "description": "",
+                                        "group": "",
+                                        "icon": "",
+                                        "label": "3",
+                                        "value": "row-cols-md-3"
+                                    },
+                                    {
+                                        "description": "",
+                                        "group": "",
+                                        "icon": "",
+                                        "label": "4",
+                                        "value": "row-cols-md-4"
+                                    }
+                                ],
+                                "renderType": "selectSingle"
+                            },
+                            "fullKey": "tx_mask_responsive_md",
+                            "key": "responsive_md",
+                            "type": "select"
+                        },
+                        "tx_mask_responsive_sm": {
+                            "config": {
+                                "fieldWizard": {
+                                    "selectIcons": {
+                                        "disabled": 1
+                                    }
+                                },
+                                "items": [
+                                    {
+                                        "description": "",
+                                        "group": "",
+                                        "icon": "",
+                                        "label": "Ausw\u00e4hlen",
+                                        "value": ""
+                                    },
+                                    {
+                                        "description": "",
+                                        "group": "",
+                                        "icon": "",
+                                        "label": "1",
+                                        "value": "row-cols-sm-1"
+                                    },
+                                    {
+                                        "description": "",
+                                        "group": "",
+                                        "icon": "",
+                                        "label": "2",
+                                        "value": "row-cols-sm-2"
+                                    },
+                                    {
+                                        "description": "",
+                                        "group": "",
+                                        "icon": "",
+                                        "label": "3",
+                                        "value": "row-cols-sm-3"
+                                    }
+                                ],
+                                "renderType": "selectSingle"
+                            },
+                            "fullKey": "tx_mask_responsive_sm",
+                            "key": "responsive_sm",
+                            "type": "select"
+                        },
+                        "tx_mask_responsive_xl": {
+                            "config": {
+                                "fieldWizard": {
+                                    "selectIcons": {
+                                        "disabled": 1
+                                    }
+                                },
+                                "items": [
+                                    {
+                                        "description": "",
+                                        "group": "",
+                                        "icon": "",
+                                        "label": "Ausw\u00e4hlen",
+                                        "value": ""
+                                    },
+                                    {
+                                        "description": "",
+                                        "group": "",
+                                        "icon": "",
+                                        "label": "3",
+                                        "value": "row-cols-xl-3"
+                                    },
+                                    {
+                                        "description": "",
+                                        "group": "",
+                                        "icon": "",
+                                        "label": "4",
+                                        "value": "row-cols-xl-4"
+                                    },
+                                    {
+                                        "description": "",
+                                        "group": "",
+                                        "icon": "",
+                                        "label": "5",
+                                        "value": "row-cols-xl-5"
+                                    }
+                                ],
+                                "renderType": "selectSingle"
+                            },
+                            "fullKey": "tx_mask_responsive_xl",
+                            "key": "responsive_xl",
+                            "type": "select"
+                        },
+                        "tx_mask_responsive_xs": {
+                            "config": {
+                                "fieldWizard": {
+                                    "selectIcons": {
+                                        "disabled": 1
+                                    }
+                                },
+                                "items": [
+                                    {
+                                        "description": "",
+                                        "group": "",
+                                        "icon": "",
+                                        "label": "Ausw\u00e4hlen",
+                                        "value": ""
+                                    },
+                                    {
+                                        "description": "",
+                                        "group": "",
+                                        "icon": "",
+                                        "label": "1",
+                                        "value": "row-cols-1"
+                                    },
+                                    {
+                                        "description": "",
+                                        "group": "",
+                                        "icon": "",
+                                        "label": "2",
+                                        "value": "row-cols-2"
+                                    },
+                                    {
+                                        "description": "",
+                                        "group": "",
+                                        "icon": "",
+                                        "label": "3",
+                                        "value": "row-cols-3"
+                                    }
+                                ],
+                                "renderType": "selectSingle"
+                            },
+                            "fullKey": "tx_mask_responsive_xs",
+                            "key": "responsive_xs",
+                            "type": "select"
+                        },
+                        "tx_mask_responsive_xxl": {
+                            "config": {
+                                "fieldWizard": {
+                                    "selectIcons": {
+                                        "disabled": 1
+                                    }
+                                },
+                                "items": [
+                                    {
+                                        "description": "",
+                                        "group": "",
+                                        "icon": "",
+                                        "label": "Ausw\u00e4hlen",
+                                        "value": ""
+                                    },
+                                    {
+                                        "description": "",
+                                        "group": "",
+                                        "icon": "",
+                                        "label": "4",
+                                        "value": "row-cols-xxl-4"
+                                    },
+                                    {
+                                        "description": "",
+                                        "group": "",
+                                        "icon": "",
+                                        "label": "6",
+                                        "value": "row-cols-xxl-6"
+                                    },
+                                    {
+                                        "description": "",
+                                        "group": "",
+                                        "icon": "",
+                                        "label": "10",
+                                        "value": "row-cols-xxl-10"
+                                    }
+                                ],
+                                "renderType": "selectSingle"
+                            },
+                            "fullKey": "tx_mask_responsive_xxl",
+                            "key": "responsive_xxl",
+                            "type": "select"
+                        }
+                    },
                     "description": "Responsive Cardelemente als Group",
                     "descriptions": [
                         "",

@@ -2,6 +2,7 @@
 return array (
   'aliasToClassNameMapping' => 
   array (
+    'typo3\\cms\\core\\imaging\\iconprovider\\fontawesomeiconprovider' => 'FriendsOfTYPO3\\FontawesomeProvider\\Imaging\\IconProvider\\FontawesomeIconProvider',
     'typo3\\cms\\backend\\elementbrowser\\filebrowser' => 'TYPO3\\CMS\\Filelist\\ElementBrowser\\FileBrowser',
     'typo3\\cms\\backend\\elementbrowser\\folderbrowser' => 'TYPO3\\CMS\\Filelist\\ElementBrowser\\FolderBrowser',
     'typo3\\cms\\backend\\form\\element\\inputlinkelement' => 'TYPO3\\CMS\\Backend\\Form\\Element\\LinkElement',
@@ -40,10 +41,13 @@ return array (
     'typo3\\cms\\recordlist\\view\\folderutilityrenderer' => 'TYPO3\\CMS\\Backend\\View\\FolderUtilityRenderer',
     'typo3\\cms\\frontend\\service\\typolinkcodecservice' => 'TYPO3\\CMS\\Core\\LinkHandling\\TypoLinkCodecService',
     'typo3\\cms\\frontend\\typolink\\linkresultfactory' => 'TYPO3\\CMS\\Frontend\\Typolink\\LinkFactory',
-    'typo3\\cms\\core\\imaging\\iconprovider\\fontawesomeiconprovider' => 'FriendsOfTYPO3\\FontawesomeProvider\\Imaging\\IconProvider\\FontawesomeIconProvider',
   ),
   'classNameToAliasMapping' => 
   array (
+    'FriendsOfTYPO3\\FontawesomeProvider\\Imaging\\IconProvider\\FontawesomeIconProvider' => 
+    array (
+      'typo3\\cms\\core\\imaging\\iconprovider\\fontawesomeiconprovider' => 'typo3\\cms\\core\\imaging\\iconprovider\\fontawesomeiconprovider',
+    ),
     'TYPO3\\CMS\\Filelist\\ElementBrowser\\FileBrowser' => 
     array (
       'typo3\\cms\\backend\\elementbrowser\\filebrowser' => 'typo3\\cms\\backend\\elementbrowser\\filebrowser',
@@ -189,10 +193,6 @@ return array (
     'TYPO3\\CMS\\Frontend\\Typolink\\LinkFactory' => 
     array (
       'typo3\\cms\\frontend\\typolink\\linkresultfactory' => 'typo3\\cms\\frontend\\typolink\\linkresultfactory',
-    ),
-    'FriendsOfTYPO3\\FontawesomeProvider\\Imaging\\IconProvider\\FontawesomeIconProvider' => 
-    array (
-      'typo3\\cms\\core\\imaging\\iconprovider\\fontawesomeiconprovider' => 'typo3\\cms\\core\\imaging\\iconprovider\\fontawesomeiconprovider',
     ),
   ),
 );

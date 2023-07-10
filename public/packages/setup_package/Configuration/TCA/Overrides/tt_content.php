@@ -13,11 +13,11 @@ $GLOBALS['TCA']['tt_content']['columns']['sectionIndex']['config']['default'] = 
     (
     new \B13\Container\Tca\ContainerConfiguration(
         'section',
-        'LLL:' . $packageKey . '/Resources/Private/Language/Backend/locallang.xlf:grid-section-title',
+        'LLL:' . $packageKey . '/Resources/Private/Language/Backend/locallang.xlf:grid-1-col-title',
         'LLL:' . $packageKey . '/Resources/Private/Language/locallang.xlf:ctype.section.desc',
         [
             [
-                ['name' => 'LLL:' . $packageKey . '/Resources/Private/Language/Backend/locallang.xlf:section', 'colPos' => 501]
+                ['name' => 'LLL:' . $packageKey . '/Resources/Private/Language/Backend/locallang.xlf:grid-1', 'colPos' => 501]
                 ]
             ]
         )
@@ -27,7 +27,7 @@ $GLOBALS['TCA']['tt_content']['columns']['sectionIndex']['config']['default'] = 
 
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPiFlexFormValue(
     '*',
-    'FILE:' . $packageKey . '/Configuration/FlexForms/Section.xml',
+    'FILE:' . $packageKey . '/Configuration/FlexForms/1ColSet.xml',
     'section'
 );
 

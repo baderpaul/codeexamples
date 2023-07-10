@@ -224,6 +224,10 @@
             container flexform labels
         ************************************** -->
 
+            <trans-unit id="grid-1-col-title" resname="grid-1-col-title" approved="no">
+                <source>Container mit 1 Spalte</source>
+            </trans-unit>
+
             <trans-unit id="grid-2-col-title" resname="grid-2-col-title" approved="no">
                 <source>Container mit 2 Spalten</source>
             </trans-unit>

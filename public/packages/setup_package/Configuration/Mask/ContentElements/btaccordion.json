@@ -1,5 +1,6 @@
 {
     "version": "8.1.0",
+    "restructuringDone": true,
     "tables": {
         "tt_content": {
             "elements": {
@@ -11,6 +12,14 @@
                         "tx_mask_812cdf7dec586",
                         "tx_mask_accordionset"
                     ],
+                    "columnsOverride": {
+                        "header": {
+                            "config": [],
+                            "fullKey": "header",
+                            "key": "header",
+                            "type": "string"
+                        }
+                    },
                     "description": "Accordion mit Bootstrap",
                     "descriptions": [
                         "",

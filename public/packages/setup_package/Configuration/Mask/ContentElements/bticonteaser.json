@@ -1,5 +1,6 @@
 {
     "version": "8.1.0",
+    "restructuringDone": true,
     "tables": {
         "tt_content": {
             "elements": {
@@ -20,6 +21,198 @@
                         "tx_mask_122e10ae0142b",
                         "tx_mask_teaseritems"
                     ],
+                    "columnsOverride": {
+                        "header": {
+                            "config": [],
+                            "fullKey": "header",
+                            "key": "header",
+                            "type": "string"
+                        },
+                        "tx_mask_iconteaseralignment": {
+                            "config": {
+                                "behaviour": {
+                                    "allowLanguageSynchronization": 1
+                                },
+                                "items": [
+                                    {
+                                        "label": "zentrieren"
+                                    }
+                                ],
+                                "renderType": "checkboxToggle"
+                            },
+                            "fullKey": "tx_mask_iconteaseralignment",
+                            "key": "iconteaseralignment",
+                            "type": "check"
+                        },
+                        "tx_mask_iconteaserctabuttonsameheight": {
+                            "config": {
+                                "items": [
+                                    {
+                                        "label": "CTA auf selber H\u00f6he"
+                                    }
+                                ],
+                                "renderType": "checkboxToggle"
+                            },
+                            "fullKey": "tx_mask_iconteaserctabuttonsameheight",
+                            "key": "iconteaserctabuttonsameheight",
+                            "type": "check"
+                        },
+                        "tx_mask_iconteaserdesktop": {
+                            "config": {
+                                "items": [
+                                    {
+                                        "description": "",
+                                        "group": "",
+                                        "icon": "",
+                                        "label": "Ausw\u00e4hlen",
+                                        "value": ""
+                                    },
+                                    {
+                                        "description": "",
+                                        "group": "",
+                                        "icon": "",
+                                        "label": "3",
+                                        "value": "row-cols-lg-3"
+                                    },
+                                    {
+                                        "description": "",
+                                        "group": "",
+                                        "icon": "",
+                                        "label": "4",
+                                        "value": "row-cols-lg-4"
+                                    },
+                                    {
+                                        "description": "",
+                                        "group": "",
+                                        "icon": "",
+                                        "label": "5",
+                                        "value": "row-cols-lg-5"
+                                    }
+                                ],
+                                "renderType": "selectSingle"
+                            },
+                            "fullKey": "tx_mask_iconteaserdesktop",
+                            "key": "iconteaserdesktop",
+                            "type": "select"
+                        },
+                        "tx_mask_iconteasermobile": {
+                            "config": {
+                                "items": [
+                                    {
+                                        "description": "",
+                                        "group": "",
+                                        "icon": "",
+                                        "label": "Ausw\u00e4hlen",
+                                        "value": ""
+                                    },
+                                    {
+                                        "description": "",
+                                        "group": "",
+                                        "icon": "",
+                                        "label": "1",
+                                        "value": "row-cols-1"
+                                    },
+                                    {
+                                        "description": "",
+                                        "group": "",
+                                        "icon": "",
+                                        "label": "2",
+                                        "value": "row-cols-2"
+                                    }
+                                ],
+                                "renderType": "selectSingle"
+                            },
+                            "fullKey": "tx_mask_iconteasermobile",
+                            "key": "iconteasermobile",
+                            "type": "select"
+                        },
+                        "tx_mask_iconteasermodus": {
+                            "config": {
+                                "behaviour": {
+                                    "allowLanguageSynchronization": 0
+                                },
+                                "items": [
+                                    {
+                                        "label": "Oberhalb",
+                                        "value": "1"
+                                    },
+                                    {
+                                        "label": "Unterhalb",
+                                        "value": "2"
+                                    }
+                                ]
+                            },
+                            "fullKey": "tx_mask_iconteasermodus",
+                            "key": "iconteasermodus",
+                            "type": "radio"
+                        },
+                        "tx_mask_iconteasersize": {
+                            "config": {
+                                "behaviour": {
+                                    "allowLanguageSynchronization": 1
+                                },
+                                "items": [
+                                    {
+                                        "description": "",
+                                        "group": "",
+                                        "icon": "",
+                                        "label": "Klein",
+                                        "value": "feature-icon-sm"
+                                    },
+                                    {
+                                        "description": "",
+                                        "group": "",
+                                        "icon": "",
+                                        "label": "Mittel",
+                                        "value": "feature-icon-md"
+                                    },
+                                    {
+                                        "description": "",
+                                        "group": "",
+                                        "icon": "",
+                                        "label": "Gro\u00df",
+                                        "value": "feature-icon-lg"
+                                    }
+                                ],
+                                "maxitems": "1",
+                                "renderType": "selectSingle"
+                            },
+                            "fullKey": "tx_mask_iconteasersize",
+                            "key": "iconteasersize",
+                            "type": "select"
+                        },
+                        "tx_mask_iconteasertablet": {
+                            "config": {
+                                "items": [
+                                    {
+                                        "description": "",
+                                        "group": "",
+                                        "icon": "",
+                                        "label": "Ausw\u00e4hlen",
+                                        "value": ""
+                                    },
+                                    {
+                                        "description": "",
+                                        "group": "",
+                                        "icon": "",
+                                        "label": "2",
+                                        "value": "row-cols-md-2"
+                                    },
+                                    {
+                                        "description": "",
+                                        "group": "",
+                                        "icon": "",
+                                        "label": "3",
+                                        "value": "row-cols-md-3"
+                                    }
+                                ],
+                                "renderType": "selectSingle"
+                            },
+                            "fullKey": "tx_mask_iconteasertablet",
+                            "key": "iconteasertablet",
+                            "type": "select"
+                        }
+                    },
                     "description": "Teaser mit Icon, kurzem Text und Link.",
                     "descriptions": [
                         "",
