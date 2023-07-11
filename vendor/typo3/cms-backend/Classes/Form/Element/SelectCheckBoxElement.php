@@ -71,6 +71,8 @@ class SelectCheckBoxElement extends AbstractFormElement
     public function render()
     {
         $resultArray = $this->initializeResultArray();
+        // @deprecated since v12, will be removed with v13 when all elements handle label/legend on their own
+        $resultArray['labelHasBeenHandled'] = true;
 
         // Field configuration from TCA:
         $parameterArray = $this->data['parameterArray'];
@@ -241,7 +243,7 @@ class SelectCheckBoxElement extends AbstractFormElement
                     $html[] =                '</tr>';
                     $html[] =            '</thead>';
 
-                    // Add RequireJS module. This is only needed, in case the element
+                    // Add JavaScript module. This is only needed, in case the element
                     // is not readOnly, since otherwise no checkbox changes take place.
                     $resultArray['javaScriptModules'][] = JavaScriptModuleInstruction::create(
                         '@typo3/backend/form-engine/element/select-check-box-element.js'
@@ -266,7 +268,7 @@ class SelectCheckBoxElement extends AbstractFormElement
         $html[] =   '</div>';
         $html[] = '</div>';
 
-        $resultArray['html'] = implode(LF, $html);
+        $resultArray['html'] = $this->wrapWithFieldsetAndLegend(implode(LF, $html));
         return $resultArray;
     }
 

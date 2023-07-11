@@ -104,6 +104,8 @@ class RichTextElement extends AbstractFormElement
     public function render(): array
     {
         $resultArray = $this->initializeResultArray();
+        // @deprecated since v12, will be removed with v13 when all elements handle label/legend on their own
+        $resultArray['labelHasBeenHandled'] = true;
         $parameterArray = $this->data['parameterArray'];
         $config = $parameterArray['fieldConf']['config'];
 
@@ -181,11 +183,21 @@ class RichTextElement extends AbstractFormElement
         $html[] =   '</div>';
         $html[] = '</div>';
 
-        $resultArray['html'] = implode(LF, $html);
+        $resultArray['html'] = $this->wrapWithFieldsetAndLegend(implode(LF, $html));
         $resultArray['javaScriptModules'][] = JavaScriptModuleInstruction::create('@typo3/rte-ckeditor/ckeditor5.js');
 
         if ($ckeditorConfiguration['options']['debug'] ?? false) {
             $resultArray['javaScriptModules'][] = JavaScriptModuleInstruction::create('@typo3/ckeditor5-inspector.js');
+        }
+
+        $uiLanguage = $ckeditorConfiguration['options']['language']['ui'];
+        if ($this->translationExists($uiLanguage)) {
+            $resultArray['javaScriptModules'][] = JavaScriptModuleInstruction::create('@typo3/ckeditor5/translations/' . $uiLanguage . '.js');
+        }
+
+        $contentLanguage = $ckeditorConfiguration['options']['language']['content'];
+        if ($this->translationExists($contentLanguage)) {
+            $resultArray['javaScriptModules'][] = JavaScriptModuleInstruction::create('@typo3/ckeditor5/translations/' . $contentLanguage . '.js');
         }
 
         $resultArray['stylesheetFiles'][] = PathUtility::getPublicResourceWebPath('EXT:rte_ckeditor/Resources/Public/Css/editor.css');
@@ -416,5 +428,11 @@ class RichTextElement extends AbstractFormElement
     {
         $fieldId = (string)preg_replace('/[^a-zA-Z0-9_:.-]/', '_', $itemFormElementName);
         return htmlspecialchars((string)preg_replace('/^[^a-zA-Z]/', 'x', $fieldId));
+    }
+
+    protected function translationExists(string $language): bool
+    {
+        $fileName = GeneralUtility::getFileAbsFileName('EXT:rte_ckeditor/Resources/Public/Contrib/translations/' . $language . '.js');
+        return file_exists($fileName);
     }
 }

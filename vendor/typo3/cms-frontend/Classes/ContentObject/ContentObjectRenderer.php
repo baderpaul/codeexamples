@@ -3340,7 +3340,10 @@ class ContentObjectRenderer implements LoggerAwareInterface
                     // Search for tags to process in current data and
                     // call this method recursively if found
                     if (str_contains($data, '<') && isset($conf['tags.']) && is_array($conf['tags.'])) {
-                        foreach ($conf['tags.'] as $tag => $tagConfig) {
+                        // @todo probably use a DOM tree traversal for the whole stuff
+                        // This iterations basically re-processes the markup string, as
+                        // long as there are `<$tag ` or `<$tag>` "tags" found...
+                        foreach (array_keys($conf['tags.']) as $tag) {
                             // only match tag `a` in `<a href"...">` but not in `<abbr>`
                             if (preg_match('#<' . $tag . '[\s/>]#', $data)) {
                                 $data = $this->parseFuncInternal($data, $conf);
@@ -5207,8 +5210,12 @@ class ContentObjectRenderer implements LoggerAwareInterface
 
                 try {
                     $count = $countQueryBuilder->executeQuery()->fetchOne();
-                    $conf['max'] = str_ireplace('total', $count, $conf['max']);
-                    $conf['begin'] = str_ireplace('total', $count, $conf['begin']);
+                    if (isset($conf['max'])) {
+                        $conf['max'] = str_ireplace('total', $count, (string)$conf['max']);
+                    }
+                    if (isset($conf['begin'])) {
+                        $conf['begin'] = str_ireplace('total', $count, (string)$conf['begin']);
+                    }
                 } catch (DBALException $e) {
                     $this->getTimeTracker()->setTSlogMessage($e->getPrevious()->getMessage());
                     $error = true;
@@ -5216,12 +5223,14 @@ class ContentObjectRenderer implements LoggerAwareInterface
             }
 
             if (!$error) {
-                $conf['begin'] = MathUtility::forceIntegerInRange((int)ceil($this->calc($conf['begin'] ?? '')), 0);
-                $conf['max'] = MathUtility::forceIntegerInRange((int)ceil($this->calc($conf['max'] ?? '')), 0);
-                if ($conf['begin'] > 0) {
+                if (isset($conf['begin']) && $conf['begin'] > 0) {
+                    $conf['begin'] = MathUtility::forceIntegerInRange((int)ceil($this->calc($conf['begin'])), 0);
                     $queryBuilder->setFirstResult($conf['begin']);
                 }
-                $queryBuilder->setMaxResults($conf['max'] ?: 100000);
+                if (isset($conf['max'])) {
+                    $conf['max'] = MathUtility::forceIntegerInRange((int)ceil($this->calc($conf['max'])), 0);
+                    $queryBuilder->setMaxResults($conf['max'] ?: 100000);
+                }
             }
         }
 
@@ -5562,11 +5571,18 @@ class ContentObjectRenderer implements LoggerAwareInterface
         $matchEnd = '(\\s*,|\\s*$)/';
         $necessaryFields = ['uid', 'pid'];
         $wsFields = ['t3ver_state'];
+        $languageField = $GLOBALS['TCA'][$table]['ctrl']['languageField'] ?? false;
         if (isset($GLOBALS['TCA'][$table]) && !preg_match($matchStart . '\\*' . $matchEnd, $selectPart) && !preg_match('/(count|max|min|avg|sum)\\([^\\)]+\\)|distinct/i', $selectPart)) {
             foreach ($necessaryFields as $field) {
                 $match = $matchStart . $field . $matchEnd;
                 if (!preg_match($match, $selectPart)) {
                     $selectPart .= ', ' . $connection->quoteIdentifier($table . '.' . $field) . ' AS ' . $connection->quoteIdentifier($field);
+                }
+            }
+            if (is_string($languageField)) {
+                $match = $matchStart . $languageField . $matchEnd;
+                if (!preg_match($match, $selectPart)) {
+                    $selectPart .= ', ' . $connection->quoteIdentifier($table . '.' . $languageField) . ' AS ' . $connection->quoteIdentifier($languageField);
                 }
             }
             if ($GLOBALS['TCA'][$table]['ctrl']['versioningWS'] ?? false) {

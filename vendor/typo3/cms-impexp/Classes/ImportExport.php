@@ -542,7 +542,9 @@ abstract class ImportExport
                 $viewID = $this->mode === 'export' ? $uid : ($this->doesImport ? ($this->importMapId['pages'][$uid] ?? 0) : 0);
                 if ($viewID) {
                     $attributes = PreviewUriBuilder::create($viewID)->serializeDispatcherAttributes();
-                    $line['title'] = sprintf('<a href="#" %s>%s</a>', $attributes, $line['title']);
+                    if ($attributes) {
+                        $line['title'] = sprintf('<a href="#" %s>%s</a>', $attributes, $line['title']);
+                    }
                 }
             }
             $line['active'] = !$this->isRecordDisabled($table, $uid) ? 'active' : 'hidden';
@@ -597,8 +599,11 @@ abstract class ImportExport
                         $databaseRecord = $this->getRecordFromDatabase($table, $newUid, '*');
                         BackendUtility::workspaceOL($table, $databaseRecord);
                     }
+                    /** @var array|null $importRecord */
                     $importRecord = $this->dat['records'][$table . ':' . $uid]['data'] ?? null;
-                    if (is_array($databaseRecord) && is_array($importRecord)) {
+                    if ($databaseRecord === null) {
+                        $line['showDiffContent'] = '';
+                    } elseif (is_array($databaseRecord) && is_array($importRecord)) {
                         $line['showDiffContent'] = $this->compareRecords($databaseRecord, $importRecord, $table, $diffInverse);
                     } else {
                         $line['showDiffContent'] = 'ERROR: One of the inputs were not an array!';

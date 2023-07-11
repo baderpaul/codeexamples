@@ -71,7 +71,13 @@ class FileLinkHandler extends AbstractResourceLinkHandler
             $markup[] = '</div>';
 
             // Create the filelist
-            $this->filelist->start($this->selectedFolder, MathUtility::forceIntegerInRange($this->currentPage, 1, 100000), 'asc', false, Mode::BROWSE);
+            $this->filelist->start(
+                $this->selectedFolder,
+                MathUtility::forceIntegerInRange($this->currentPage, 1, 100000),
+                $request->getQueryParams()['sort'] ?? '',
+                ($request->getQueryParams()['reverse'] ?? '') === '1',
+                Mode::BROWSE
+            );
             $this->filelist->setResourceDisplayMatcher($this->resourceDisplayMatcher);
             $this->filelist->setResourceSelectableMatcher($this->resourceSelectableMatcher);
 
@@ -88,7 +94,7 @@ class FileLinkHandler extends AbstractResourceLinkHandler
 
             // Build the file upload and folder creation form
             $folderUtilityRenderer = GeneralUtility::makeInstance(FolderUtilityRenderer::class, $this);
-            $markup[] = $folderUtilityRenderer->uploadForm($this->selectedFolder, []);
+            $markup[] = $folderUtilityRenderer->uploadForm($this->selectedFolder);
             $markup[] = $folderUtilityRenderer->createFolder($this->selectedFolder);
 
             $contentHtml = implode(PHP_EOL, $markup);

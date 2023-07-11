@@ -80,7 +80,7 @@ class SetupCommand extends Command
             ->addOption(
                 'port',
                 null,
-                InputOption::VALUE_REQUIRED,
+                InputOption::VALUE_OPTIONAL,
                 'Set the database port to use',
                 '3306'
             )
@@ -108,7 +108,7 @@ class SetupCommand extends Command
             ->addOption(
                 'admin-username',
                 null,
-                InputOption::VALUE_REQUIRED,
+                InputOption::VALUE_OPTIONAL,
                 'Set a username',
                 'admin'
             )
@@ -296,7 +296,14 @@ EOT
                 $dbname->setValidator($dbNameValidator);
                 $databaseConnection['database'] = $questionHelper->ask($input, $output, $dbname);
             } else {
-                $dbNameValidator($dbnameFromCli);
+                try {
+                    $dbNameValidator($dbnameFromCli);
+                } catch (\RuntimeException $e) {
+                    $this->writeError($output, $e->getMessage());
+
+                    return Command::FAILURE;
+                }
+
                 $databaseConnection['database'] = $dbnameFromCli;
             }
 
@@ -461,6 +468,7 @@ EOT
                         // All passed in values should go through the set validator,
                         // therefore, we can't break early
                         $validator = $question->getValidator();
+                        $envValue = $envValue ?: $default;
                         $value = $validator ? $validator($envValue) : $envValue;
                     }
 
@@ -489,6 +497,11 @@ EOT
             $questionUsername = new Question('Admin username (user will be "system maintainer") ? ');
             $questionUsername->setValidator($usernameValidator);
             return $questionHelper->ask($input, $output, $questionUsername);
+        }
+
+        // Use default value for 'admin-username' if in non-interactive mode
+        if ($usernameFromCli === false && !$input->isInteractive()) {
+            $usernameFromCli = $this->getDefinition()->getOption('admin-username')->getDefault();
         }
 
         return $usernameValidator($usernameFromCli);
@@ -528,7 +541,7 @@ EOT
         return $passwordValidator($passwordFromCli);
     }
 
-    protected function getAdminEmailAddress(QuestionHelper $questionHelper, InputInterface $input, OutputInterface $output): string|false
+    protected function getAdminEmailAddress(QuestionHelper $questionHelper, InputInterface $input, OutputInterface $output): string
     {
         $emailValidator = static function ($email) {
             if (!empty($email) && !GeneralUtility::validEmail($email)) {
@@ -549,7 +562,7 @@ EOT
             return $questionHelper->ask($input, $output, $questionEmail);
         }
 
-        return $emailValidator($emailFromCli);
+        return (string)$emailValidator($emailFromCli);
     }
 
     protected function getProjectName(QuestionHelper $questionHelper, InputInterface $input, OutputInterface $output): string

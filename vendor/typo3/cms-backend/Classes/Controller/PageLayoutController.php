@@ -168,6 +168,7 @@ class PageLayoutController
         $configuration->setShowHidden((bool)$this->moduleData->get('showHidden'));
         $configuration->setLanguageColumns($this->MOD_MENU['language']);
         $configuration->setSelectedLanguageId($this->currentSelectedLanguage);
+        $configuration->setAllowInconsistentLanguageHandling((bool)($tsConfig['mod.']['web_layout.']['allowInconsistentLanguageHandling'] ?? false));
         if ((int)$this->moduleData->get('function') === 2) {
             $configuration->setLanguageMode(true);
         }
@@ -631,11 +632,12 @@ class PageLayoutController
             ->buildDispatcherDataAttributes();
 
         return $buttonBar->makeLinkButton()
+            ->setHref('#')
             ->setDataAttributes($previewDataAttributes ?? [])
+            ->setDisabled(!$previewDataAttributes)
             ->setTitle($this->getLanguageService()->sL('LLL:EXT:core/Resources/Private/Language/locallang_core.xlf:labels.showPage'))
             ->setIcon($this->iconFactory->getIcon('actions-view-page', Icon::SIZE_SMALL))
-            ->setShowLabelText(true)
-            ->setHref('#');
+            ->setShowLabelText(true);
     }
 
     /**

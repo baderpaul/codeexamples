@@ -1024,20 +1024,20 @@ class PageRepository implements LoggerAwareInterface
             return [];
         }
 
-        $dokType = (int)$page['doktype'];
-        $shortcutMode = (int)$page['shortcut_mode'];
+        $dokType = (int)($page['doktype'] ?? 0);
+        $shortcutMode = (int)($page['shortcut_mode'] ?? 0);
 
-        if ($dokType === self::DOKTYPE_SHORTCUT && ($page['shortcut'] || $shortcutMode)) {
+        if ($dokType === self::DOKTYPE_SHORTCUT && (($shortcut = (int)($page['shortcut'] ?? 0)) || $shortcutMode)) {
             if ($shortcutMode === self::SHORTCUT_MODE_NONE) {
                 // No shortcut_mode set, so target is directly set in $page['shortcut']
                 $searchField = 'uid';
-                $searchUid = (int)$page['shortcut'];
+                $searchUid = $shortcut;
             } elseif ($shortcutMode === self::SHORTCUT_MODE_FIRST_SUBPAGE || $shortcutMode === self::SHORTCUT_MODE_RANDOM_SUBPAGE) {
                 // Check subpages - first subpage or random subpage
                 $searchField = 'pid';
                 // If a shortcut mode is set and no valid page is given to select subpages
                 // from use the actual page.
-                $searchUid = (int)$page['shortcut'] ?: $page['uid'];
+                $searchUid = $shortcut ?: $page['uid'];
             } elseif ($shortcutMode === self::SHORTCUT_MODE_PARENT_PAGE) {
                 // Shortcut to parent page
                 $searchField = 'uid';
@@ -1200,8 +1200,9 @@ class PageRepository implements LoggerAwareInterface
             $resolveRandomSubpages
         );
         if (!empty($shortcut)) {
+            $shortcutOriginalPageUid = (int)$page['uid'];
             $page = $shortcut;
-            $page['_SHORTCUT_ORIGINAL_PAGE_UID'] = $page['uid'];
+            $page['_SHORTCUT_ORIGINAL_PAGE_UID'] = $shortcutOriginalPageUid;
         }
 
         if ($resolveRandomSubpages === false) {
@@ -1677,14 +1678,14 @@ class PageRepository implements LoggerAwareInterface
      */
     public function versionOL($table, &$row, $unsetMovePointers = false, $bypassEnableFieldsCheck = false)
     {
-        if ($this->versioningWorkspaceId > 0 && is_array($row)) {
+        if ($this->versioningWorkspaceId > 0 && is_array($row) && $row !== [] && isset($row['uid'], $row['t3ver_oid'])) {
             // implode(',',array_keys($row)) = Using fields from original record to make
             // sure no additional fields are selected. This is best for eg. getPageOverlay()
             // Computed properties are excluded since those would lead to SQL errors.
             $fieldNames = implode(',', array_keys($this->purgeComputedProperties($row)));
             // will overlay any incoming moved record with the live record, which in turn
             // will be overlaid with its workspace version again to fetch both PID fields.
-            $incomingRecordIsAMoveVersion = (int)($row['t3ver_oid'] ?? 0) > 0 && (int)($row['t3ver_state'] ?? 0) === VersionState::MOVE_POINTER;
+            $incomingRecordIsAMoveVersion = (int)($row['t3ver_oid']) > 0 && (int)($row['t3ver_state'] ?? 0) === VersionState::MOVE_POINTER;
             if ($incomingRecordIsAMoveVersion) {
                 // Fetch the live version again if the given $row is a move pointer, so we know the original PID
                 $queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)->getQueryBuilderForTable($table);

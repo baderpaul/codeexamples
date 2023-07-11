@@ -523,6 +523,12 @@ Do you want to continue WITHOUT saving?</source>
 			<trans-unit id="labels.inconsistentLanguageWarning" resname="labels.inconsistentLanguageWarning">
 				<source>No translation parent assigned</source>
 			</trans-unit>
+			<trans-unit id="labels.notEditableInWorkspace" resname="labels.notEditableInWorkspace">
+				<source>Not editable in this workspace without "Live" edit permissions.</source>
+			</trans-unit>
+			<trans-unit id="labels.editingLiveRecordsWarning" resname="labels.editingLiveRecordsWarning">
+				<source>Caution! These records are not versioned, you will edit the live records.</source>
+			</trans-unit>
 			<trans-unit id="alttext.suggestSearching" resname="alttext.suggestSearching">
 				<source>Searching...</source>
 			</trans-unit>
@@ -654,6 +660,9 @@ Do you want to continue WITHOUT saving?</source>
 			</trans-unit>
 			<trans-unit id="file_upload.fileExtensionExpected" resname="file_upload.fileExtensionExpected">
 				<source>Upload failed! A file with &quot;{0}&quot; extension is expected!</source>
+			</trans-unit>
+			<trans-unit id="file_upload.fileExtensionDisallowed" resname="file_upload.fileExtensionDisallowed">
+				<source>Upload failed! The file extension must not be &quot;{0}&quot;!</source>
 			</trans-unit>
 			<trans-unit id="file_upload.uploadFailed" resname="file_upload.uploadFailed">
 				<source>Upload of file &quot;{0}&quot; failed!</source>
@@ -1221,6 +1230,9 @@ Do you want to refresh it now?</source>
 			<trans-unit id="cm.allowedFileExtensions" resname="cm.allowedFileExtensions">
 				<source>Allowed file extensions</source>
 			</trans-unit>
+			<trans-unit id="cm.disallowedFileExtensions" resname="cm.disallowedFileExtensions">
+				<source>Disallowed file extensions</source>
+			</trans-unit>
 			<trans-unit id="cm.allowedEditableTextFileExtensions" resname="cm.allowedEditableTextFileExtensions">
 				<source>Allowed editable text file extensions</source>
 			</trans-unit>
@@ -1307,6 +1319,12 @@ Do you want to refresh it now?</source>
 			</trans-unit>
 			<trans-unit id="warning.inline_use_combination" resname="warning.inline_use_combination">
 				<source>This record will be modified globally.</source>
+			</trans-unit>
+			<trans-unit id="warning.tableDisplayOrder.message" resname="warning.tableDisplayOrder.message">
+				<source>The TSconfig setting for "mod.web_list.tableDisplayOrder" contains a circular dependency and cannot be resolved.</source>
+			</trans-unit>
+			<trans-unit id="warning.tableDisplayOrder.title" resname="warning.tableDisplayOrder.title">
+				<source>Circular table ordering detected</source>
 			</trans-unit>
 			<trans-unit id="error.formProtection.tokenInvalid" resname="error.formProtection.tokenInvalid">
 				<source>Validating the security token of this form has failed. Please reload the form and submit it again.</source>
@@ -1484,6 +1502,9 @@ Do you want to refresh it now?</source>
 			</trans-unit>
 			<trans-unit id="message.confirmation" resname="message.confirmation">
 				<source>Are you sure?</source>
+			</trans-unit>
+			<trans-unit id="labels.datepicker.today" resname="labels.datepicker.today">
+				<source>Today</source>
 			</trans-unit>
 		</body>
 	</file>

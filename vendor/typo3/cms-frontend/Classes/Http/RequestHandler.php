@@ -138,10 +138,14 @@ class RequestHandler implements RequestHandlerInterface
             $this->timeTracker->pull($this->timeTracker->LR ? $controller->content : '');
             $this->timeTracker->decStackPointer();
 
-            // in case the nonce value was actually consumed during the rendering process, add a
+            // In case the nonce value was actually consumed during the rendering process, add a
             // permanent substitution of the current value (that will be cached), with a future
-            // value (that will be generated and issued in the HTTP CSP header)
-            if ($nonce instanceof ConsumableString && count($nonce) > 0) {
+            // value (that will be generated and issued in the HTTP CSP header).
+            // Besides that, the same handling is triggered in case there are other uncached items
+            // already - this is due to the fact that the `PageRenderer` state has been serialized
+            // before and note executed via `$pageRenderer->render()` and did not consume any nonce values
+            // (see serialization in `generatePageContent()`).
+            if ($nonce instanceof ConsumableString && (count($nonce) > 0 || $controller->isINTincScript())) {
                 // nonce was consumed
                 $controller->config['INTincScript'][] = [
                     'target' => NonceValueSubstitution::class . '->substituteNonce',
@@ -287,10 +291,9 @@ class RequestHandler implements RequestHandlerInterface
         if (!empty($docTypeParts)) {
             $pageRenderer->setXmlPrologAndDocType(implode(LF, $docTypeParts));
         }
-        if ($siteLanguage->getHreflang(true)) {
-            // See https://www.w3.org/International/questions/qa-html-language-declarations.en.html#attributes
-            $htmlTagAttributes[$docType->isXmlCompliant() ? 'xml:lang' : 'lang'] = $siteLanguage->getHreflang(true);
-        }
+        // See https://www.w3.org/International/questions/qa-html-language-declarations.en.html#attributes
+        $htmlTagAttributes[$docType->isXmlCompliant() ? 'xml:lang' : 'lang'] = $siteLanguage->getLocale()->getLanguageCode();
+
         if ($docType->isXmlCompliant() || $docType === DocType::html5 && $xmlDocument) {
             // We add this to HTML5 to achieve a slightly better backwards compatibility
             $htmlTagAttributes['xmlns'] = 'http://www.w3.org/1999/xhtml';

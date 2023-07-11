@@ -1260,8 +1260,9 @@ class BackendUserAuthentication extends AbstractUserAuthentication
             // Regular users only have storages that are defined in their filemounts
             // Permissions and file mounts for the storage are added in StoragePermissionAspect
             foreach ($this->getFileMountRecords() as $row) {
-                if (!str_contains($row['identifier'], ':')) {
-                    // Skip record since the file mount identifier is invalid
+                if (!str_contains($row['identifier'] ?? '', ':')) {
+                    // Skip record since the file mount identifier is invalid, this usually happens
+                    // when file storages are selected. file mounts and groupHomePath and userHomePath should go through
                     continue;
                 }
                 [$base] = GeneralUtility::trimExplode(':', $row['identifier'], true);
@@ -1361,13 +1362,14 @@ class BackendUserAuthentication extends AbstractUserAuthentication
             $fileMountRecords = $queryBuilder->executeQuery()->fetchAllAssociative();
             if ($fileMountRecords !== false) {
                 foreach ($fileMountRecords as $fileMount) {
-                    $fileMountRecordCache[$fileMount['identifier']] = $fileMount;
+                    $readOnlySuffix = (bool)$fileMount['read_only'] ? '-readonly' : '';
+                    $fileMountRecordCache[$fileMount['identifier'] . $readOnlySuffix] = $fileMount;
                 }
             }
         }
 
         // Read-only file mounts
-        $readOnlyMountPoints = \trim($this->getTSConfig()['options.']['folderTree.']['altElementBrowserMountPoints'] ?? '');
+        $readOnlyMountPoints = trim($this->getTSConfig()['options.']['folderTree.']['altElementBrowserMountPoints'] ?? '');
         if ($readOnlyMountPoints) {
             // We cannot use the API here but need to fetch the default storage record directly
             // to not instantiate it (which directly applies mount points) before all mount points are resolved!
@@ -1396,7 +1398,7 @@ class BackendUserAuthentication extends AbstractUserAuthentication
                     $storageUid = $defaultStorageRow['uid'];
                     $path = $readOnlyMountPointConfiguration[0];
                 }
-                $fileMountRecordCache[$storageUid . $path] = [
+                $fileMountRecordCache[$storageUid . $path . '-readonly'] = [
                     'base' => $storageUid,
                     'title' => $path,
                     'path' => $path,
@@ -1408,7 +1410,7 @@ class BackendUserAuthentication extends AbstractUserAuthentication
         // Personal or Group filemounts are not accessible if file mount list is set in workspace record
         if ($this->workspace <= 0 || empty($this->workspaceRec['file_mountpoints'])) {
             // If userHomePath is set, we attempt to mount it
-            if ($GLOBALS['TYPO3_CONF_VARS']['BE']['userHomePath']) {
+            if ($GLOBALS['TYPO3_CONF_VARS']['BE']['userHomePath'] ?? false) {
                 [$userHomeStorageUid, $userHomeFilter] = explode(':', $GLOBALS['TYPO3_CONF_VARS']['BE']['userHomePath'], 2);
                 $userHomeStorageUid = (int)$userHomeStorageUid;
                 $userHomeFilter = '/' . ltrim($userHomeFilter, '/');
@@ -1417,6 +1419,7 @@ class BackendUserAuthentication extends AbstractUserAuthentication
                     $path = $userHomeFilter . $this->user['uid'] . '_' . $this->user['username'] . $GLOBALS['TYPO3_CONF_VARS']['BE']['userUploadDir'];
                     $fileMountRecordCache[$userHomeStorageUid . $path] = [
                         'base' => $userHomeStorageUid,
+                        'identifier' => $userHomeStorageUid . ':' . $path,
                         'title' => $this->user['username'],
                         'path' => $path,
                         'read_only' => false,
@@ -1426,6 +1429,7 @@ class BackendUserAuthentication extends AbstractUserAuthentication
                     $path = $userHomeFilter . $this->user['uid'] . $GLOBALS['TYPO3_CONF_VARS']['BE']['userUploadDir'];
                     $fileMountRecordCache[$userHomeStorageUid . $path] = [
                         'base' => $userHomeStorageUid,
+                        'identifier' => $userHomeStorageUid . ':' . $path,
                         'title' => $this->user['username'],
                         'path' => $path,
                         'read_only' => false,
@@ -1436,7 +1440,7 @@ class BackendUserAuthentication extends AbstractUserAuthentication
 
             // Mount group home-dirs
             $mountOptions = new BackendGroupMountOption((int)($this->user['options'] ?? 0));
-            if ($GLOBALS['TYPO3_CONF_VARS']['BE']['groupHomePath'] !== '' && $mountOptions->shouldUserIncludeFileMountsFromAssociatedGroups()) {
+            if (($GLOBALS['TYPO3_CONF_VARS']['BE']['groupHomePath'] ?? '') !== '' && $mountOptions->shouldUserIncludeFileMountsFromAssociatedGroups()) {
                 // If groupHomePath is set, we attempt to mount it
                 [$groupHomeStorageUid, $groupHomeFilter] = explode(':', $GLOBALS['TYPO3_CONF_VARS']['BE']['groupHomePath'], 2);
                 $groupHomeStorageUid = (int)$groupHomeStorageUid;
@@ -1446,6 +1450,7 @@ class BackendUserAuthentication extends AbstractUserAuthentication
                         $path = $groupHomeFilter . $groupData['uid'];
                         $fileMountRecordCache[$groupHomeStorageUid . $path] = [
                             'base' => $groupHomeStorageUid,
+                            'identifier' => $groupHomeStorageUid . ':' . $path,
                             'title' => $groupData['title'],
                             'path' => $path,
                             'read_only' => false,
@@ -2087,30 +2092,44 @@ class BackendUserAuthentication extends AbstractUserAuthentication
         $this->fetchGroupData();
         // Setting the UC array. It's needed with fetchGroupData first, due to default/overriding of values.
         $this->backendSetUC();
-        if ($this->loginSessionStarted) {
-            // Also, if there is a recovery link set, unset it now
-            // this will be moved into its own Event at a later stage.
-            // If a token was set previously, this is now unset, as it was now possible to log-in
-            if ($this->user['password_reset_token'] ?? '') {
-                GeneralUtility::makeInstance(ConnectionPool::class)
-                    ->getConnectionForTable($this->user_table)
-                    ->update($this->user_table, ['password_reset_token' => ''], ['uid' => $this->user['uid']]);
-            }
+        if ($this->loginSessionStarted && !($this->getSessionData('mfa') ?? false)) {
+            // Handling user logged in. By checking for the mfa session key, it's ensured, the
+            // handling is only done once, since MfaController does the handling on its own.
+            $this->handleUserLoggedIn();
+        }
+    }
 
-            $event = new AfterUserLoggedInEvent($this, $request);
-            GeneralUtility::makeInstance(EventDispatcherInterface::class)->dispatch($event);
-            // Process hooks
-            $hooks = $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['t3lib/class.t3lib_userauthgroup.php']['backendUserLogin'] ?? [];
-            if (!empty($hooks)) {
-                trigger_error(
-                    '$GLOBALS[\'TYPO3_CONF_VARS\'][\'SC_OPTIONS\'][\'t3lib/class.t3lib_userauthgroup.php\'][\'backendUserLogin\'] will be removed in TYPO3 v13.0. Use the PSR-14 "AfterUserLoggedInEvent" instead.',
-                    E_USER_DEPRECATED
-                );
-            }
-            foreach ($hooks as $_funcRef) {
-                $_params = ['user' => $this->user];
-                GeneralUtility::callUserFunction($_funcRef, $_params, $this);
-            }
+    /**
+     * Is called after a user has sucesfully logged in. So either by using only one factor
+     * (e.g. username/password) or after the multi-factor authentication process has been passed.
+     *
+     * @internal
+     */
+    public function handleUserLoggedIn(ServerRequestInterface $request = null): void
+    {
+        // Also, if there is a recovery link set, unset it now
+        // this will be moved into its own Event at a later stage.
+        // If a token was set previously, this is now unset, as it was now possible to log-in
+        if ($this->user['password_reset_token'] ?? '') {
+            GeneralUtility::makeInstance(ConnectionPool::class)
+                ->getConnectionForTable($this->user_table)
+                ->update($this->user_table, ['password_reset_token' => ''], ['uid' => $this->user['uid']]);
+        }
+
+        $event = new AfterUserLoggedInEvent($this, $request);
+        GeneralUtility::makeInstance(EventDispatcherInterface::class)->dispatch($event);
+
+        // Process hooks
+        $hooks = $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['t3lib/class.t3lib_userauthgroup.php']['backendUserLogin'] ?? [];
+        if (!empty($hooks)) {
+            trigger_error(
+                '$GLOBALS[\'TYPO3_CONF_VARS\'][\'SC_OPTIONS\'][\'t3lib/class.t3lib_userauthgroup.php\'][\'backendUserLogin\'] will be removed in TYPO3 v13.0. Use the PSR-14 "AfterUserLoggedInEvent" instead.',
+                E_USER_DEPRECATED
+            );
+        }
+        foreach ($hooks as $_funcRef) {
+            $_params = ['user' => $this->user];
+            GeneralUtility::callUserFunction($_funcRef, $_params, $this);
         }
     }
 

@@ -45,8 +45,11 @@ use TYPO3\CMS\Core\Imaging\IconFactory;
 use TYPO3\CMS\Core\LinkHandling\Exception\UnknownLinkHandlerException;
 use TYPO3\CMS\Core\LinkHandling\LinkService;
 use TYPO3\CMS\Core\Localization\LanguageService;
+use TYPO3\CMS\Core\Messaging\FlashMessage;
+use TYPO3\CMS\Core\Messaging\FlashMessageService;
 use TYPO3\CMS\Core\Service\DependencyOrderingService;
 use TYPO3\CMS\Core\Type\Bitmask\Permission;
+use TYPO3\CMS\Core\Type\ContextualFeedbackSeverity;
 use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Core\Utility\MathUtility;
@@ -775,6 +778,31 @@ class DatabaseRecordList
             ';
         }
 
+        $recordListMessages = '';
+        $recordlistMessageEntries = [];
+        if ($backendUser->workspace > 0 && ExtensionManagementUtility::isLoaded('workspaces') && !BackendUtility::isTableWorkspaceEnabled($table)) {
+            // In case the table is not editable in workspace inform the user about the missing actions
+            if ($backendUser->workspaceAllowsLiveEditingInTable($table)) {
+                $recordlistMessageEntries[] = [
+                    'message' => $lang->sL('LLL:EXT:core/Resources/Private/Language/locallang_core.xlf:labels.editingLiveRecordsWarning'),
+                    'severity' => ContextualFeedbackSeverity::WARNING,
+                ];
+            } else {
+                $recordlistMessageEntries[] = [
+                    'message' => $lang->sL('LLL:EXT:core/Resources/Private/Language/locallang_core.xlf:labels.notEditableInWorkspace'),
+                    'severity' => ContextualFeedbackSeverity::INFO,
+                ];
+            }
+        }
+
+        foreach ($recordlistMessageEntries as $messageEntry) {
+            $recordListMessages .= '<div class="alert alert-' . $messageEntry['severity']->getCssClass() . '">';
+            $recordListMessages .= $this->iconFactory->getIcon($messageEntry['severity']->getIconIdentifier(), Icon::SIZE_SMALL)->render();
+            $recordListMessages .= ' ';
+            $recordListMessages .= htmlspecialchars($messageEntry['message'], ENT_QUOTES | ENT_HTML5);
+            $recordListMessages .= '</div>';
+        }
+
         $collapseClass = $tableCollapsed && !$this->table ? 'collapse' : 'collapse show';
         $dataState = $tableCollapsed && !$this->table ? 'collapsed' : 'expanded';
         return '
@@ -783,12 +811,13 @@ class DatabaseRecordList
                     <input type="hidden" name="cmd_table" value="' . htmlspecialchars($tableIdentifier) . '" />
                     <input type="hidden" name="cmd" />
                     <div class="recordlist-heading ' . ($multiRecordSelectionActions !== '' ? 'multi-record-selection-panel' : '') . '">
-                    <div class="recordlist-heading-row">
-                        <div class="recordlist-heading-title">' . $tableHeader . '</div>
-                        <div class="recordlist-heading-actions">' . $tableActions . '</div>
+                        <div class="recordlist-heading-row">
+                            <div class="recordlist-heading-title">' . $tableHeader . '</div>
+                            <div class="recordlist-heading-actions">' . $tableActions . '</div>
+                        </div>
+                        ' . $multiRecordSelectionActions . '
                     </div>
-                    ' . $multiRecordSelectionActions . '
-                    </div>
+                    ' . $recordListMessages . '
                     <div class="' . $collapseClass . '" data-state="' . $dataState . '" id="recordlist-' . htmlspecialchars($tableIdentifier) . '">
                         <div class="table-fit">
                             <table data-table="' . htmlspecialchars($tableIdentifier) . '" class="table table-striped table-hover">
@@ -1342,9 +1371,10 @@ class DatabaseRecordList
                 && !in_array((int)$this->pageRow['doktype'], $this->getNoViewWithDokTypes($tsConfig), true)
             )
         ) {
-            if (!$isDeletePlaceHolder) {
-                $attributes = $this->getPreviewUriBuilder($table, $row)->serializeDispatcherAttributes();
-                $viewAction = '<a href="#"'
+            if (!$isDeletePlaceHolder
+                && ($attributes = $this->getPreviewUriBuilder($table, $row)->serializeDispatcherAttributes()) !== null
+            ) {
+                $viewAction = '<button'
                     . ' class="btn btn-default" ' . $attributes
                     . ' title="' . htmlspecialchars($this->getLanguageService()->sL('LLL:EXT:core/Resources/Private/Language/locallang_core.xlf:labels.showPage')) . '">';
                 if ($table === 'pages') {
@@ -1352,7 +1382,7 @@ class DatabaseRecordList
                 } else {
                     $viewAction .= $this->iconFactory->getIcon('actions-view', Icon::SIZE_SMALL)->render();
                 }
-                $viewAction .= '</a>';
+                $viewAction .= '</button>';
                 $this->addActionToCellGroup($cells, $viewAction, 'view');
             } else {
                 $this->addActionToCellGroup($cells, $this->spaceIcon, 'view');
@@ -2088,7 +2118,8 @@ class DatabaseRecordList
         $backendUser = $this->getBackendUserAuthentication();
         return !($GLOBALS['TCA'][$table]['ctrl']['readOnly'] ?? false)
             && $this->editable
-            && ($backendUser->isAdmin() || $backendUser->check('tables_modify', $table));
+            && ($backendUser->isAdmin() || $backendUser->check('tables_modify', $table))
+            && (BackendUtility::isTableWorkspaceEnabled($table) || $backendUser->workspaceAllowsLiveEditingInTable($table));
     }
 
     /**
@@ -2242,8 +2273,21 @@ class DatabaseRecordList
                 }
             }
         }
-        $orderedTableNames = GeneralUtility::makeInstance(DependencyOrderingService::class)
-            ->orderByDependencies($tableNames);
+        try {
+            $orderedTableNames = GeneralUtility::makeInstance(DependencyOrderingService::class)
+                ->orderByDependencies($tableNames);
+        } catch (\UnexpectedValueException $e) {
+            // If you have circular dependencies we just keep the original order and give a notice
+            // Example mod.web_list.tableDisplayOrder.pages.after = tt_content
+            $lang = $this->getLanguageService();
+            $header = $lang->sL('LLL:EXT:core/Resources/Private/Language/locallang_core.xlf:warning.tableDisplayOrder.title');
+            $msg = $lang->sL('LLL:EXT:core/Resources/Private/Language/locallang_core.xlf:warning.tableDisplayOrder.message');
+            $flashMessage = GeneralUtility::makeInstance(FlashMessage::class, $msg, $header, ContextualFeedbackSeverity::WARNING, true);
+            $flashMessageService = GeneralUtility::makeInstance(FlashMessageService::class);
+            $defaultFlashMessageQueue = $flashMessageService->getMessageQueueByIdentifier();
+            $defaultFlashMessageQueue->enqueue($flashMessage);
+            $orderedTableNames = $tableNames;
+        }
         return array_keys($orderedTableNames);
     }
 
@@ -2533,13 +2577,14 @@ class DatabaseRecordList
                 break;
             case 'show':
                 // "Show" link (only pages and tt_content elements)
-                if ($table === 'pages' || $table === 'tt_content') {
-                    $attributes = $this->getPreviewUriBuilder($table, $row)->serializeDispatcherAttributes();
+                if (($table === 'pages' || $table === 'tt_content')
+                    && ($attributes = $this->getPreviewUriBuilder($table, $row)->serializeDispatcherAttributes()) !== null
+                ) {
                     $title = htmlspecialchars($lang->sL('LLL:EXT:core/Resources/Private/Language/locallang_core.xlf:labels.showPage'));
-                    $code = '<a href="#" ' . $attributes
+                    $code = '<button ' . $attributes
                         . ' title="' . $title . '"'
                         . ' aria-label="' . $title . '">'
-                        . $code . '</a>';
+                        . $code . '</button>';
                 }
                 break;
             case 'info':
@@ -2731,7 +2776,8 @@ class DatabaseRecordList
             foreach ($pages as $page) {
                 $idList[] = (int)$page['uid'];
             }
-            $runtimeCache->set($hash, array_unique($idList));
+            $idList = array_unique($idList);
+            $runtimeCache->set($hash, $idList);
         }
 
         return $idList;
@@ -3161,7 +3207,7 @@ class DatabaseRecordList
     /**
      * Check whether the clipboard functionality is generally enabled.
      * In case a row is given, this checks if the record is neither
-     * a "delete placeholder", nor a translation.
+     * a "delete placeholder", nor a translation, nor a version
      */
     protected function isClipboardFunctionalityEnabled(string $table, array $row = []): bool
     {
@@ -3173,7 +3219,8 @@ class DatabaseRecordList
                     !$this->isRecordDeletePlaceholder($row)
                     && (int)($row[$GLOBALS['TCA'][$table]['ctrl']['transOrigPointerField'] ?? null] ?? 0) === 0
                 )
-            );
+            )
+            && (BackendUtility::isTableWorkspaceEnabled($table) || $this->getBackendUserAuthentication()->workspaceAllowsLiveEditingInTable($table));
     }
 
     /**

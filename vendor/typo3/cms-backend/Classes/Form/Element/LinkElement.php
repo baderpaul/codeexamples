@@ -87,6 +87,8 @@ class LinkElement extends AbstractFormElement
         $fieldName = $this->data['fieldName'];
         $parameterArray = $this->data['parameterArray'];
         $resultArray = $this->initializeResultArray();
+        // @deprecated since v12, will be removed with v13 when all elements handle label/legend on their own
+        $resultArray['labelHasBeenHandled'] = true;
         $config = $parameterArray['fieldConf']['config'];
 
         if (is_array($config['allowedTypes'] ?? false) && $config['allowedTypes'] === []) {
@@ -100,6 +102,8 @@ class LinkElement extends AbstractFormElement
         $width = $this->formMaxWidth(
             MathUtility::forceIntegerInRange($config['size'] ?? $this->defaultInputWidth, $this->minimumInputWidth, $this->maxInputWidth)
         );
+        $fieldId = StringUtility::getUniqueId('formengine-input-');
+        $renderedLabel = $this->renderLabel($fieldId);
 
         $fieldInformationResult = $this->renderFieldInformation();
         $fieldInformationHtml = $fieldInformationResult['html'];
@@ -107,12 +111,13 @@ class LinkElement extends AbstractFormElement
 
         if ($config['readOnly'] ?? false) {
             $html = [];
+            $html[] = $renderedLabel;
             $html[] = '<div class="formengine-field-item t3js-formengine-field-item">';
             $html[] =   $fieldInformationHtml;
             $html[] =   '<div class="form-wizards-wrap">';
             $html[] =       '<div class="form-wizards-element">';
             $html[] =           '<div class="form-control-wrap" style="max-width: ' . $width . 'px">';
-            $html[] =               '<input class="form-control" value="' . htmlspecialchars((string)$itemValue) . '" type="text" disabled>';
+            $html[] =               '<input class="form-control" id="' . htmlspecialchars($fieldId) . '" value="' . htmlspecialchars((string)$itemValue) . '" type="text" disabled>';
             $html[] =           '</div>';
             $html[] =       '</div>';
             $html[] =   '</div>';
@@ -122,7 +127,6 @@ class LinkElement extends AbstractFormElement
         }
 
         $languageService = $this->getLanguageService();
-        $fieldId = StringUtility::getUniqueId('formengine-input-');
         $itemName = (string)$parameterArray['itemFormElName'];
 
         // Always adding "trim".
@@ -283,7 +287,7 @@ class LinkElement extends AbstractFormElement
             $fullElement = implode(LF, $fullElement);
         }
 
-        $resultArray['html'] = '
+        $resultArray['html'] = $renderedLabel . '
             <typo3-formengine-element-link class="formengine-field-item t3js-formengine-field-item" recordFieldId="' . htmlspecialchars($fieldId) . '">
                 ' . $fieldInformationHtml . '
                 ' . $fullElement . '
@@ -352,20 +356,19 @@ class LinkElement extends AbstractFormElement
                 break;
             case LinkService::TYPE_EMAIL:
                 $data = [
-                    'text' => $linkData['email'],
+                    'text' => $linkData['email'] ?? '',
                     'icon' => $this->iconFactory->getIcon('content-elements-mailform', Icon::SIZE_SMALL)->render(),
                 ];
                 break;
             case LinkService::TYPE_URL:
                 $data = [
-                    'text' => $linkData['url'],
+                    'text' => $linkData['url'] ?? '',
                     'icon' => $this->iconFactory->getIcon('apps-pagetree-page-shortcut-external', Icon::SIZE_SMALL)->render(),
 
                 ];
                 break;
             case LinkService::TYPE_FILE:
-                /** @var File $file */
-                $file = $linkData['file'];
+                $file = $linkData['file'] ?? null;
                 if ($file instanceof File) {
                     $data = [
                         'text' => $file->getPublicUrl(),
@@ -374,8 +377,7 @@ class LinkElement extends AbstractFormElement
                 }
                 break;
             case LinkService::TYPE_FOLDER:
-                /** @var Folder $folder */
-                $folder = $linkData['folder'];
+                $folder = $linkData['folder'] ?? null;
                 if ($folder instanceof Folder) {
                     $data = [
                         'text' => $folder->getPublicUrl(),
@@ -411,7 +413,7 @@ class LinkElement extends AbstractFormElement
                 break;
             case LinkService::TYPE_UNKNOWN:
                 $data = [
-                    'text' => $linkData['file'],
+                    'text' => $linkData['file'] ?? $linkData['url'] ?? '',
                     'icon' => $this->iconFactory->getIcon('actions-link', Icon::SIZE_SMALL)->render(),
                 ];
                 break;

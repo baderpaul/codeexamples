@@ -38,6 +38,7 @@ use TYPO3\CMS\Core\Context\SecurityAspect;
 use TYPO3\CMS\Core\Database\ConnectionPool;
 use TYPO3\CMS\Core\FormProtection\BackendFormProtection;
 use TYPO3\CMS\Core\FormProtection\FormProtectionFactory;
+use TYPO3\CMS\Core\Http\JsonResponse;
 use TYPO3\CMS\Core\Http\NormalizedParams;
 use TYPO3\CMS\Core\Http\PropagateResponseException;
 use TYPO3\CMS\Core\Http\RedirectResponse;
@@ -145,6 +146,18 @@ class LoginController
     }
 
     /**
+     * Returns a new request-token value, which is signed by a new nonce value (the nonce is sent
+     * as cookie automatically in `RequestTokenMiddleware` since it is created via the `NoncePool`).
+     */
+    public function requestTokenAction(ServerRequestInterface $request): ResponseInterface
+    {
+        return new JsonResponse([
+            'headerName' => RequestToken::HEADER_NAME,
+            'requestToken' => $this->provideRequestTokenJwt(),
+        ]);
+    }
+
+    /**
      * @todo: Ugly. This can be used by login providers, they receive an instance of $this.
      *        Unused in core, though. It should vanish when login providers receive love.
      */
@@ -200,15 +213,17 @@ class LoginController
         $preferredBrowserLanguage = $this->locales->getPreferredClientLanguage($httpAcceptLanguage);
 
         // If we found a $preferredBrowserLanguage, which is not the default language, while no user is logged in,
-        // initialize $this->getLanguageService()
+        // initialize $this->getLanguageService() and set the language to the backend user object, so labels in fluid
+        // views are translated
         if (empty($backendUser->user['uid'])) {
             $languageService->init($this->locales->createLocale($preferredBrowserLanguage));
+            $backendUser->user['lang'] = $preferredBrowserLanguage;
         }
 
         $this->setUpBasicPageRendererForBackend($this->pageRenderer, $this->extensionConfiguration, $request, $languageService);
         $this->pageRenderer->setTitle('TYPO3 CMS Login: ' . ($GLOBALS['TYPO3_CONF_VARS']['SYS']['sitename'] ?? ''));
 
-        $this->redirectUrl = GeneralUtility::sanitizeLocalUrl($parsedBody['redirect_url'] ?? $queryParams['redirect_url'] ?? null);
+        $this->redirectUrl = GeneralUtility::sanitizeLocalUrl($parsedBody['redirect_url'] ?? $queryParams['redirect_url'] ?? '');
         $this->loginProviderIdentifier = $this->loginProviderResolver->resolveLoginProviderIdentifierFromRequest($request, 'be_lastLoginProvider');
 
         $this->loginRefresh = (bool)($parsedBody['loginRefresh'] ?? $queryParams['loginRefresh'] ?? false);

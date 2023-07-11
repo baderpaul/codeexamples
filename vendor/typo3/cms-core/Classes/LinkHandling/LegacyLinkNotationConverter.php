@@ -22,6 +22,7 @@ use TYPO3\CMS\Core\Resource\Exception\ResourceDoesNotExistException;
 use TYPO3\CMS\Core\Resource\File;
 use TYPO3\CMS\Core\Resource\Folder;
 use TYPO3\CMS\Core\Resource\ResourceFactory;
+use TYPO3\CMS\Core\Resource\ResourceInterface;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Core\Utility\MathUtility;
 
@@ -83,6 +84,12 @@ class LegacyLinkNotationConverter
             // Check for link-handler keyword
             [$linkHandlerKeyword, $linkHandlerValue] = explode(':', $linkParameter, 2);
             $result['type'] = strtolower(trim($linkHandlerKeyword));
+            if ($linkHandlerValue === '') {
+                return [
+                    'type' => LinkService::TYPE_UNKNOWN,
+                    'url' => $linkParameter,
+                ];
+            }
             $result['url'] = $linkParameter;
             $result['value'] = $linkHandlerValue;
             if ($result['type'] === LinkService::TYPE_RECORD) {
@@ -212,6 +219,13 @@ class LegacyLinkNotationConverter
                 [$fileIdentifier, $fragment] = explode('#', $fileIdentifier, 2);
             }
             $fileOrFolderObject = $this->getResourceFactory()->retrieveFileOrFolderObject($fileIdentifier);
+            // Links to a file/folder in the main TYPO3 directory should not be considered as file links, but an external link
+            if ($fileOrFolderObject instanceof ResourceInterface && $fileOrFolderObject->getStorage()->getUid() === 0) {
+                return [
+                    'type' => LinkService::TYPE_URL,
+                    'url' => $mixedIdentifier,
+                ];
+            }
             // Link to a folder or file
             if ($fileOrFolderObject instanceof File) {
                 $result['type'] = LinkService::TYPE_FILE;
@@ -225,6 +239,9 @@ class LegacyLinkNotationConverter
                 if ($fragment) {
                     $result['fragment'] = $fragment;
                 }
+            } elseif (str_starts_with($mixedIdentifier, '/')) {
+                $result['type'] = LinkService::TYPE_URL;
+                $result['url'] = $mixedIdentifier;
             } else {
                 $result['type'] = LinkService::TYPE_UNKNOWN;
                 $result['file'] = $mixedIdentifier;
