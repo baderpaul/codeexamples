@@ -22,25 +22,25 @@ $newFields = [
     ]
 ];
 
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns(
+ExtensionManagementUtility::addTCAcolumns(
     'pages',
     $newFields
 );
 
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToAllTCAtypes(
+ExtensionManagementUtility::addToAllTCAtypes(
     'pages',
     'breadcrumb',
     '',
     'after:nav_title'
 );
 
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::registerPageTSConfigFile(
+ExtensionManagementUtility::registerPageTSConfigFile(
     $package,
     'Configuration/TSconfig/Page/TSBeLayouts.tsconfig',
     'Backend Layouts (Templates, Crop Variants)'
 );
 
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::registerPageTSConfigFile(
+ExtensionManagementUtility::registerPageTSConfigFile(
     $package,
     'Configuration/TSconfig/Page/Page.tsconfig',
     'Backend settings'
