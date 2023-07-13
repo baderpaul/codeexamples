@@ -26,7 +26,7 @@ GeneralUtility::makeInstance(\B13\Container\Tca\Registry::class)->configureConta
             ]
         )
     )
-    ->setIcon('col-1')
+    ->setIcon('content-container-columns-1')
 );
 
 ExtensionManagementUtility::addPiFlexFormValue(
@@ -51,7 +51,7 @@ GeneralUtility::makeInstance(\B13\Container\Tca\Registry::class)->configureConta
             ]
         )
     )
-    ->setIcon('col-2')
+    ->setIcon('content-container-columns-2')
 );
 
 ExtensionManagementUtility::addPiFlexFormValue(
@@ -78,7 +78,7 @@ GeneralUtility::makeInstance(\B13\Container\Tca\Registry::class)->configureConta
         ]
         )
     )
-    ->setIcon('col-3')
+    ->setIcon('content-container-columns-3')
 );
 ExtensionManagementUtility::addPiFlexFormValue(
     '*',
@@ -104,7 +104,7 @@ GeneralUtility::makeInstance(\B13\Container\Tca\Registry::class)->configureConta
         ]
         )
     )
-    ->setIcon('col-4')
+    ->setIcon('content-container-columns-4')
 );
 ExtensionManagementUtility::addPiFlexFormValue(
     '*',
