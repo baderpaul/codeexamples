@@ -8,16 +8,16 @@
     "packages": [
         {
             "name": "b13/container",
-            "version": "2.2.3",
+            "version": "2.2.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/b13/container.git",
-                "reference": "dcbcad029995455487753aaa52ecf6a9b5f08392"
+                "reference": "006cef502b911dcd02ec44dafa1818278441c376"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/b13/container/zipball/dcbcad029995455487753aaa52ecf6a9b5f08392",
-                "reference": "dcbcad029995455487753aaa52ecf6a9b5f08392",
+                "url": "https://api.github.com/repos/b13/container/zipball/006cef502b911dcd02ec44dafa1818278441c376",
+                "reference": "006cef502b911dcd02ec44dafa1818278441c376",
                 "shasum": ""
             },
             "require": {
@@ -65,9 +65,9 @@
             "homepage": "https://b13.com",
             "support": {
                 "issues": "https://github.com/b13/container/issues",
-                "source": "https://github.com/b13/container/tree/2.2.3"
+                "source": "https://github.com/b13/container/tree/2.2.4"
             },
-            "time": "2023-06-14T08:47:27+00:00"
+            "time": "2023-07-12T12:11:36+00:00"
         },
         {
             "name": "bacon/bacon-qr-code",
@@ -456,16 +456,16 @@
         },
         {
             "name": "doctrine/dbal",
-            "version": "3.6.4",
+            "version": "3.6.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/dbal.git",
-                "reference": "19f0dec95edd6a3c3c5ff1d188ea94c6b7fc903f"
+                "reference": "96d5a70fd91efdcec81fc46316efc5bf3da17ddf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/dbal/zipball/19f0dec95edd6a3c3c5ff1d188ea94c6b7fc903f",
-                "reference": "19f0dec95edd6a3c3c5ff1d188ea94c6b7fc903f",
+                "url": "https://api.github.com/repos/doctrine/dbal/zipball/96d5a70fd91efdcec81fc46316efc5bf3da17ddf",
+                "reference": "96d5a70fd91efdcec81fc46316efc5bf3da17ddf",
                 "shasum": ""
             },
             "require": {
@@ -480,10 +480,10 @@
             "require-dev": {
                 "doctrine/coding-standard": "12.0.0",
                 "fig/log-test": "^1",
-                "jetbrains/phpstorm-stubs": "2022.3",
-                "phpstan/phpstan": "1.10.14",
+                "jetbrains/phpstorm-stubs": "2023.1",
+                "phpstan/phpstan": "1.10.21",
                 "phpstan/phpstan-strict-rules": "^1.5",
-                "phpunit/phpunit": "9.6.7",
+                "phpunit/phpunit": "9.6.9",
                 "psalm/plugin-phpunit": "0.18.4",
                 "squizlabs/php_codesniffer": "3.7.2",
                 "symfony/cache": "^5.4|^6.0",
@@ -548,7 +548,7 @@
             ],
             "support": {
                 "issues": "https://github.com/doctrine/dbal/issues",
-                "source": "https://github.com/doctrine/dbal/tree/3.6.4"
+                "source": "https://github.com/doctrine/dbal/tree/3.6.5"
             },
             "funding": [
                 {
@@ -564,7 +564,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2023-06-15T07:40:12+00:00"
+            "time": "2023-07-17T09:15:50+00:00"
         },
         {
             "name": "doctrine/deprecations",
@@ -965,16 +965,16 @@
         },
         {
             "name": "firebase/php-jwt",
-            "version": "v6.8.0",
+            "version": "v6.8.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/firebase/php-jwt.git",
-                "reference": "48b0210c51718d682e53210c24d25c5a10a2299b"
+                "reference": "5dbc8959427416b8ee09a100d7a8588c00fb2e26"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/firebase/php-jwt/zipball/48b0210c51718d682e53210c24d25c5a10a2299b",
-                "reference": "48b0210c51718d682e53210c24d25c5a10a2299b",
+                "url": "https://api.github.com/repos/firebase/php-jwt/zipball/5dbc8959427416b8ee09a100d7a8588c00fb2e26",
+                "reference": "5dbc8959427416b8ee09a100d7a8588c00fb2e26",
                 "shasum": ""
             },
             "require": {
@@ -1022,9 +1022,9 @@
             ],
             "support": {
                 "issues": "https://github.com/firebase/php-jwt/issues",
-                "source": "https://github.com/firebase/php-jwt/tree/v6.8.0"
+                "source": "https://github.com/firebase/php-jwt/tree/v6.8.1"
             },
-            "time": "2023-06-20T16:45:35+00:00"
+            "time": "2023-07-14T18:33:00+00:00"
         },
         {
             "name": "friendsoftypo3/fontawesome-provider",
@@ -1543,16 +1543,16 @@
         },
         {
             "name": "mask/mask",
-            "version": "v8.2.3",
+            "version": "v8.2.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Gernott/mask.git",
-                "reference": "d4d14a641e65164a099eec3d93353f96ed418b02"
+                "reference": "adadb8cccb423e2d286819ae3f509a45321c05bf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Gernott/mask/zipball/d4d14a641e65164a099eec3d93353f96ed418b02",
-                "reference": "d4d14a641e65164a099eec3d93353f96ed418b02",
+                "url": "https://api.github.com/repos/Gernott/mask/zipball/adadb8cccb423e2d286819ae3f509a45321c05bf",
+                "reference": "adadb8cccb423e2d286819ae3f509a45321c05bf",
                 "shasum": ""
             },
             "require": {
@@ -1635,7 +1635,7 @@
                     "type": "WEBprofil - Gernot Ploiner e.U. (Founder)"
                 }
             ],
-            "time": "2023-06-20T14:24:34+00:00"
+            "time": "2023-07-22T16:03:47+00:00"
         },
         {
             "name": "masterminds/html5",
@@ -2123,16 +2123,16 @@
         },
         {
             "name": "phpstan/phpstan",
-            "version": "1.10.25",
+            "version": "1.10.26",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpstan/phpstan.git",
-                "reference": "578f4e70d117f9a90699324c555922800ac38d8c"
+                "reference": "5d660cbb7e1b89253a47147ae44044f49832351f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/578f4e70d117f9a90699324c555922800ac38d8c",
-                "reference": "578f4e70d117f9a90699324c555922800ac38d8c",
+                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/5d660cbb7e1b89253a47147ae44044f49832351f",
+                "reference": "5d660cbb7e1b89253a47147ae44044f49832351f",
                 "shasum": ""
             },
             "require": {
@@ -2181,7 +2181,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2023-07-06T12:11:37+00:00"
+            "time": "2023-07-19T12:44:37+00:00"
         },
         {
             "name": "psr/cache",
@@ -6617,12 +6617,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/PKuhlmay/treupo_sys_note_widgets.git",
-                "reference": "88faafc10fa535ae6bb4c4d826f37e147aa11007"
+                "reference": "83be1f664ec5a29935e18ef48b326d622db0c1e1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/PKuhlmay/treupo_sys_note_widgets/zipball/88faafc10fa535ae6bb4c4d826f37e147aa11007",
-                "reference": "88faafc10fa535ae6bb4c4d826f37e147aa11007",
+                "url": "https://api.github.com/repos/PKuhlmay/treupo_sys_note_widgets/zipball/83be1f664ec5a29935e18ef48b326d622db0c1e1",
+                "reference": "83be1f664ec5a29935e18ef48b326d622db0c1e1",
                 "shasum": ""
             },
             "require": {
@@ -6656,9 +6656,9 @@
             "homepage": "https://typo3.org",
             "support": {
                 "issues": "https://github.com/PKuhlmay/treupo_sys_note_widgets/issues",
-                "source": "https://github.com/PKuhlmay/treupo_sys_note_widgets/tree/1.2.1"
+                "source": "https://github.com/PKuhlmay/treupo_sys_note_widgets/tree/1.2.2"
             },
-            "time": "2023-07-05T08:58:30+00:00"
+            "time": "2023-07-21T07:06:05+00:00"
         },
         {
             "name": "typo3/class-alias-loader",

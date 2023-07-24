@@ -1,9 +1,4 @@
-<div class="d-block d-md-flex 
-{f:if(condition: '{flexform.set-grid-frame} == 1', then: 'border border-dark reset-border')}
-{f:if(condition: '{data.layout} == 1', then:' container-md')}
-{f:if(condition: '{data.layout} == 2', then:' container-lg')}
-{f:if(condition: '{data.layout} == 3', then:' container-fluid')} 
-mb-10 mb-md-20">
+<div class="container-xl d-block d-md-flex {f:if(condition: '{flexform.set-grid-frame} == 1', then: 'border border-dark reset-border')} mb-10 mb-md-20">
     <f:if condition="{childrenLeft}">
     <div class="
         {f:if(condition: '{flexform.columnType} == cols-1-1-1-1', then: 'col-md-3')}

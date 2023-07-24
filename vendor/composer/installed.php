@@ -3,7 +3,7 @@
         'name' => 'typo3/cms-base-distribution',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => 'd7231c9a927a698918122b7c3ea8aacd45edf7c1',
+        'reference' => 'a3e60aa897e23ce61b4c374dd527217b2a656854',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -11,9 +11,9 @@
     ),
     'versions' => array(
         'b13/container' => array(
-            'pretty_version' => '2.2.3',
-            'version' => '2.2.3.0',
-            'reference' => 'dcbcad029995455487753aaa52ecf6a9b5f08392',
+            'pretty_version' => '2.2.4',
+            'version' => '2.2.4.0',
+            'reference' => '006cef502b911dcd02ec44dafa1818278441c376',
             'type' => 'typo3-cms-extension',
             'install_path' => __DIR__ . '/../b13/container',
             'aliases' => array(),
@@ -80,9 +80,9 @@
             'dev_requirement' => false,
         ),
         'doctrine/dbal' => array(
-            'pretty_version' => '3.6.4',
-            'version' => '3.6.4.0',
-            'reference' => '19f0dec95edd6a3c3c5ff1d188ea94c6b7fc903f',
+            'pretty_version' => '3.6.5',
+            'version' => '3.6.5.0',
+            'reference' => '96d5a70fd91efdcec81fc46316efc5bf3da17ddf',
             'type' => 'library',
             'install_path' => __DIR__ . '/../doctrine/dbal',
             'aliases' => array(),
@@ -143,9 +143,9 @@
             'dev_requirement' => false,
         ),
         'firebase/php-jwt' => array(
-            'pretty_version' => 'v6.8.0',
-            'version' => '6.8.0.0',
-            'reference' => '48b0210c51718d682e53210c24d25c5a10a2299b',
+            'pretty_version' => 'v6.8.1',
+            'version' => '6.8.1.0',
+            'reference' => '5dbc8959427416b8ee09a100d7a8588c00fb2e26',
             'type' => 'library',
             'install_path' => __DIR__ . '/../firebase/php-jwt',
             'aliases' => array(),
@@ -218,9 +218,9 @@
             ),
         ),
         'mask/mask' => array(
-            'pretty_version' => 'v8.2.3',
-            'version' => '8.2.3.0',
-            'reference' => 'd4d14a641e65164a099eec3d93353f96ed418b02',
+            'pretty_version' => 'v8.2.4',
+            'version' => '8.2.4.0',
+            'reference' => 'adadb8cccb423e2d286819ae3f509a45321c05bf',
             'type' => 'typo3-cms-extension',
             'install_path' => __DIR__ . '/../mask/mask',
             'aliases' => array(),
@@ -305,9 +305,9 @@
             'dev_requirement' => false,
         ),
         'phpstan/phpstan' => array(
-            'pretty_version' => '1.10.25',
-            'version' => '1.10.25.0',
-            'reference' => '578f4e70d117f9a90699324c555922800ac38d8c',
+            'pretty_version' => '1.10.26',
+            'version' => '1.10.26.0',
+            'reference' => '5d660cbb7e1b89253a47147ae44044f49832351f',
             'type' => 'library',
             'install_path' => __DIR__ . '/../phpstan/phpstan',
             'aliases' => array(),
@@ -946,7 +946,7 @@
         'treupo/sys_note_widgets' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => '88faafc10fa535ae6bb4c4d826f37e147aa11007',
+            'reference' => '83be1f664ec5a29935e18ef48b326d622db0c1e1',
             'type' => 'typo3-cms-extension',
             'install_path' => __DIR__ . '/../treupo/sys_note_widgets',
             'aliases' => array(
@@ -957,7 +957,7 @@
         'typo3-ter/container' => array(
             'dev_requirement' => false,
             'replaced' => array(
-                0 => '2.2.3',
+                0 => '2.2.4',
             ),
         ),
         'typo3-ter/custom_dashboard_widgets' => array(
@@ -975,7 +975,7 @@
         'typo3-ter/mask' => array(
             'dev_requirement' => false,
             'replaced' => array(
-                0 => 'v8.2.3',
+                0 => 'v8.2.4',
             ),
         ),
         'typo3/class-alias-loader' => array(
@@ -1005,7 +1005,7 @@
         'typo3/cms-base-distribution' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => 'd7231c9a927a698918122b7c3ea8aacd45edf7c1',
+            'reference' => 'a3e60aa897e23ce61b4c374dd527217b2a656854',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
