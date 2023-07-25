@@ -41,6 +41,7 @@ class Sanitizer
     protected const mastermindsDefaultOptions = [
         // Whether the serializer should aggressively encode all characters as entities.
         'encode_entities' => false,
+        'encode_attributes' => true,
         // Prevents the parser from automatically assigning the HTML5 namespace to the DOM document.
         // (adjusted due to https://github.com/Masterminds/html5-php/issues/181#issuecomment-643767471)
         'disable_html_ns' => true,
@@ -73,7 +74,7 @@ class Sanitizer
     protected $context;
 
     /**
-     * @param Behavior|VisitorInterface[] $items
+     * @param Behavior|VisitorInterface ...$items
      *
      * @todo use `__construct(Behavior $behavior, VisitorInterface ...$visitors)`
      * (which would have been a breaking change with a PHP fatal error)

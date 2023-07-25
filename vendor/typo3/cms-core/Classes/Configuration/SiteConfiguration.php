@@ -164,6 +164,31 @@ class SiteConfiguration implements SingletonInterface
     }
 
     /**
+     * Resolve all site objects which have been found in the filesystem containing settings only from the `config.yaml`
+     * file ignoring values from the `settings.yaml` file.
+     *
+     * @return Site[]
+     * @internal Not part of public API. Used as intermediate solution until settings are handled by a dedicated GUI.
+     */
+    public function resolveAllExistingSitesRaw(): array
+    {
+        $sites = [];
+        $siteConfiguration = $this->getAllSiteConfigurationFromFiles(false);
+        foreach ($siteConfiguration as $identifier => $configuration) {
+            // cast $identifier to string, as the identifier can potentially only consist of (int) digit numbers
+            $identifier = (string)$identifier;
+            $siteSettings = new SiteSettings($configuration['settings'] ?? []);
+            $configuration['contentSecurityPolicies'] = $this->getContentSecurityPolicies($identifier);
+
+            $rootPageId = (int)($configuration['rootPageId'] ?? 0);
+            if ($rootPageId > 0) {
+                $sites[$identifier] = new Site($identifier, $rootPageId, $configuration, $siteSettings);
+            }
+        }
+        return $sites;
+    }
+
+    /**
      * Returns an array of paths in which a site configuration is found.
      *
      * @internal
@@ -236,13 +261,19 @@ class SiteConfiguration implements SingletonInterface
 
     /**
      * Fetch the settings for a specific site and return the parsed Site Settings object.
+     *
+     * @todo This method resolves placeholders during the loading, which is okay as this is only used in context where
+     *       the replacement is needed. However, this may change in the future, for example if loading is needed for
+     *       implementing a GUI for the settings - which should either get a dedicated method or a flag to control if
+     *       placeholder should be resolved during yaml file loading or not. The SiteConfiguration save action currently
+     *       avoid calling this method.
      */
     protected function getSiteSettings(string $siteIdentifier, array $siteConfiguration): SiteSettings
     {
         $fileName = $this->configPath . '/' . $siteIdentifier . '/' . $this->settingsFileName;
         if (file_exists($fileName)) {
             $loader = GeneralUtility::makeInstance(YamlFileLoader::class);
-            $settings = $loader->load(GeneralUtility::fixWindowsFilePath($fileName), YamlFileLoader::PROCESS_IMPORTS);
+            $settings = $loader->load(GeneralUtility::fixWindowsFilePath($fileName));
         } else {
             $settings = $siteConfiguration['settings'] ?? [];
         }
