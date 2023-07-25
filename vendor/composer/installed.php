@@ -3,7 +3,7 @@
         'name' => 'typo3/cms-base-distribution',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => '8e7b10c99ab9f125f30be791a15d4543e5811ffd',
+        'reference' => '8f4b81b173f47a3f6927e0323fa2da33951ecf90',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -218,9 +218,9 @@
             ),
         ),
         'mask/mask' => array(
-            'pretty_version' => 'v8.2.5',
-            'version' => '8.2.5.0',
-            'reference' => '28e9a6022999de42e7a67752c95c27b1bf703c7c',
+            'pretty_version' => 'v8.2.6',
+            'version' => '8.2.6.0',
+            'reference' => '3c0df54292905567b1be998175974f1a23f8cd62',
             'type' => 'typo3-cms-extension',
             'install_path' => __DIR__ . '/../mask/mask',
             'aliases' => array(),
@@ -975,7 +975,7 @@
         'typo3-ter/mask' => array(
             'dev_requirement' => false,
             'replaced' => array(
-                0 => 'v8.2.5',
+                0 => 'v8.2.6',
             ),
         ),
         'typo3/class-alias-loader' => array(
@@ -1005,7 +1005,7 @@
         'typo3/cms-base-distribution' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => '8e7b10c99ab9f125f30be791a15d4543e5811ffd',
+            'reference' => '8f4b81b173f47a3f6927e0323fa2da33951ecf90',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
