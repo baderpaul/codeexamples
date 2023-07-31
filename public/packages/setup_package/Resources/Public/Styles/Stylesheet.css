@@ -442,8 +442,8 @@ legend {
   height: auto; }
 
 [type="search"] {
-  outline-offset: -2px;
-  -webkit-appearance: textfield; }
+  -webkit-appearance: textfield;
+  outline-offset: -2px; }
 
 /* rtl:raw:
 [type="tel"],
@@ -1739,10 +1739,10 @@ progress {
   font-weight: 400;
   line-height: 1.7;
   color: var(--bs-body-color);
+  appearance: none;
   background-color: var(--bs-body-bg);
   background-clip: padding-box;
   border: var(--bs-border-width) solid #444444;
-  appearance: none;
   border-radius: var(--bs-border-radius);
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out; }
   @media (prefers-reduced-motion: reduce) {
@@ -1859,6 +1859,7 @@ textarea.form-control-lg {
   font-weight: 400;
   line-height: 1.7;
   color: var(--bs-body-color);
+  appearance: none;
   background-color: var(--bs-body-bg);
   background-image: var(--bs-form-select-bg-img), var(--bs-form-select-bg-icon, none);
   background-repeat: no-repeat;
@@ -1866,8 +1867,7 @@ textarea.form-control-lg {
   background-size: 16px 12px;
   border: var(--bs-border-width) solid #444444;
   border-radius: var(--bs-border-radius);
-  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-  appearance: none; }
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out; }
   @media (prefers-reduced-motion: reduce) {
     .form-select {
       transition: none; } }
@@ -1922,13 +1922,13 @@ textarea.form-control-lg {
   height: 1em;
   margin-top: 0.35em;
   vertical-align: top;
+  appearance: none;
   background-color: var(--bs-form-check-bg);
   background-image: var(--bs-form-check-bg-image);
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
   border: var(--bs-border-width) solid var(--bs-border-color);
-  appearance: none;
   print-color-adjust: exact; }
   .form-check-input[type="checkbox"] {
     border-radius: 0.25em; }
@@ -2001,8 +2001,8 @@ textarea.form-control-lg {
   width: 100%;
   height: 1.5rem;
   padding: 0;
-  background-color: transparent;
-  appearance: none; }
+  appearance: none;
+  background-color: transparent; }
   .form-range:focus {
     outline: 0; }
     .form-range:focus::-webkit-slider-thumb {
@@ -2015,11 +2015,11 @@ textarea.form-control-lg {
     width: 1rem;
     height: 1rem;
     margin-top: -0.25rem;
+    appearance: none;
     background-color: #2a7da6;
     border: 0;
     border-radius: 1rem;
-    transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-    appearance: none; }
+    transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out; }
     @media (prefers-reduced-motion: reduce) {
       .form-range::-webkit-slider-thumb {
         transition: none; } }
@@ -2036,11 +2036,11 @@ textarea.form-control-lg {
   .form-range::-moz-range-thumb {
     width: 1rem;
     height: 1rem;
+    appearance: none;
     background-color: #2a7da6;
     border: 0;
     border-radius: 1rem;
-    transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-    appearance: none; }
+    transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out; }
     @media (prefers-reduced-motion: reduce) {
       .form-range::-moz-range-thumb {
         transition: none; } }
@@ -2127,9 +2127,11 @@ textarea.form-control-lg {
     transform: scale(0.85) translateY(-0.5rem) translateX(0.15rem); }
   .form-floating > .form-control-plaintext ~ label {
     border-width: var(--bs-border-width) 0; }
-  .form-floating > :disabled ~ label {
+  .form-floating > :disabled ~ label,
+  .form-floating > .form-control:disabled ~ label {
     color: #6c757d; }
-    .form-floating > :disabled ~ label::after {
+    .form-floating > :disabled ~ label::after,
+    .form-floating > .form-control:disabled ~ label::after {
       background-color: var(--bs-secondary-bg); }
 
 .input-group {
@@ -2959,7 +2961,7 @@ textarea.form-control-lg {
   .nav-link:focus-visible {
     outline: 0;
     box-shadow: 0 0 0 0.25rem rgba(42, 125, 166, 0.25); }
-  .nav-link.disabled {
+  .nav-link.disabled, .nav-link:disabled {
     color: var(--bs-nav-link-disabled-color);
     pointer-events: none;
     cursor: default; }
@@ -2981,10 +2983,6 @@ textarea.form-control-lg {
     .nav-tabs .nav-link:hover, .nav-tabs .nav-link:focus {
       isolation: isolate;
       border-color: var(--bs-nav-tabs-link-hover-border-color); }
-    .nav-tabs .nav-link.disabled, .nav-tabs .nav-link:disabled {
-      color: var(--bs-nav-link-disabled-color);
-      background-color: transparent;
-      border-color: transparent; }
   .nav-tabs .nav-link.active,
   .nav-tabs .nav-item.show .nav-link {
     color: var(--bs-nav-tabs-link-active-color);
@@ -3001,10 +2999,6 @@ textarea.form-control-lg {
   --bs-nav-pills-link-active-bg: #2a7da6; }
   .nav-pills .nav-link {
     border-radius: var(--bs-nav-pills-border-radius); }
-    .nav-pills .nav-link:disabled {
-      color: var(--bs-nav-link-disabled-color);
-      background-color: transparent;
-      border-color: transparent; }
   .nav-pills .nav-link.active,
   .nav-pills .show > .nav-link {
     color: var(--bs-nav-pills-link-active-color);
@@ -4145,27 +4139,27 @@ textarea.form-control-lg {
 
 .text-bg-primary {
   color: #ffffff;
-  background-color: RGBA(42, 125, 166, var(--bs-bg-opacity, 1)); }
+  background-color: RGBA(var(--bs-primary-rgb), var(--bs-bg-opacity, 1)); }
 
 .text-bg-secondary {
   color: #ffffff;
-  background-color: RGBA(68, 68, 68, var(--bs-bg-opacity, 1)); }
+  background-color: RGBA(var(--bs-secondary-rgb), var(--bs-bg-opacity, 1)); }
 
 .text-bg-light {
   color: #000;
-  background-color: RGBA(222, 226, 230, var(--bs-bg-opacity, 1)); }
+  background-color: RGBA(var(--bs-light-rgb), var(--bs-bg-opacity, 1)); }
 
 .text-bg-dark {
   color: #ffffff;
-  background-color: RGBA(68, 68, 68, var(--bs-bg-opacity, 1)); }
+  background-color: RGBA(var(--bs-dark-rgb), var(--bs-bg-opacity, 1)); }
 
 .text-bg-coal {
   color: #ffffff;
-  background-color: RGBA(0, 0, 0, var(--bs-bg-opacity, 1)); }
+  background-color: RGBA(var(--bs-coal-rgb), var(--bs-bg-opacity, 1)); }
 
 .text-bg-white {
   color: #000;
-  background-color: RGBA(255, 255, 255, var(--bs-bg-opacity, 1)); }
+  background-color: RGBA(var(--bs-white-rgb), var(--bs-bg-opacity, 1)); }
 
 .link-primary {
   color: RGBA(var(--bs-primary-rgb), var(--bs-link-opacity, 1));
@@ -4379,7 +4373,7 @@ textarea.form-control-lg {
 .vr {
   display: inline-block;
   align-self: stretch;
-  width: 1px;
+  width: var(--bs-border-width);
   min-height: 1em;
   background-color: currentcolor;
   opacity: 0.25; }
