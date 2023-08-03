@@ -11,6 +11,11 @@ tt_content.cols_2 {
             }
             as = image
         }
+        200 = B13\Container\DataProcessing\ContainerProcessor
+        200 {
+            colPos = 200
+            as = header2col
+        }
         201 = B13\Container\DataProcessing\ContainerProcessor
         201 {
             colPos = 201
@@ -33,6 +38,11 @@ tt_content.cols_3 < tt_content.cols_2
 tt_content.cols_3 {
     templateName = 3Col
     dataProcessing {
+        300 = B13\Container\DataProcessing\ContainerProcessor
+        300 {
+            colPos = 300
+            as = header3col
+        }
         301 = B13\Container\DataProcessing\ContainerProcessor
         301 {
             colPos = 301
@@ -60,6 +70,11 @@ tt_content.cols_4 < tt_content.cols_2
 tt_content.cols_4 {
     templateName = 4Col
     dataProcessing {
+        400 = B13\Container\DataProcessing\ContainerProcessor
+        400 {
+            colPos = 400
+            as = header4col
+        }
         401 = B13\Container\DataProcessing\ContainerProcessor
         401 {
             colPos = 401
@@ -93,6 +108,11 @@ tt_content.section < tt_content.cols_2
 tt_content.section {
     templateName = Section
     dataProcessing {
+        500 = B13\Container\DataProcessing\ContainerProcessor
+        500 {
+            colPos = 500
+            as = header1col
+        }
         501 = B13\Container\DataProcessing\ContainerProcessor
         501 {
             colPos = 501

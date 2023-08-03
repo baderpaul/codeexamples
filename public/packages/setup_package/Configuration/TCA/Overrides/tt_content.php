@@ -21,6 +21,9 @@ GeneralUtility::makeInstance(\B13\Container\Tca\Registry::class)->configureConta
         'LLL:' . $packageKey . '' . $locallangFile . ':ctype.section.desc',
         [
             [
+            ['name' => 'header2col', 'colPos' => 500, 'allowed' => ['CType' => 'header, textmedia']]
+            ],
+            [
                 ['name' => 'LLL:' . $packageKey . '' . $locallangBackendFile . ':grid-1', 'colPos' => 501]
                 ]
             ]
@@ -35,7 +38,7 @@ ExtensionManagementUtility::addPiFlexFormValue(
     'section'
 );
 
-$GLOBALS['TCA']['tt_content']['types']['section']['showitem'] = 'sys_language_uid,CType,header,layout,sectionIndex,pi_flexform';
+$GLOBALS['TCA']['tt_content']['types']['section']['showitem'] = 'sys_language_uid,CType,header2col,header,layout,sectionIndex,pi_flexform';
 
 GeneralUtility::makeInstance(\B13\Container\Tca\Registry::class)->configureContainer(
     (
@@ -43,7 +46,9 @@ GeneralUtility::makeInstance(\B13\Container\Tca\Registry::class)->configureConta
         'cols_2',
         'LLL:' . $packageKey . '' . $locallangBackendFile . ':grid-2-col-title',
         'LLL:' . $packageKey . '' . $locallangFile . ':ctype.col-2.desc',
-        [
+        [[
+            ['name' => 'header-col-2', 'colPos' => 200, 'colspan' => 2, 'allowed' => ['CType' => 'header']]
+        ],
             [
                 ['name' => 'LLL:' . $packageKey . '' . $locallangBackendFile . ':grid-1', 'colPos' => 201],
                 ['name' => 'LLL:' . $packageKey . '' . $locallangBackendFile . ':grid-2', 'colPos' => 202]
@@ -60,7 +65,7 @@ ExtensionManagementUtility::addPiFlexFormValue(
     'cols_2'
 );
 
-$GLOBALS['TCA']['tt_content']['types']['cols_2']['showitem'] = 'sys_language_uid,CType,header,header_layout,header_position,layout,colPos,tx_container_parent,pi_flexform';
+$GLOBALS['TCA']['tt_content']['types']['cols_2']['showitem'] = 'sys_language_uid,CType,header-col-2,header,header_layout,header_position,layout,colPos,tx_container_parent,pi_flexform';
 
 
 GeneralUtility::makeInstance(\B13\Container\Tca\Registry::class)->configureContainer(
@@ -70,6 +75,9 @@ GeneralUtility::makeInstance(\B13\Container\Tca\Registry::class)->configureConta
         'LLL:' . $packageKey . '' . $locallangBackendFile . ':grid-3-col-title',
         'LLL:' . $packageKey . '' . $locallangFile . ':ctype.col-3.desc',
         [
+            [
+                ['name' => 'header', 'colPos' => 300, 'colspan' => 3, 'allowed' => ['CType' => 'header, textmedia']]
+            ],
             [
                 ['name' => 'LLL:' . $packageKey . '' . $locallangBackendFile . ':grid-1', 'colPos' => 301],
                 ['name' => 'LLL:' . $packageKey . '' . $locallangBackendFile . '', 'colPos' => 302],
@@ -95,6 +103,9 @@ GeneralUtility::makeInstance(\B13\Container\Tca\Registry::class)->configureConta
         'LLL:' . $packageKey . '' . $locallangBackendFile . ':grid-4-col-title',
         'LLL:' . $packageKey . '' . $locallangFile . ':ctype.col-4.desc',
         [
+            [
+                ['name' => 'header', 'colPos' => 400, 'colspan' => 4, 'allowed' => ['CType' => 'header, textmedia']]
+            ],
             [
                 ['name' => 'LLL:' . $packageKey . '' . $locallangBackendFile . ':grid-1', 'colPos' => 401],
                 ['name' => 'LLL:' . $packageKey . '' . $locallangBackendFile . ':grid-2', 'colPos' => 402],

@@ -1,8 +1,13 @@
-<section id="c{data.uid}" class="container-xl d-block d-lg-flex px-0
+<section id="c{data.uid}" class="container-xl d-block px-0
 {f:if(condition: '{flexform.backgroundcolor} == 1', then: ' bg-primary text-white')}
 {f:if(condition: '{flexform.backgroundcolor} == 2', then: ' bg-secondary text-light')}
 {f:if(condition: '{flexform.backgroundcolor} == 3', then: ' bg-light text-dark')}
 " data-aos="zoom-in" data-aos-duration="2000">
+<f:if condition="{header1col}">
+    <f:for each="{header1col}" as="child">
+        <f:format.raw>{child.renderedContent}</f:format.raw>
+    </f:for>
+</f:if>
     <div class="g-0" >
     <f:for each="{sectionWrapper}" as="child">
         <f:format.raw>{child.renderedContent}</f:format.raw>

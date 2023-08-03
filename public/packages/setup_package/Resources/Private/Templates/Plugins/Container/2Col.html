@@ -1,9 +1,14 @@
-<div class="container-xl d-block d-lg-flex 
+<div class="container-xl 
 {f:if(condition: '{flexform.image} == 1', then: 'bg-container overflow-hidden g-0 position-relative c-uid-{data.uid}')}
 {f:if(condition: '{flexform.set-grid-frame} == 1', then: 'border border-dark reset-border')} 
 px-10 px-md-0 mt-20 mb-25 mt-md-40 mb-md-30"
  >
-
+ <f:if condition="{header2col}">
+    <f:for each="{header2col}" as="child">
+        <f:format.raw>{child.renderedContent}</f:format.raw>
+    </f:for>
+</f:if>
+<div class="d-block d-lg-flex">
 <f:if condition="{childrenLeft}">
     <div class="
         {f:if(condition: '{flexform.columnType} == cols-1-1', then: 'col-lg-6')}
@@ -32,7 +37,8 @@ px-10 px-md-0 mt-20 mb-25 mt-md-40 mb-md-30"
             <f:format.raw>{child.renderedContent}</f:format.raw>
         </f:for>
     </div>
-</f:if>  
+</f:if> 
+</div> 
 </div>
 <f:if condition="{flexform.image}">
 <f:asset.css identifier="container-bg-image" priority="true">
