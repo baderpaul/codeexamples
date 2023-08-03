@@ -1,11 +1,13 @@
 options{
     pageTree {
         showPageIdWithTitle = 1
+        backgroundColor {
+            2 = #cfe2ff
+            3 = #f8d7da
+            5 = #d1e7dd
+    }
     }
     clearCache.pages = 1
-    backgroundColor {
-
-    }
 }
 
 #
