@@ -61,10 +61,6 @@ page.10 {
             extKey = TEXT
             extKey.value = {$td.themeName}
         }
-
-        settings {
-            extKey = {$td.themeName}
-        }
 }
 
 lib.extKey = TEXT

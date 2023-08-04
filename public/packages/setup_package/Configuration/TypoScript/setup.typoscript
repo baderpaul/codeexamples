@@ -7,6 +7,6 @@
 // Plugins
 @import 'EXT:setup_package/Configuration/TypoScript/Setup/50-Plugins/Container.typoscript'
 @import 'EXT:setup_package/Configuration/TypoScript/Setup/50-Plugins/Mask.typoscript'
-@import 'EXT:setup_package/Configuration/TypoScript/Setup/50-Plugins/*.typoscript'
+//@import 'EXT:setup_package/Configuration/TypoScript/Setup/50-Plugins/*.typoscript'
 @import 'EXT:setup_package/Configuration/TypoScript/Setup/50-Plugins/TxNews.typoscript'
 @import 'EXT:setup_package/Configuration/TypoScript/Setup/50-Plugins/Form/*.typoscript'
