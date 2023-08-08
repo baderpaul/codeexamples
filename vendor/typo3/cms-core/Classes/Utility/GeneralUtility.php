@@ -925,6 +925,7 @@ class GeneralUtility
      *                   the last element containing the rest of string. If the limit parameter is negative, all components
      *                   except the last -limit are returned.
      * @return list<string> Exploded values
+     * @phpstan-return ($removeEmptyValues is true ? list<non-empty-string> : list<string>) Exploded values
      */
     public static function trimExplode($delim, $string, $removeEmptyValues = false, $limit = 0): array
     {
@@ -994,7 +995,7 @@ class GeneralUtility
      * then this method is for you.
      *
      * @param string $string GETvars string
-     * @return array<string, string> Array of values. All values AND keys are rawurldecoded() as they properly should be. But this means that any implosion of the array again must rawurlencode it!
+     * @return array<array-key, string> Array of values. All values AND keys are rawurldecoded() as they properly should be. But this means that any implosion of the array again must rawurlencode it!
      * @see implodeArrayForUrl()
      */
     public static function explodeUrl2Array($string)
@@ -1929,7 +1930,7 @@ class GeneralUtility
 
             foreach ($allowedFileExtensionArray as $allowedFileExtension) {
                 if (
-                    ($extensionList === ',,' || stripos($extensionList, ',' . substr($entry, strlen($allowedFileExtension) * -1, strlen($allowedFileExtension)) . ',') !== false)
+                    ($extensionList === ',,' || str_ends_with(mb_strtolower($entry), mb_strtolower('.' . $allowedFileExtension)))
                     && ($excludePattern === '' || !preg_match('/^' . $excludePattern . '$/', $entry))
                 ) {
                     if ($order !== 'mtime') {
@@ -2079,9 +2080,9 @@ class GeneralUtility
      * This might be handy to find out the real upload limit that is possible for this
      * TYPO3 installation.
      *
-     * @return int The maximum size of uploads that are allowed (measured in kilobytes)
+     * @return int Maximum size of uploads that are allowed in KiB (divider 1024)
      */
-    public static function getMaxUploadFileSize()
+    public static function getMaxUploadFileSize(): int
     {
         $uploadMaxFilesize = (string)ini_get('upload_max_filesize');
         $postMaxSize = (string)ini_get('post_max_size');
@@ -2092,7 +2093,7 @@ class GeneralUtility
         // If the total amount of post data is smaller (!) than the upload_max_filesize directive,
         // then this is the real limit in PHP
         $phpUploadLimit = $phpPostLimit > 0 && $phpPostLimit < $phpUploadLimit ? $phpPostLimit : $phpUploadLimit;
-        return floor($phpUploadLimit) / 1024;
+        return (int)(floor($phpUploadLimit) / 1024);
     }
 
     /**

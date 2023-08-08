@@ -17,7 +17,6 @@ declare(strict_types=1);
 
 namespace TYPO3\CMS\Backend\Controller\ContentElement;
 
-use Exception;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use TYPO3\CMS\Backend\Attribute\Controller;
@@ -96,7 +95,7 @@ class ElementInformationController
                 } else {
                     $this->row = BackendUtility::getRecordWSOL($this->table, $uid);
                     if ($this->row) {
-                        if (!empty($this->row['t3ver_oid'])) {
+                        if (isset($this->row['_ORIG_uid'])) {
                             // Make $uid the uid of the versioned record, while $this->row['uid'] is live record uid
                             $uid = (int)$this->row['_ORIG_uid'];
                         }
@@ -347,7 +346,7 @@ class ElementInformationController
                     unset($fieldList[$key]);
                 }
             }
-        } catch (Exception $exception) {
+        } catch (\Exception $exception) {
             $fieldList = [];
         }
 

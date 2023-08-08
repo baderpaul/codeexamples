@@ -41,9 +41,11 @@ class Policy
     public function __construct(SourceCollection|SourceInterface ...$sources)
     {
         $this->directives = new Map();
+        $directive = Directive::DefaultSrc;
         $collection = $this->asMergedSourceCollection(...$sources);
+        $collection = $this->purgeNonApplicableSources($directive, $collection);
         if (!$collection->isEmpty()) {
-            $this->directives[Directive::DefaultSrc] = $collection;
+            $this->directives[$directive] = $collection;
         }
     }
 
@@ -88,7 +90,8 @@ class Policy
     public function extend(Directive $directive, SourceCollection|SourceInterface ...$sources): self
     {
         $collection = $this->asMergedSourceCollection(...$sources);
-        if ($collection->isEmpty()) {
+        $collection = $this->purgeNonApplicableSources($directive, $collection);
+        if ($collection->isEmpty() && !$directive->isStandAlone()) {
             return $this;
         }
         foreach ($directive->getAncestors() as $ancestorDirective) {
@@ -121,6 +124,7 @@ class Policy
     public function set(Directive $directive, SourceCollection|SourceInterface ...$sources): self
     {
         $collection = $this->asMergedSourceCollection(...$sources);
+        $collection = $this->purgeNonApplicableSources($directive, $collection);
         return $this->changeDirectiveSources($directive, $collection);
     }
 
@@ -180,8 +184,8 @@ class Policy
             }
         }
         foreach ($directives as $directive => $collection) {
-            // applies implicit changes to sources in case 'strict-dynamic' is used
-            if ($collection->contains(SourceKeyword::strictDynamic)) {
+            // applies implicit changes to sources in case 'strict-dynamic' is used for applicable directives
+            if ($collection->contains(SourceKeyword::strictDynamic) && SourceKeyword::strictDynamic->isApplicable($directive)) {
                 $directives[$directive] = SourceKeyword::strictDynamic->applySourceImplications($collection) ?? $collection;
             }
         }
@@ -205,7 +209,7 @@ class Policy
         $service = GeneralUtility::makeInstance(ModelService::class, $cache);
         foreach ($this->prepare()->directives as $directive => $collection) {
             $directiveParts = $service->compileSources($nonce, $collection);
-            if ($directiveParts !== []) {
+            if ($directiveParts !== [] || $directive->isStandAlone()) {
                 array_unshift($directiveParts, $directive->value);
                 $policyParts[] = implode(' ', $directiveParts);
             }
@@ -265,7 +269,7 @@ class Policy
 
     protected function changeDirectiveSources(Directive $directive, SourceCollection $sources): self
     {
-        if ($sources->isEmpty()) {
+        if ($sources->isEmpty() && !$directive->isStandAlone()) {
             return $this;
         }
         $target = clone $this;
@@ -285,5 +289,14 @@ class Policy
             $target = $target->merge($collection);
         }
         return $target;
+    }
+
+    protected function purgeNonApplicableSources(Directive $directive, SourceCollection $collection): SourceCollection
+    {
+        $sources = array_filter(
+            $collection->sources,
+            static fn (SourceInterface $source): bool => $source instanceof SourceKeyword ? $source->isApplicable($directive) : true
+        );
+        return new SourceCollection(...$sources);
     }
 }

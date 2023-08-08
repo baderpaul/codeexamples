@@ -2274,13 +2274,13 @@ class TypoScriptFrontendController implements LoggerAwareInterface
             // If the split had a comment-end after 32 characters it's probably a split-string
             if (substr($contentPart, 32, 3) === '-->') {
                 $nonCacheableKey = 'INT_SCRIPT.' . substr($contentPart, 0, 32);
-                if (is_array($nonCacheableData[$nonCacheableKey])) {
+                if (is_array($nonCacheableData[$nonCacheableKey] ?? false)) {
                     $label = 'Include ' . $nonCacheableData[$nonCacheableKey]['type'];
                     $timeTracker->push($label);
                     $nonCacheableContent = '';
                     $contentObjectRendererForNonCacheable = unserialize($nonCacheableData[$nonCacheableKey]['cObj']);
                     if ($contentObjectRendererForNonCacheable instanceof ContentObjectRenderer) {
-                        $contentObjectRendererForNonCacheable->setRequest($request->withAttribute('currentContentObject', $contentObjectRendererForNonCacheable));
+                        $contentObjectRendererForNonCacheable->setRequest($request);
                         $nonCacheableContent = match ($nonCacheableData[$nonCacheableKey]['type']) {
                             'COA' => $contentObjectRendererForNonCacheable->cObjGetSingle('COA', $nonCacheableData[$nonCacheableKey]['conf']),
                             'FUNC' => $contentObjectRendererForNonCacheable->cObjGetSingle('USER', $nonCacheableData[$nonCacheableKey]['conf']),

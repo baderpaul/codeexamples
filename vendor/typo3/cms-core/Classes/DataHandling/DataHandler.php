@@ -19,6 +19,7 @@ use Doctrine\DBAL\Exception as DBALException;
 use Doctrine\DBAL\Platforms\PostgreSQL94Platform as PostgreSQLPlatform;
 use Doctrine\DBAL\Types\IntegerType;
 use Doctrine\DBAL\Types\JsonType;
+use Psr\Container\ContainerInterface;
 use Psr\EventDispatcher\EventDispatcherInterface;
 use Psr\Log\LoggerAwareInterface;
 use Psr\Log\LoggerAwareTrait;
@@ -35,6 +36,7 @@ use TYPO3\CMS\Core\Configuration\FlexForm\Exception\InvalidParentRowRootExceptio
 use TYPO3\CMS\Core\Configuration\FlexForm\Exception\InvalidPointerFieldValueException;
 use TYPO3\CMS\Core\Configuration\FlexForm\FlexFormTools;
 use TYPO3\CMS\Core\Configuration\Richtext;
+use TYPO3\CMS\Core\Core\Environment;
 use TYPO3\CMS\Core\Crypto\PasswordHashing\InvalidPasswordHashException;
 use TYPO3\CMS\Core\Crypto\PasswordHashing\PasswordHashFactory;
 use TYPO3\CMS\Core\Crypto\Random;
@@ -4426,13 +4428,15 @@ class DataHandler implements LoggerAwareInterface
                 $updateFields = [
                     $translationSourceFieldName => $newFieldValue,
                 ];
-                GeneralUtility::makeInstance(ConnectionPool::class)
-                    ->getConnectionForTable($table)
-                    ->update($table, $updateFields, ['uid' => (int)$languageSourceMap[$record['uid']]]);
-                if ($this->BE_USER->workspace > 0) {
+                if (isset($languageSourceMap[$record['uid']])) {
                     GeneralUtility::makeInstance(ConnectionPool::class)
                         ->getConnectionForTable($table)
-                        ->update($table, $updateFields, ['t3ver_oid' => (int)$languageSourceMap[$record['uid']], 't3ver_wsid' => $this->BE_USER->workspace]);
+                        ->update($table, $updateFields, ['uid' => (int)$languageSourceMap[$record['uid']]]);
+                    if ($this->BE_USER->workspace > 0) {
+                        GeneralUtility::makeInstance(ConnectionPool::class)
+                            ->getConnectionForTable($table)
+                            ->update($table, $updateFields, ['t3ver_oid' => (int)$languageSourceMap[$record['uid']], 't3ver_wsid' => $this->BE_USER->workspace]);
+                    }
                 }
             }
         }
@@ -4636,10 +4640,10 @@ class DataHandler implements LoggerAwareInterface
             // Save the position to which the original record is requested to be moved
             $originalRecordDestinationPid = $destPid;
             $sortInfo = $this->getSortNumber($table, $uid, $destPid);
-            // Setting the destPid to the new pid of the record.
-            $destPid = $sortInfo['pid'];
             // If not an array, there was an error (which is already logged)
             if (is_array($sortInfo)) {
+                // Setting the destPid to the new pid of the record.
+                $destPid = $sortInfo['pid'];
                 if ($table !== 'pages' || $this->destNotInsideSelf($destPid, $uid)) {
                     // clear cache before moving
                     $this->registerRecordIdForPageCacheClearing($table, $uid);
@@ -9361,6 +9365,12 @@ class DataHandler implements LoggerAwareInterface
 
                     // Delete Opcode Cache
                     GeneralUtility::makeInstance(OpcodeCacheService::class)->clearAllActive();
+
+                    // Delete DI Cache only on development context
+                    if (Environment::getContext()->isDevelopment()) {
+                        $container = GeneralUtility::makeInstance(ContainerInterface::class);
+                        $container->get('cache.di')->getBackend()->forceFlush();
+                    }
                 }
                 break;
         }
