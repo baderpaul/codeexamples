@@ -1,6 +1,7 @@
-# Container & Mask examples
+# Container, Mask & Content Block Examples
+Mit Bootstrap 5.3, Fluid
 
-## Containerexamples
+## Container Examples
 Vorgefertigte Codeschnipsel für TYPO3 >= 10 <= 12 Backendelemente mit Container & Mask.
 Über Flexform kann ein Rahmen oder Hintergrundgrafik in das Grid hinzugefügt werden.
 Kann Problemlos erweitert werden.
@@ -8,7 +9,7 @@ Kann Problemlos erweitert werden.
 ### Container - 1 Spalte
 * 100%
 
- ###  Container 2 Spalten 
+###  Container 2 Spalten 
 * 50% - 50%
 * 66.7% - 33.3%
 * 33.3% - 66.7%
@@ -24,3 +25,10 @@ Kann Problemlos erweitert werden.
  ### Container 4 Spalten     
 * 25% - 25% - 25% - 25% 
 
+## Mask Examples
+
+## Content Blocks Examples
+
+## Todos 
+* Check der default Frames von TYPO3 für die jeweiligen Elemente 
+* Anpassungen für Mobile, Tablet & PC -> Breakpoints
