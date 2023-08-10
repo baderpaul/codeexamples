@@ -1,4 +1,4 @@
-# Container, Mask & Content Block Examples
+# Container & Mask Examples
 Mit Bootstrap 5.3, Fluid
 
 ## Container Examples
@@ -26,8 +26,6 @@ Kann Problemlos erweitert werden.
 * 25% - 25% - 25% - 25% 
 
 ## Mask Examples
-
-## Content Blocks Examples
 
 ## Todos 
 * Check der default Frames von TYPO3 für die jeweiligen Elemente 
