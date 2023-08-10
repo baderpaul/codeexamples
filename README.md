@@ -22,7 +22,7 @@ Kann Problemlos erweitert werden.
 * 50% - 25% - 25%
 * 25% - 50% - 25%
 
- ### Container 4 Spalten     
+### Container 4 Spalten     
 * 25% - 25% - 25% - 25% 
 
 ## Mask Examples
