@@ -123,6 +123,8 @@ $spacers: (0: 0,
   //1000: $spacer * 62.50,
 );
 
+$grid-gutter-width: 0;
+
 // Guttermap usage == g-0
 $gutters: (0: 0,
   1: $spacer * .0625,
@@ -167,30 +169,27 @@ $font-style-normal: normal;
 $font-weight-600: 600;
 $font-weight-500: 500;
 
-// Font
-$font-family-sans-serif: 'Open Sans',
-sans-serif;
-$font-family-icon: 'Open Sans',
-sans-serif;
+// Fonthandling
+$font-family-base: 'Helvetica Neue';
 
-$font-size-base: .875rem;
-$font-size-sm: $font-size-base * .8125;
+$font-size-base: $spacer;
+$font-size-sm: $font-size-base * .875;
 $font-size-lg: $font-size-base * 1.25;
-$font-size-xlg: ($spacer * 1.875);
+$font-size-xlg: $font-size-base * 1.875;
 
-$font-size-nav: $spacer * 1.125;
-$font-size-nav-xl: $spacer * .9375;
-$font-size-nav-sub: $spacer * .9375;
+$font-size-nav: $font-size-base * 1.125;
+$font-size-nav-xl: $font-size-base * .9375;
+$font-size-nav-sub: $font-size-base * .9375;
 
 $lead-font-size: $font-size-base;
 $lead-font-weight: 400;
 
-$h1-font-size: $font-size-base * 3.125;
-$h2-font-size: $font-size-base * 2.5;
-$h3-font-size: $font-size-base * 1.0625;
-$h4-font-size: 1.5rem;
-$h5-font-size: $font-size-base * 1.125;
-$h6-font-size: $font-size-base;
+$h1-font-size: $font-size-base * 2.5;
+$h2-font-size: $font-size-base * 1.875;
+$h3-font-size: $font-size-base * 1.5;
+$h4-font-size: $font-size-base * 1.25;
+$h5-font-size: $font-size-base * 1.25;
+$h6-font-size: $font-size-base * 1.125;
 
 $font-sizes: (1: $h1-font-size,
   2: $h2-font-size,
@@ -212,10 +211,10 @@ $font-sizes: (1: $h1-font-size,
 $font-size-icon: $font-size-xlg;
 $list-inline-padding: 0;
 
-$line-height-base: 1.7;
-$line-height: 1.5;
-$line-height-lg: 1.9;
-$line-height-sm: 1.3;
+$line-height-base: 1.4;
+$line-height: 1.2;
+$line-height-lg: 1.6;
+$line-height-sm: 1.2;
 
 // headings-variables
 $headings-margin-bottom: 0;

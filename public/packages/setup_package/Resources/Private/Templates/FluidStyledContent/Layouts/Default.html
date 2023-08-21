@@ -2,7 +2,10 @@
     <f:if condition="{data.frame_class} != none">
         <f:then>
             <div id="c{data.uid}"
-                 class="frame frame-type-{data.CType}">
+                 class="frame frame-type-{data.CType}
+                        {f:if(condition: '{data.layout} == 1', then:' container-md')}
+                        {f:if(condition: '{data.layout} == 2', then:' container-xl')}
+                        {f:if(condition: '{data.layout} == 3', then:' container-fluid')} mb-20">
                 <f:if condition="{data._LOCALIZED_UID}">
                     <a id="c{data._LOCALIZED_UID}"></a>
                 </f:if>

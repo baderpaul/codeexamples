@@ -403,16 +403,16 @@
         },
         {
             "name": "doctrine/dbal",
-            "version": "3.6.5",
+            "version": "3.6.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/dbal.git",
-                "reference": "96d5a70fd91efdcec81fc46316efc5bf3da17ddf"
+                "reference": "63646ffd71d1676d2f747f871be31b7e921c7864"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/dbal/zipball/96d5a70fd91efdcec81fc46316efc5bf3da17ddf",
-                "reference": "96d5a70fd91efdcec81fc46316efc5bf3da17ddf",
+                "url": "https://api.github.com/repos/doctrine/dbal/zipball/63646ffd71d1676d2f747f871be31b7e921c7864",
+                "reference": "63646ffd71d1676d2f747f871be31b7e921c7864",
                 "shasum": ""
             },
             "require": {
@@ -428,10 +428,11 @@
                 "doctrine/coding-standard": "12.0.0",
                 "fig/log-test": "^1",
                 "jetbrains/phpstorm-stubs": "2023.1",
-                "phpstan/phpstan": "1.10.21",
+                "phpstan/phpstan": "1.10.29",
                 "phpstan/phpstan-strict-rules": "^1.5",
                 "phpunit/phpunit": "9.6.9",
                 "psalm/plugin-phpunit": "0.18.4",
+                "slevomat/coding-standard": "8.13.1",
                 "squizlabs/php_codesniffer": "3.7.2",
                 "symfony/cache": "^5.4|^6.0",
                 "symfony/console": "^4.4|^5.4|^6.0",
@@ -495,7 +496,7 @@
             ],
             "support": {
                 "issues": "https://github.com/doctrine/dbal/issues",
-                "source": "https://github.com/doctrine/dbal/tree/3.6.5"
+                "source": "https://github.com/doctrine/dbal/tree/3.6.6"
             },
             "funding": [
                 {
@@ -511,7 +512,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2023-07-17T09:15:50+00:00"
+            "time": "2023-08-17T05:38:17+00:00"
         },
         {
             "name": "doctrine/deprecations",
@@ -1428,16 +1429,16 @@
         },
         {
             "name": "mask/mask",
-            "version": "v8.3.0",
+            "version": "v8.3.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Gernott/mask.git",
-                "reference": "efb44fc91a22edb3df60deb27bfe76332726023f"
+                "reference": "103f7410d5c92a6a7d0739d26a6b0322cd748285"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Gernott/mask/zipball/efb44fc91a22edb3df60deb27bfe76332726023f",
-                "reference": "efb44fc91a22edb3df60deb27bfe76332726023f",
+                "url": "https://api.github.com/repos/Gernott/mask/zipball/103f7410d5c92a6a7d0739d26a6b0322cd748285",
+                "reference": "103f7410d5c92a6a7d0739d26a6b0322cd748285",
                 "shasum": ""
             },
             "require": {
@@ -1520,7 +1521,7 @@
                     "type": "WEBprofil - Gernot Ploiner e.U. (Founder)"
                 }
             ],
-            "time": "2023-08-09T09:10:08+00:00"
+            "time": "2023-08-21T08:03:15+00:00"
         },
         {
             "name": "masterminds/html5",
@@ -5744,16 +5745,16 @@
         },
         {
             "name": "typo3/cms-cli",
-            "version": "3.1.0",
+            "version": "3.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/TYPO3/cms-cli.git",
-                "reference": "1572143c88ec08d238e417de55c9813fb949e783"
+                "reference": "d8947732ff5a6dc52829e88cb1c761124475c0e8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/TYPO3/cms-cli/zipball/1572143c88ec08d238e417de55c9813fb949e783",
-                "reference": "1572143c88ec08d238e417de55c9813fb949e783",
+                "url": "https://api.github.com/repos/TYPO3/cms-cli/zipball/d8947732ff5a6dc52829e88cb1c761124475c0e8",
+                "reference": "d8947732ff5a6dc52829e88cb1c761124475c0e8",
                 "shasum": ""
             },
             "require": {
@@ -5771,9 +5772,9 @@
             "homepage": "https://typo3.org",
             "support": {
                 "issues": "https://github.com/TYPO3/cms-cli/issues",
-                "source": "https://github.com/TYPO3/cms-cli/tree/3.1.0"
+                "source": "https://github.com/TYPO3/cms-cli/tree/3.1.1"
             },
-            "time": "2021-03-01T12:18:57+00:00"
+            "time": "2023-08-15T10:14:53+00:00"
         },
         {
             "name": "typo3/cms-composer-installers",
