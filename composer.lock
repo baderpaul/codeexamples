@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "276f796615305817a165a0eeb1546488",
+    "content-hash": "d108d371353a1a23464098647ea3a41f",
     "packages": [
         {
             "name": "b13/container",
@@ -6800,6 +6800,64 @@
             "support": {
                 "chat": "https://typo3.org/help",
                 "docs": "https://docs.typo3.org/c/typo3/cms-reactions/main/en-us/",
+                "issues": "https://forge.typo3.org",
+                "source": "https://github.com/typo3/typo3"
+            },
+            "time": "2023-08-08T06:25:16+00:00"
+        },
+        {
+            "name": "typo3/cms-recycler",
+            "version": "v12.4.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/TYPO3-CMS/recycler.git",
+                "reference": "25e3479854fb54da99ce50bc94e31f1e56281a00"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/TYPO3-CMS/recycler/zipball/25e3479854fb54da99ce50bc94e31f1e56281a00",
+                "reference": "25e3479854fb54da99ce50bc94e31f1e56281a00",
+                "shasum": ""
+            },
+            "require": {
+                "typo3/cms-core": "12.4.5"
+            },
+            "conflict": {
+                "typo3/cms": "*"
+            },
+            "suggest": {
+                "typo3/cms-scheduler": "Remove deleted records after given time"
+            },
+            "type": "typo3-cms-framework",
+            "extra": {
+                "branch-alias": {
+                    "dev-main": "12.4.x-dev"
+                },
+                "typo3/cms": {
+                    "extension-key": "recycler"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "TYPO3\\CMS\\Recycler\\": "Classes/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "TYPO3 Core Team",
+                    "email": "typo3cms@typo3.org",
+                    "role": "Developer"
+                }
+            ],
+            "description": "TYPO3 CMS Recycler - Restore deleted records or remove them from the database permanently.",
+            "homepage": "https://typo3.org",
+            "support": {
+                "chat": "https://typo3.org/help",
+                "docs": "https://docs.typo3.org/c/typo3/cms-recycler/main/en-us/",
                 "issues": "https://forge.typo3.org",
                 "source": "https://github.com/typo3/typo3"
             },
