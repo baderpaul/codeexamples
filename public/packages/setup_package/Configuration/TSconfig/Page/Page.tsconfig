@@ -36,19 +36,19 @@ TCEFORM.tt_content {
     # layouts in ce
     layout {
         disabled = 0
-        #removeItems = 0,1,2,3
-        altLabels {
-            0 = Fullscreenansicht wählen
-            1 = Fullscreen nur Mobile
-            2 = Fullscreen nur Mobile/Tablet
-            3 = Fullscreen von Mobile bis Desktop
-        }
-        #addItems {
+        removeItems = 0,1,2,3
+        #altLabels {
         #    0 = Fullscreenansicht wählen
         #    1 = Fullscreen nur Mobile
         #    2 = Fullscreen nur Mobile/Tablet
-        #    3 = Fullscreen von Mobile bis Desktop
+        #   3 = Fullscreen von Mobile bis Desktop
         #}
+        addItems {
+            10 = Ohne Layout
+            11 = Fullscreen nur Mobile
+            12 = Fullscreen nur Mobile/Tablet
+            13 = Fullscreen von Mobile bis Desktop
+        }
     }
     # owen frames in ce - the same as section_frame before TYPO3 7.6
     #frame_class {

@@ -3,9 +3,11 @@
         <f:then>
             <div id="c{data.uid}"
                  class="frame frame-type-{data.CType}
-                        {f:if(condition: '{data.layout} == 1', then:' container-md')}
-                        {f:if(condition: '{data.layout} == 2', then:' container-xl')}
-                        {f:if(condition: '{data.layout} == 3', then:' container-fluid')} mb-20">
+                        {f:if(condition: '{data.layout} == 11', then:' container-md')}
+                        {f:if(condition: '{data.layout} == 12', then:' container-xl')}
+                        {f:if(condition: '{data.layout} == 13', then:' container-fluid')}
+                        {f:if(condition: '{data.CType} == textmedia', then:' px-15 px-md-0 mx-md-0')} 
+                        mb-20">
                 <f:if condition="{data._LOCALIZED_UID}">
                     <a id="c{data._LOCALIZED_UID}"></a>
                 </f:if>
@@ -52,4 +54,5 @@
 
         </f:else>
     </f:if>
+    <f:comment><f:debug>{_all}</f:debug></f:comment>
 </html>
