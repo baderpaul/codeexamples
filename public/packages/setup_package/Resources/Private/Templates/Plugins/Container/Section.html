@@ -1,14 +1,15 @@
-<section id="c{data.uid}" class="container-xl d-block px-0
+<section id="c{data.uid}" class="d-block
+{f:if(condition: '{data.layout} == 0', then: ' container-fluid')}
+{f:if(condition: '{data.layout} == 11 || {data.layout} == 12 || {data.layout} == 13', then:' px-30 py-15')}
 {f:if(condition: '{flexform.backgroundcolor} == 1', then: ' bg-primary text-white')}
 {f:if(condition: '{flexform.backgroundcolor} == 2', then: ' bg-secondary text-light')}
-{f:if(condition: '{flexform.backgroundcolor} == 3', then: ' bg-light text-dark')}
-" data-aos="zoom-in" data-aos-duration="2000">
+{f:if(condition: '{flexform.backgroundcolor} == 3', then: ' bg-light text-dark')}">
 <f:if condition="{header1col}">
     <f:for each="{header1col}" as="child">
         <f:format.raw>{child.renderedContent}</f:format.raw>
     </f:for>
 </f:if>
-    <div class="g-0" >
+    <div class="g-0">
     <f:for each="{sectionWrapper}" as="child">
         <f:format.raw>{child.renderedContent}</f:format.raw>
     </f:for>

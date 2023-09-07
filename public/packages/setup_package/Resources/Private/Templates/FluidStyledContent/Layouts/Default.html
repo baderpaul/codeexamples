@@ -3,11 +3,12 @@
         <f:then>
             <div id="c{data.uid}"
                  class="frame frame-type-{data.CType}
+                        {f:if(condition: '{data.layout} == 10', then:' container-sm mx-0')}
                         {f:if(condition: '{data.layout} == 11', then:' container-md')}
                         {f:if(condition: '{data.layout} == 12', then:' container-xl')}
                         {f:if(condition: '{data.layout} == 13', then:' container-fluid')}
-                        {f:if(condition: '{data.CType} == textmedia', then:' px-15 px-md-0 mx-md-0')} 
-                        mb-20">
+                        {f:if(condition: '{data.CType} == textmedia', then:' px-0 px-sm-0 mx-lg-0')} 
+                        mb-md-20">
                 <f:if condition="{data._LOCALIZED_UID}">
                     <a id="c{data._LOCALIZED_UID}"></a>
                 </f:if>

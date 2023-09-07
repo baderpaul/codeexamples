@@ -1,4 +1,4 @@
-h1,
+/*h1,
 h2,
 h3 {
     font-weight: $headings-font-weight-light;
@@ -18,7 +18,7 @@ h3 {
 
 h3 {
     font-weight: $font-weight-600;
-}
+}*/
 
 .bg-primary h1,
 .bg-primary h2,
@@ -28,7 +28,7 @@ h3 {
         border: 1px solid $white;
     }
 }
-
+/*
 .frame-type-list header h3 {
     @extend #{'.fs-17','.pb-10','.text-uppercase','.border-bottom','.w-100','.mb-20'};
     font-weight: $font-weight-500;
@@ -88,9 +88,9 @@ ul.checkmarks li:before {
         line-height: $line-height-lg;
     }
 }
-
+*/
 /* bg images with plugin container & CType media  - reset padding around the headline in ce */
-
+/*
 .bg-container { 
     .frame {
         padding: 0 !important;
@@ -146,7 +146,7 @@ ul.checkmarks li:before {
 .text-shadow-dark {
     text-shadow: 1px 1px 1px $black;
 }   
-/*
+
 .list-square {
     list-style-type: square;
 }

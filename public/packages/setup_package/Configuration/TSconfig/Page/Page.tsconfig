@@ -44,9 +44,10 @@ TCEFORM.tt_content {
         #   3 = Fullscreen von Mobile bis Desktop
         #}
         addItems {
-            10 = Ohne Layout
-            11 = Fullscreen nur Mobile
-            12 = Fullscreen nur Mobile/Tablet
+            9 =  Keine Auswahl
+            10 = Fullscreen Mobile Portrait SM 
+            11 = Fullscreen Mobile MD
+            12 = Fullscreen Mobile/Tablet LG
             13 = Fullscreen von Mobile bis Desktop
         }
     }
