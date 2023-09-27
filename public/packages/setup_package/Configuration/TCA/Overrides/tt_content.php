@@ -21,7 +21,7 @@ GeneralUtility::makeInstance(\B13\Container\Tca\Registry::class)->configureConta
         'LLL:' . $packageKey . '' . $locallangFile . ':ctype.section.desc',
         [
             [
-            ['name' => 'header2col', 'colPos' => 500, 'allowed' => ['CType' => 'header, textmedia']]
+            ['name' => 'header1col', 'colPos' => 500, 'allowed' => ['CType' => 'header, textmedia']]
             ],
             [
                 ['name' => 'LLL:' . $packageKey . '' . $locallangBackendFile . ':grid-1', 'colPos' => 501]

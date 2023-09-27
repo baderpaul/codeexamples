@@ -248,6 +248,10 @@
             <source>Spaltenelemente mit Rahmen anzeigen</source>
             </trans-unit>
 
+            <trans-unit id="no-bottom-space">
+            <source>Section ohne Abstand nach unten.</source>
+            </trans-unit>
+
             <trans-unit id="set-backgroundcolor">
             <source>Hintergrundfarbe für Section auswählen </source>
             </trans-unit>
