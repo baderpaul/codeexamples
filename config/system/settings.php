@@ -34,9 +34,6 @@ return [
             'loginLogo' => '',
             'loginLogoAlt' => '',
         ],
-        'db_rector' => [
-            'ignoreTYPO3Context' => '1',
-        ],
         'extensionmanager' => [
             'automaticInstallation' => '1',
             'offlineMode' => '0',
