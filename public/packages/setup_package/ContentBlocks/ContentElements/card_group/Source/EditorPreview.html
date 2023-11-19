@@ -9,11 +9,11 @@
 
 <div class="cb-card-group">
     <f:if condition="{data.card_group_item}">
-        <div class="card-group-element card-group-element-align-{data.settings.alignment} card-group-element-columns-{data.settings.rowItems}">
+        <div class="card-group-element card-group-element-align-{data.settings.alignment} card-group-element-columns-{data.settings.row_items}">
             <f:for each="{data.card_group_item}" as="item" iteration="iteration">
 
                 <div class="card-group-element-item">
-                    <be:link.editRecord uid="{item.uid}" table="example_card_group_card_group_item">
+                    <be:link.editRecord uid="{item.uid}" table="{item.tableName}">
                         <div class="card">
                             <f:if condition="{item.image.0}">
                                 <div class="card-img-top">
@@ -30,8 +30,8 @@
                             </div>
                             <f:if condition="{item.link}">
                                 <f:variable name="link_title">
-                                    <f:if condition="{item.linkTitle}">
-                                        <f:then>{item.linkTitle}</f:then>
+                                    <f:if condition="{item.link_title}">
+                                        <f:then>{item.link_title}</f:then>
                                         <f:else><cb:translate key="readmore"/></f:else>
                                     </f:if>
                                 </f:variable>
