@@ -1,0 +1,15 @@
+name: techdivision/btslider
+title: techdivision/btslider
+description: 'Description for Content Element techdivision/btslider'
+group: common
+prefixFields: true
+prefixType: full
+fields:
+  -
+    identifier: header
+    useExistingField: true
+    label: 'Pluginbeschreibung für TYPO3 BE'
+  - identifier: subheader
+    useExistingField: true
+    label: 'Custom header label'
+  
