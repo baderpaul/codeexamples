@@ -40,7 +40,7 @@ return [
         ],
         'mask' => [
             'backend' => 'EXT:setup_package/Resources/Private/Templates/Plugins/Mask/Backend/Preview/',
-            'backend_layouts_folder' => 'EXT:setup_package/Configuration/Mask/BackendLayouts/',
+            'backend_layouts_folder' => 'EXT:setup_package/Configuration/Mask/Backend/',
             'backendlayout_pids' => '0',
             'content' => 'EXT:setup_package/Resources/Private/Templates/Plugins/Mask/',
             'content_elements_folder' => 'EXT:setup_package/Configuration/Mask/ContentElements/',
@@ -49,7 +49,7 @@ return [
             'layouts_backend' => 'EXT:setup_package/Resources/Private/Templates/Plugins/Mask/Backend/',
             'loader_identifier' => 'json-split',
             'override_shared_fields' => '0',
-            'partials' => 'EXT:setup_package/Resources/Private/Templates/Plugins/Mask/',
+            'partials' => 'EXT:setup_package/Resources/Private/Templates/Plugins/Mask/Partials/',
             'partials_backend' => 'EXT:setup_package/Resources/Private/Templates/Plugins/Mask/Backend/',
             'preview' => 'EXT:setup_package/Resources/Private/Templates/Plugins/Mask/Backend/',
         ],
@@ -133,5 +133,6 @@ return [
             'security.usePasswordPolicyForFrontendUsers' => true,
         ],
         'sitename' => 'New TYPO3 site',
+        'systemLocale' => 'de_DE.UTF-8',
     ],
 ];

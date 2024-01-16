@@ -1,15 +1,44 @@
 name: techdivision/btslider
 title: techdivision/btslider
-description: 'Description for Content Element techdivision/btslider'
-group: common
+description: 'Carousel/Imageslider width Bootstrap'
+basics:
+     - TYPO3/Appearance
+     - TYPO3/Links
+#group: common
 prefixFields: true
 prefixType: full
 fields:
-  -
-    identifier: header
+  - identifier: header
     useExistingField: true
-    label: 'Pluginbeschreibung für TYPO3 BE'
-  - identifier: subheader
-    useExistingField: true
-    label: 'Custom header label'
-  
+    label: Pluginbeschreibung für TYPO3 BE
+  - identifier: tab_1
+    type: Tab
+  - identifier: palette_1
+    type: Palette
+    label: Palette 1
+    description: My palette description
+    fields:
+      - identifier: modus
+        type: Select
+        renderType: selectMultipleSideBySide
+        maxitems: 1
+        items:
+        - label: slide
+          value: 1
+        - label: fade
+          value: 2
+      - type: Linebreak      
+      - identifier: control
+        type: Checkbox
+        renderType: checkboxToggle
+        default: 0
+  - identifier: tab_2
+    type: Tab
+  - identifier: palette_2
+    type: Palette
+    label: Slideimages anlegen
+    fields:
+      - identifier: image
+        type: File
+        maxtems: 1
+        allowed: common-image-types
