@@ -49,7 +49,7 @@ return [
             'layouts_backend' => 'EXT:setup_package/Resources/Private/Templates/Plugins/Mask/Backend/',
             'loader_identifier' => 'json-split',
             'override_shared_fields' => '0',
-            'partials' => 'EXT:setup_package/Resources/Private/Templates/Plugins/Mask/Partials/',
+            'partials' => 'EXT:setup_package/Resources/Private/Templates/Plugins/Mask/',
             'partials_backend' => 'EXT:setup_package/Resources/Private/Templates/Plugins/Mask/Backend/',
             'preview' => 'EXT:setup_package/Resources/Private/Templates/Plugins/Mask/Backend/',
         ],
