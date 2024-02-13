@@ -68,8 +68,8 @@ TCEFORM.tt_content {
     }
 
     # disable space before/after - can be a problem width beusers and responsive pages
-    space_before_class.disabled = 1
-    space_after_class.disabled = 1
+    space_before_class.disabled = 0
+    space_after_class.disabled = 0
 
     # Reduce header layouts
     header_layout.removeItems = 0,5

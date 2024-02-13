@@ -2,7 +2,9 @@
     <f:if condition="{data.frame_class} != none">
         <f:then>
             <div id="c{data.uid}"
-                 class="frame frame-type-{data.CType}
+                 class="frame frame-type-{data.CType} frame-layout-{data.layout}
+                 {f:if(condition: data.space_before_class, then: ' frame-space-before-{data.space_before_class}')}
+                 {f:if(condition: data.space_after_class, then: ' frame-space-after-{data.space_after_class}')}
                         {f:if(condition: '{data.layout} == 10', then:' container-sm mx-0')}
                         {f:if(condition: '{data.layout} == 11', then:' container-md')}
                         {f:if(condition: '{data.layout} == 12', then:' container-xl')}
