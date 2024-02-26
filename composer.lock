@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c4aaeca97378e783568d443ef648b6b8",
+    "content-hash": "4cbee38d06331acaeb3634cadcf93d7b",
     "packages": [
         {
             "name": "b13/container",
@@ -184,23 +184,24 @@
         },
         {
             "name": "contentblocks/content-blocks",
-            "version": "0.5.2",
+            "version": "0.6.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nhovratov/content-blocks.git",
-                "reference": "4a156a6f6159dc49131ec2d320af4dd2f790925e"
+                "reference": "c19f63088be8f7b918b2d10981867e38363f5479"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nhovratov/content-blocks/zipball/4a156a6f6159dc49131ec2d320af4dd2f790925e",
-                "reference": "4a156a6f6159dc49131ec2d320af4dd2f790925e",
+                "url": "https://api.github.com/repos/nhovratov/content-blocks/zipball/c19f63088be8f7b918b2d10981867e38363f5479",
+                "reference": "c19f63088be8f7b918b2d10981867e38363f5479",
                 "shasum": ""
             },
             "require": {
-                "typo3/cms-backend": "^12.4",
-                "typo3/cms-core": "^12.4",
-                "typo3/cms-fluid": "^12.4",
-                "typo3/cms-frontend": "^12.4"
+                "symfony/var-exporter": "^6.4 || ^7.0",
+                "typo3/cms-backend": "^12.4.11",
+                "typo3/cms-core": "^12.4.11",
+                "typo3/cms-fluid": "^12.4.11",
+                "typo3/cms-frontend": "^12.4.11"
             },
             "conflict": {
                 "typo3/cms": "*"
@@ -215,14 +216,14 @@
                 "friendsoftypo3/phpstan-typo3": "^0.9.0",
                 "phpstan/phpstan": "^1.10.22",
                 "phpstan/phpstan-phpunit": "^1.3.13",
-                "typo3/cms-extbase": "^12.4",
-                "typo3/cms-extensionmanager": "^12.4",
-                "typo3/cms-filelist": "^12.4",
-                "typo3/cms-install": "^12.4",
-                "typo3/cms-lowlevel": "^12.4",
-                "typo3/cms-rte-ckeditor": "^12.4",
-                "typo3/cms-tstemplate": "^12.4",
-                "typo3/cms-workspaces": "^12.4",
+                "typo3/cms-extbase": "^12.4.11",
+                "typo3/cms-extensionmanager": "^12.4.11",
+                "typo3/cms-filelist": "^12.4.11",
+                "typo3/cms-install": "^12.4.11",
+                "typo3/cms-lowlevel": "^12.4.11",
+                "typo3/cms-rte-ckeditor": "^12.4.11",
+                "typo3/cms-tstemplate": "^12.4.11",
+                "typo3/cms-workspaces": "^12.4.11",
                 "typo3/coding-standards": "^0.7",
                 "typo3/testing-framework": "^8.0"
             },
@@ -235,6 +236,7 @@
                     "web-dir": ".Build/public",
                     "extension-key": "content_blocks",
                     "Package": {
+                        "serviceProvider": "TYPO3\\CMS\\ContentBlocks\\ServiceProvider",
                         "partOfFactoryDefault": false
                     }
                 }
@@ -263,7 +265,7 @@
                 "issues": "https://forge.typo3.org",
                 "source": "https://github.com/typo3/typo3"
             },
-            "time": "2024-02-03T16:17:11+00:00"
+            "time": "2024-02-25T15:11:21+00:00"
         },
         {
             "name": "dasprid/enum",
@@ -2121,21 +2123,21 @@
         },
         {
             "name": "phpdocumentor/type-resolver",
-            "version": "1.8.1",
+            "version": "1.8.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpDocumentor/TypeResolver.git",
-                "reference": "bc3dc91a5e9b14aa06d1d9e90647c5c5a2cc5353"
+                "reference": "153ae662783729388a584b4361f2545e4d841e3c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpDocumentor/TypeResolver/zipball/bc3dc91a5e9b14aa06d1d9e90647c5c5a2cc5353",
-                "reference": "bc3dc91a5e9b14aa06d1d9e90647c5c5a2cc5353",
+                "url": "https://api.github.com/repos/phpDocumentor/TypeResolver/zipball/153ae662783729388a584b4361f2545e4d841e3c",
+                "reference": "153ae662783729388a584b4361f2545e4d841e3c",
                 "shasum": ""
             },
             "require": {
                 "doctrine/deprecations": "^1.0",
-                "php": "^7.4 || ^8.0",
+                "php": "^7.3 || ^8.0",
                 "phpdocumentor/reflection-common": "^2.0",
                 "phpstan/phpdoc-parser": "^1.13"
             },
@@ -2173,22 +2175,22 @@
             "description": "A PSR-5 based resolver of Class names, Types and Structural Element Names",
             "support": {
                 "issues": "https://github.com/phpDocumentor/TypeResolver/issues",
-                "source": "https://github.com/phpDocumentor/TypeResolver/tree/1.8.1"
+                "source": "https://github.com/phpDocumentor/TypeResolver/tree/1.8.2"
             },
-            "time": "2024-01-18T19:15:27+00:00"
+            "time": "2024-02-23T11:10:43+00:00"
         },
         {
             "name": "phpstan/phpdoc-parser",
-            "version": "1.25.0",
+            "version": "1.26.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpstan/phpdoc-parser.git",
-                "reference": "bd84b629c8de41aa2ae82c067c955e06f1b00240"
+                "reference": "231e3186624c03d7e7c890ec662b81e6b0405227"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpstan/phpdoc-parser/zipball/bd84b629c8de41aa2ae82c067c955e06f1b00240",
-                "reference": "bd84b629c8de41aa2ae82c067c955e06f1b00240",
+                "url": "https://api.github.com/repos/phpstan/phpdoc-parser/zipball/231e3186624c03d7e7c890ec662b81e6b0405227",
+                "reference": "231e3186624c03d7e7c890ec662b81e6b0405227",
                 "shasum": ""
             },
             "require": {
@@ -2220,9 +2222,9 @@
             "description": "PHPDoc parser with support for nullable, intersection and generic types",
             "support": {
                 "issues": "https://github.com/phpstan/phpdoc-parser/issues",
-                "source": "https://github.com/phpstan/phpdoc-parser/tree/1.25.0"
+                "source": "https://github.com/phpstan/phpdoc-parser/tree/1.26.0"
             },
-            "time": "2024-01-04T17:06:16+00:00"
+            "time": "2024-02-23T16:05:55+00:00"
         },
         {
             "name": "psr/cache",
