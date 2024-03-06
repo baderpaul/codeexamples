@@ -14,8 +14,10 @@ $newFields = [
             'renderType' => 'checkboxToggle',
             'items' => [
                 [
-                    0 => '',
-                    1 => '',
+                    'label' => '0',
+                    'value' => '',
+                    'label' => '1',
+                    'value' => '',
                 ]
             ],
         ]
