@@ -1,0 +1,73 @@
+name: twoh/person-element
+title: twoh/person-element
+description: 'This is a basic Text Content Element'
+group: common
+prefixFields: false
+fields:
+  - identifier: hideOnMobile
+    type: Checkbox
+    renderType: checkboxToggle
+    default: 0
+
+  - identifier: marginPos
+    type: Select
+    renderType: selectSingle
+    size: 1
+    itemsProcFunc: TWOH\TwohKickstarter\UserFunctions\AtomElementRenderer->renderMarginPosValues
+    onChange: reload
+
+  - identifier: margin
+    type: Select
+    renderType: selectSingle
+    size: 1
+    itemsProcFunc: TWOH\TwohKickstarter\UserFunctions\AtomElementRenderer->renderMarginValues
+    displayCond: FIELD:marginPos:!=:0
+
+  - identifier: textColor
+    type: Select
+    renderType: selectSingle
+    size: 1
+    itemsProcFunc: TWOH\TwohKickstarter\UserFunctions\AtomElementRenderer->renderTextColors
+
+  - identifier: bgColor
+    type: Select
+    renderType: selectSingle
+    size: 1
+    itemsProcFunc: TWOH\TwohKickstarter\UserFunctions\AtomElementRenderer->renderBackgroundColors
+
+  - identifier: aspectRatio
+    type: Select
+    renderType: selectSingle
+    size: 1
+    itemsProcFunc: TWOH\TwohKickstarter\UserFunctions\AtomElementRenderer->renderAspectRatioValues
+    default: '1 / 1'
+
+  - identifier: header
+    useExistingField: true
+
+  - identifier: contact
+    type: Select
+    renderType: selectSingle
+    size: 1
+    itemsProcFunc: TWOH\TwohKickstarter\UserFunctions\AtomElementRenderer->renderContacts
+
+  - identifier: url
+    type: Link
+    autocomplete: true
+    allowedTypes:
+      - page
+      - url
+      - file
+    required: true
+
+  - identifier: iconColor
+    type: Select
+    renderType: selectSingle
+    size: 1
+    itemsProcFunc: TWOH\TwohKickstarter\UserFunctions\AtomElementRenderer->renderIconColors
+
+  - identifier: icon
+    type: Select
+    renderType: selectSingle
+    size: 1
+    itemsProcFunc: TWOH\TwohKickstarter\UserFunctions\AtomElementRenderer->renderIcons

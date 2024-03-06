@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+	<file datatype="plaintext" original="Labels.xlf" source-language="en" target-language="de" date="2024-02-01T11:17:02+00:00" product-name="twoh/counter-element">
+		<header/>
+		<body>
+			<trans-unit id="title">
+				<target>Zähler Element</target>
+			</trans-unit>
+			<trans-unit id="description">
+				<target>Dies ist ein grundlegendes Zähler-Inhaltselement</target>
+			</trans-unit>
+			<trans-unit id="header.label">
+				<target>Benutzerdefiniertes Header-Label</target>
+			</trans-unit>
+			<trans-unit id="hideOnMobile.label">
+				<target>Auf dem mobilen Gerät ausblenden</target>
+			</trans-unit>
+			<trans-unit id="marginPos.label">
+				<target>Position des Abstands</target>
+			</trans-unit>
+			<trans-unit id="margin.label">
+				<target>Abstand</target>
+			</trans-unit>
+			<trans-unit id="textColor.label">
+				<target>Textfarbe</target>
+			</trans-unit>
+			<trans-unit id="icon.label">
+				<target>Icon</target>
+			</trans-unit>
+			<trans-unit id="iconColor.label">
+				<target>Icon-Farbe</target>
+			</trans-unit>
+			<trans-unit id="amount.label">
+				<target>Menge</target>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

@@ -1,0 +1,46 @@
+name: twoh/sliderimage-element
+title: twoh/sliderimage-element
+description: 'This is a basic Image Content Element'
+group: common
+prefixFields: false
+fields:
+  - identifier: hideOnMobile
+    type: Checkbox
+    renderType: checkboxToggle
+    default: 0
+
+  - identifier: marginPos
+    type: Select
+    renderType: selectSingle
+    size: 1
+    itemsProcFunc: TWOH\TwohKickstarter\UserFunctions\AtomElementRenderer->renderMarginPosValues
+    onChange: reload
+
+  - identifier: margin
+    type: Select
+    renderType: selectSingle
+    size: 1
+    itemsProcFunc: TWOH\TwohKickstarter\UserFunctions\AtomElementRenderer->renderMarginValues
+    displayCond: FIELD:marginPos:!=:0
+
+  - identifier: header
+    useExistingField: true
+
+  - identifier: aspectRatio
+    type: Select
+    renderType: selectSingle
+    size: 1
+    itemsProcFunc: TWOH\TwohKickstarter\UserFunctions\AtomElementRenderer->renderAspectRatioValues
+    default: '16 / 9'
+
+  - identifier: gradient
+    type: Select
+    renderType: selectSingle
+    size: 1
+    itemsProcFunc: TWOH\TwohKickstarter\UserFunctions\AtomElementRenderer->renderGradient
+
+  - identifier: media
+    useExistingField: true
+    allowed: common-image-types
+    maxitems: 1
+    required: true

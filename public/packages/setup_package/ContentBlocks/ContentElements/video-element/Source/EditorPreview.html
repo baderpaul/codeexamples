@@ -1,0 +1,11 @@
+<cb:asset.css identifier="content-block-video-element-twoh/video-element-be" file="EditorPreview.css"/>
+
+<table>
+    <tr>
+        <td>
+            <f:for each="{data.media}" as="video">
+                <f:media file="{video}" additionalConfig="{loop: '{data.loop}', autoplay: '{data.autoplay}'}" />
+            </f:for>
+        </td>
+    </tr>
+</table>

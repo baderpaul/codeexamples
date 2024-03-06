@@ -1,0 +1,111 @@
+{namespace twoh=TWOH\TwohKickstarter\ViewHelpers}
+
+<f:layout name="Boxed" />
+
+<f:section name="content">
+    <f:variable name="contact" value="{twoh:contact(uid: '{data.contact}')}" />
+    
+    <div class="contact-component card w100 {f:if(condition: data.hideOnMobile, then: 'd-none d-md-block')} m{data.marginPos}{data.margin}"
+         itemscope itemtype="https://schema.org/Person">
+        <div class="contact-wrapper wrapper-{data.width}">
+            <f:render section="Image" arguments="{_all}" />
+            <f:render section="Contact" arguments="{_all}" />
+        </div>
+    </div>
+</f:section>
+
+<f:section name="Image">
+    <f:if condition="{contact.image}">
+        <f:for each="{contact.image}" as="image">
+            <f:link.typolink parameter="{image.link}">
+                <picture class="image-component-picture">
+                    <source srcset="{f:uri.image(image: image, cropVariant: 'desktop')}"
+                            media="(min-width: 992px)">
+                    <source srcset="{f:uri.image(image: image, cropVariant: 'tablet')}"
+                            media="(min-width: 768px)">
+                    <source srcset="{f:uri.image(image: image, cropVariant: 'mobile')}"
+                            media="(max-width: 767px)">
+                    <!---Fallback--->
+                    <img class="{twoh:imageOrientation(imagePath: '{f:uri.image(image: image, maxWidth: settings.maxImgWidth)}')}  img-fluid"
+                         src="{f:uri.image(image: image, maxWidth: settings.maxImgWidth, cropVariant: 'desktop')}"
+                         alt="{image.alternative}" longdesc="{image.description}" title="{image.title}"
+                         style="aspect-ratio: {data.aspectRatio}"
+                    >
+                </picture>
+            </f:link.typolink>
+        </f:for>
+    </f:if>
+</f:section>
+
+<f:section name="Contact">
+    <address class="contact-component-content px-1 py-1 lh-1 {data.bgColor} {data.textColor}">
+        <div class="contact-component-content-top d-grid pb-1">
+            <f:if condition="{contact.title}">
+                <h6 class="h6 mb-0 contact-title" itemprop="familyName">
+                    {contact.title}
+                </h6>
+            </f:if>
+            <f:if condition="{contact.subTitle}">
+                <h6 class="h6 mb-0 contact-subtitle">
+                    {contact.subTitle}
+                </h6>
+            </f:if>
+            <f:if condition="{contact.position}">
+                <h7 class="h7 mb-0 contact-position" itemprop="jobTitle">{contact.position}</h7>
+            </f:if>
+            <f:if condition="{contact.companyName}">
+                <h7 class="h7 mb-0 contact-company" itemprop="affiliation">{contact.companyName}</h7>
+            </f:if>
+            <f:if condition="{contact.companyNameAppendix}">
+                <h7 class="h7 mb-0 contact-company-appendix">{contact.companyNameAppendix}</h7>
+            </f:if>
+            <f:if condition="{contact.companyAddress}">
+                <h7 class="h7 mb-0 contact-company-address" itemprop="affiliation">{contact.companyAddress}</h7>
+            </f:if>
+            <f:if condition="{contact.companyAddressAppendix}">
+                <h7 class="h7 mb-0 contact-company-address-appendix">{contact.companyAddressAppendix}</h7>
+            </f:if>
+        </div>
+        <div class="contact-component-content-bottom d-grid">
+            <f:if condition="{contact.phone}">
+                <a href="tel:{contact.phone}"
+                   target="_blank"
+                   class="text-decoration-none {data.textColor} contact-phone"
+                   itemprop="telefon"
+                >
+                    <h7 class="h7 mb-0">
+                        Fon {contact.phone}
+                    </h7>
+                </a>
+            </f:if>
+            <f:if condition="{contact.email}">
+                <a class="text-decoration-none {data.textColor} contact-email"
+                   href="mailto:{contact.email}"
+                   target="_blank"
+                   itemprop="email"
+                >
+                    <h7 class="h7 mb-0">E-Mail
+                        <f:if condition="{contact.emailTitle}">
+                            <f:then> {contact.emailTitle}</f:then>
+                            <f:else> {contact.email}</f:else>
+                        </f:if>
+                    </h7>
+                </a>
+            </f:if>
+            <f:if condition="{contact.website}">
+                <f:link.typolink
+                        parameter="{contact.website}"
+                        class="text-decoration-none {data.textColor} contact-website"
+                        target="_blank"
+                >
+                    <h7 class="h7 mb-0">Webseite
+                        <f:if condition="{contact.websiteTitle}">
+                            <f:then> {contact.websiteTitle}</f:then>
+                            <f:else> {contact.website}</f:else>
+                        </f:if>
+                    </h7>
+                </f:link.typolink>
+            </f:if>
+        </div>
+    </address>
+</f:section>

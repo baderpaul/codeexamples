@@ -1,0 +1,58 @@
+name: twoh/image-element
+title: twoh/image-element
+description: 'This is a basic Image Content Element'
+group: common
+prefixFields: false
+fields:
+  - identifier: hideOnMobile
+    type: Checkbox
+    renderType: checkboxToggle
+    default: 0
+
+  - identifier: boxed
+    type: Checkbox
+    renderType: checkboxToggle
+    default: 0
+
+  - identifier: marginPos
+    type: Select
+    renderType: selectSingle
+    size: 1
+    itemsProcFunc: TWOH\TwohKickstarter\UserFunctions\AtomElementRenderer->renderMarginPosValues
+    onChange: reload
+
+  - identifier: margin
+    type: Select
+    renderType: selectSingle
+    size: 1
+    itemsProcFunc: TWOH\TwohKickstarter\UserFunctions\AtomElementRenderer->renderMarginValues
+    displayCond: FIELD:marginPos:!=:0
+
+  - identifier: header
+    useExistingField: true
+
+  - identifier: aspectRatio
+    type: Select
+    renderType: selectSingle
+    size: 1
+    itemsProcFunc: TWOH\TwohKickstarter\UserFunctions\AtomElementRenderer->renderAspectRatioValues
+    default: '16 / 9'
+
+  - identifier: media
+    useExistingField: true
+    allowed: common-image-types
+    maxitems: 1
+    required: true
+
+  - identifier: copyright
+    type: Checkbox
+    renderType: checkboxToggle
+    default: 0
+    onChange: reload
+
+  - identifier: copyrightColor
+    type: Select
+    renderType: selectSingle
+    size: 1
+    itemsProcFunc: TWOH\TwohKickstarter\UserFunctions\AtomElementRenderer->renderTextColors
+    displayCond: FIELD:copyright:=:1

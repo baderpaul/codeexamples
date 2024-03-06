@@ -1,0 +1,25 @@
+{namespace twoh=TWOH\TwohKickstarter\ViewHelpers}
+
+<cb:asset.css identifier="content-block-network-element-twoh/network-element-be" file="EditorPreview.css"/>
+
+<f:variable name="contact" value="{twoh:contact(uid: '{data.contact}')}" />
+
+<table>
+    <tr>
+        <td>
+            <f:for each="{data.media}" as="image">
+                <f:image image="{image}" height="100"/>
+            </f:for>
+        </td>
+    <tr>
+        <td>
+            {contact.title}
+        </td>
+    </tr>
+    <tr>
+        <td>
+            {contact.position}
+        </td>
+    </tr>
+    </tr>
+</table>

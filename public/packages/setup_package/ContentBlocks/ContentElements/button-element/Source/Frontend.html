@@ -1,0 +1,30 @@
+{namespace twoh=TWOH\TwohKickstarter\ViewHelpers}
+
+<f:layout name="Boxed" />
+
+<f:section name="content">
+    <div class="button-wrapper {f:if(condition: data.hideOnMobile, then: 'd-none d-md-block')} m{data.marginPos}{data.margin}">
+        <f:render section="Button" arguments="{_all}" />
+    </div>
+</f:section>
+
+<f:section name="Headline">
+    <{data.headlines} class="{data.headlines} mb-0">
+        {data.header}
+    </{data.headlines}>
+</f:section>
+
+
+<f:section name="Button">
+    <div class="button-module d-flex {data.position} w-100">
+        <f:if condition="{data.url}">
+            <f:link.typolink
+                    parameter="{data.url}"
+                    additionalAttributes="{type:'button'}"
+                    class="text-decoration-none btn rounded-0 py-0 px-2 wrapper-{data.width} {data.bgColor} {data.textColor} {f:if(condition: data.bottom, then: 'position-absolute bottom-0')}"
+            >
+                <f:render section="Headline" arguments="{_all}" />
+            </f:link.typolink>
+        </f:if>
+    </div>
+</f:section>

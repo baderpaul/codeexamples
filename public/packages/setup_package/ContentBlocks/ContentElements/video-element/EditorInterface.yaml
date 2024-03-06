@@ -1,0 +1,55 @@
+name: twoh/video-element
+title: twoh/video-element
+description: 'This is a basic Video Content Element'
+group: common
+prefixFields: false
+fields:
+  - identifier: hideOnMobile
+    type: Checkbox
+    renderType: checkboxToggle
+    default: 0
+
+  - identifier: boxed
+    type: Checkbox
+    renderType: checkboxToggle
+    default: 0
+
+  - identifier: marginPos
+    type: Select
+    renderType: selectSingle
+    size: 1
+    itemsProcFunc: TWOH\TwohKickstarter\UserFunctions\AtomElementRenderer->renderMarginPosValues
+    onChange: reload
+
+  - identifier: margin
+    type: Select
+    renderType: selectSingle
+    size: 1
+    itemsProcFunc: TWOH\TwohKickstarter\UserFunctions\AtomElementRenderer->renderMarginValues
+    displayCond: FIELD:marginPos:!=:0
+
+  - identifier: header
+    useExistingField: true
+
+  - identifier: aspectRatio
+    type: Select
+    renderType: selectSingle
+    size: 1
+    itemsProcFunc: TWOH\TwohKickstarter\UserFunctions\AtomElementRenderer->renderAspectVideoRatioValues
+    default: '16by9'
+
+  - identifier: media
+    useExistingField: true
+    allowed: common-media-types
+    maxitems: 1
+    required: true
+
+  - identifier: autoplay
+    type: Checkbox
+    renderType: checkboxToggle
+    default: 0
+
+  - identifier: loop
+    type: Checkbox
+    renderType: checkboxToggle
+    default: 0

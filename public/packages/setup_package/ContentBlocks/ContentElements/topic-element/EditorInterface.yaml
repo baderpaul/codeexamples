@@ -1,0 +1,81 @@
+name: twoh/topic-element
+title: twoh/topic-element
+description: 'This is a basic Text Content Element'
+group: common
+prefixFields: false
+fields:
+  - identifier: hideOnMobile
+    type: Checkbox
+    renderType: checkboxToggle
+    default: 0
+
+  - identifier: marginPos
+    type: Select
+    renderType: selectSingle
+    size: 1
+    itemsProcFunc: TWOH\TwohKickstarter\UserFunctions\AtomElementRenderer->renderMarginPosValues
+    onChange: reload
+
+  - identifier: margin
+    type: Select
+    renderType: selectSingle
+    size: 1
+    itemsProcFunc: TWOH\TwohKickstarter\UserFunctions\AtomElementRenderer->renderMarginValues
+    displayCond: FIELD:marginPos:!=:0
+
+  - identifier: url
+    type: Link
+    autocomplete: true
+    allowedTypes:
+      - page
+      - url
+      - file
+    required: true
+
+  - identifier: headlines
+    type: Select
+    renderType: selectSingle
+    size: 1
+    itemsProcFunc: TWOH\TwohKickstarter\UserFunctions\AtomElementRenderer->renderHeadlineValues
+    default: 'h6'
+
+  - identifier: header
+    useExistingField: true
+
+  - identifier: textColor
+    type: Select
+    renderType: selectSingle
+    size: 1
+    itemsProcFunc: TWOH\TwohKickstarter\UserFunctions\AtomElementRenderer->renderTextColors
+
+  - identifier: bgColor
+    type: Select
+    renderType: selectSingle
+    size: 1
+    itemsProcFunc: TWOH\TwohKickstarter\UserFunctions\AtomElementRenderer->renderBackgroundColors
+
+  - identifier: aspectRatio
+    type: Select
+    renderType: selectSingle
+    size: 1
+    itemsProcFunc: TWOH\TwohKickstarter\UserFunctions\AtomElementRenderer->renderAspectRatioValues
+    default: '16 / 9'
+
+  - identifier: media
+    useExistingField: true
+    allowed: common-image-types
+    maxitems: 1
+    required: true
+
+  - identifier: copyright
+    type: Checkbox
+    renderType: checkboxToggle
+    onChange: reload
+    default: 0
+
+  - identifier: copyrightColor
+    type: Select
+    renderType: selectSingle
+    size: 1
+    itemsProcFunc: TWOH\TwohKickstarter\UserFunctions\AtomElementRenderer->renderTextColors
+    displayCond: FIELD:copyright:=:1

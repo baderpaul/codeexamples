@@ -1,0 +1,32 @@
+{namespace twoh=TWOH\TwohKickstarter\ViewHelpers}
+
+<f:layout name="Boxed"/>
+
+<f:section name="content">
+    <div class="counter-component d-flex justify-content-center w-100 {f:if(condition: data.hideOnMobile, then: 'd-none d-md-block')} m{data.marginPos}{data.margin}">
+        <div class="counter-component-content {data.textColor} w-100 text-center mb-2">
+            <f:if condition="{data.icon}">
+                <div class="counter-component-content-icon {data.iconColor}">
+                    <twoh:svg svgPath="{data.icon}.svg"/>
+                </div>
+            </f:if>
+            <f:if condition="{data.amount}">
+                <h4 class="h4 mb-0 counter-component-content-digit">
+                  <span
+                          class="counter"
+                          id="counter_{data._raw.uid}"
+                          data-purecounter-start="0"
+                          data-purecounter-end="{data.amount}"
+                  >
+                    0
+                  </span>
+                </h4>
+            </f:if>
+            <f:if condition="{data.header}">
+                <div class="counter-component-content-icon fst-italic">
+                    <h8 class="h8 text-uppercase mb-0 d-block wrapper-w50 m-auto">{data.header}</h8>
+                </div>
+            </f:if>
+        </div>
+    </div>
+</f:section>

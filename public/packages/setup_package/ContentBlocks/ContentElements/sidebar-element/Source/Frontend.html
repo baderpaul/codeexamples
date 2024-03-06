@@ -1,0 +1,54 @@
+{namespace twoh=TWOH\TwohKickstarter\ViewHelpers}
+
+<f:layout name="Boxed" />
+
+<f:section name="content">
+    <div class="sidebar w-100 {f:if(condition: data.hideOnMobile, then: 'd-none d-md-block')} m{data.marginPos}{data.margin}">
+        <div class="sidebar-content pb-1">
+            <f:if condition="{data.showImage}">
+                <f:then>
+                    <f:render section="Image" arguments="{_all}" />
+                </f:then>
+                <f:else>
+                    <div class="sidebar-content-text d-grid {data.textColor}">
+                        <div class="sidebar-content-text-header mb-1">
+                            <h6 class="h6 mb-0 text-uppercase">
+                                {data.header}
+                            </h6>
+                        </div>
+                        <f:render section="Bodytext" arguments="{_all}" />
+                    </div>
+                </f:else>
+            </f:if>
+        </div>
+    </div>
+</f:section>
+
+<f:section name="Bodytext">
+    <div class="h7 mb-0">
+        <f:format.raw>{data.bodytext}</f:format.raw>
+    </div>
+</f:section>
+
+<f:section name="Image">
+    <f:if condition="{data.media}">
+        <f:for each="{data.media}" as="image">
+            <f:link.typolink parameter="{image.link}">
+                <picture class="image-component-picture">
+                    <source srcset="{f:uri.image(image: image, cropVariant: 'desktop')}"
+                            media="(min-width: 992px)">
+                    <source srcset="{f:uri.image(image: image, cropVariant: 'tablet')}"
+                            media="(min-width: 768px)">
+                    <source srcset="{f:uri.image(image: image, cropVariant: 'mobile')}"
+                            media="(max-width: 767px)">
+                    <!---Fallback--->
+                    <img class="{twoh:imageOrientation(imagePath: '{f:uri.image(image: image, maxWidth: settings.maxImgWidth)}')}  img-fluid"
+                         src="{f:uri.image(image: image, maxWidth: settings.maxImgWidth, cropVariant: 'desktop')}"
+                         alt="{image.alternative}" longdesc="{image.description}" title="{image.title}"
+                         style="aspect-ratio: {data.aspectRatio}"
+                    >
+                </picture>
+            </f:link.typolink>
+        </f:for>
+    </f:if>
+</f:section>

@@ -1,0 +1,37 @@
+{namespace twoh=TWOH\TwohKickstarter\ViewHelpers}
+
+<cb:asset.css identifier="content-block-contact-element-twoh/contact-element-be" file="EditorPreview.css"/>
+
+<f:variable name="contact" value="{twoh:contact(uid: '{data.contact}')}" />
+
+<table>
+    <tr>
+        <td>
+            <f:if condition="{contact.image}">
+                <f:for each="{contact.image}" as="image">
+                    <picture class="image-component-picture">
+                        <source srcset="{f:uri.image(image: image, cropVariant: 'desktop')}"
+                                media="(min-width: 992px)">
+                        <source srcset="{f:uri.image(image: image, cropVariant: 'tablet')}"
+                                media="(min-width: 768px)">
+                        <source srcset="{f:uri.image(image: image, cropVariant: 'mobile')}"
+                                media="(max-width: 767px)">
+                        <!---Fallback--->
+                        <img class="{twoh:imageOrientation(imagePath: '{f:uri.image(image: image, maxWidth: settings.maxImgWidth)}')}  img-fluid"
+                             src="{f:uri.image(image: image, maxWidth: settings.maxImgWidth, cropVariant: 'desktop')}" />
+                    </picture>
+                </f:for>
+            </f:if>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            {contact.title}
+        </td>
+    </tr>
+    <tr>
+        <td>
+            {contact.position}
+        </td>
+    </tr>
+</table>

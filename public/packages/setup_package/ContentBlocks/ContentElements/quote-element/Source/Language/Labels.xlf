@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+	<file datatype="plaintext" original="Labels.xlf" source-language="en" date="2024-02-01T11:17:02+00:00" product-name="twoh/quote-element">
+		<header/>
+		<body>
+			<trans-unit id="title">
+				<source>Quote Element</source>
+			</trans-unit>
+			<trans-unit id="description">
+				<source>This is a basic Quote Content Element</source>
+			</trans-unit>
+			<trans-unit id="header.label">
+				<source>Custom header label</source>
+			</trans-unit>
+			<trans-unit id="bodytext.label">
+				<source>Bodytext</source>
+			</trans-unit>
+			<trans-unit id="hideOnMobile.label">
+				<source>Hide on mobile</source>
+			</trans-unit>
+			<trans-unit id="boxed.label">
+				<source>Boxed Layout</source>
+			</trans-unit>
+			<trans-unit id="marginPos.label">
+				<source>Margin Position</source>
+			</trans-unit>
+			<trans-unit id="margin.label">
+				<source>Margin</source>
+			</trans-unit>
+			<trans-unit id="textColor.label">
+				<source>Textcolor</source>
+			</trans-unit>
+			<trans-unit id="hasHeader.label">
+				<source>Has header</source>
+			</trans-unit>
+			<trans-unit id="author.label">
+				<source>Author</source>
+			</trans-unit>
+			<trans-unit id="linkTitle.label">
+				<source>Linktitle</source>
+			</trans-unit>
+			<trans-unit id="url.label">
+				<source>URL</source>
+			</trans-unit>
+			<trans-unit id="bgColor.label">
+				<source>Backgroundcolor</source>
+			</trans-unit>
+			<trans-unit id="aspectRatio.label">
+				<source>Aspect Ratio</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

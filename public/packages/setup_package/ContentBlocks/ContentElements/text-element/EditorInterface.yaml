@@ -1,0 +1,69 @@
+name: twoh/text-element
+title: twoh/text-element
+description: 'This is a basic Text Content Element'
+group: common
+prefixFields: false
+fields:
+  - identifier: hideOnMobile
+    type: Checkbox
+    renderType: checkboxToggle
+    default: 0
+
+  - identifier: boxed
+    type: Checkbox
+    renderType: checkboxToggle
+    default: 0
+
+  - identifier: marginPos
+    type: Select
+    renderType: selectSingle
+    size: 1
+    itemsProcFunc: TWOH\TwohKickstarter\UserFunctions\AtomElementRenderer->renderMarginPosValues
+    onChange: reload
+
+  - identifier: margin
+    type: Select
+    renderType: selectSingle
+    size: 1
+    itemsProcFunc: TWOH\TwohKickstarter\UserFunctions\AtomElementRenderer->renderMarginValues
+    displayCond: FIELD:marginPos:!=:0
+
+  - identifier: width
+    type: Select
+    renderType: selectSingle
+    size: 1
+    itemsProcFunc: TWOH\TwohKickstarter\UserFunctions\AtomElementRenderer->renderColValues
+    default: 'w100'
+
+  - identifier: disableHeader
+    type: Checkbox
+    renderType: checkboxToggle
+    default: 1
+    onChange: reload
+
+  - identifier: headlines
+    type: Select
+    renderType: selectSingle
+    size: 1
+    itemsProcFunc: TWOH\TwohKickstarter\UserFunctions\AtomElementRenderer->renderHeadlineValues
+    displayCond: FIELD:disableHeader:=:0
+
+  - identifier: upperCase
+    type: Checkbox
+    renderType: checkboxToggle
+    default: 0
+    displayCond: FIELD:disableHeader:=:0
+
+  - identifier: header
+    useExistingField: true
+
+  - identifier: textColor
+    type: Select
+    renderType: selectSingle
+    size: 1
+    itemsProcFunc: TWOH\TwohKickstarter\UserFunctions\AtomElementRenderer->renderTextColors
+
+  - identifier: bodytext
+    type: textarea
+    enableRichtext: true
+    useExistingField: true

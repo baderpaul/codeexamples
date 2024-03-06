@@ -1,0 +1,28 @@
+<f:layout name="Boxed" />
+
+<f:section name="content">
+    <div class="text-module {f:if(condition: data.hideOnMobile, then: 'd-none d-md-block')} m{data.marginPos}{data.margin} wrapper-{data.width}">
+        <f:if condition="{data.header} && {data.headlines} && {data.disableHeader} === 0">
+            <div class="text-module-header mb-1">
+                <f:render section="Headline" arguments="{_all}" />
+            </div>
+        </f:if>
+        <f:if condition="{data.bodytext}">
+            <div class="text-module-body">
+                <f:render section="Bodytext" arguments="{_all}" />
+            </div>
+        </f:if>
+    </div>
+</f:section>
+
+<f:section name="Headline">
+    <{data.headlines} class="{data.headlines} mb-0 {f:if(condition: '{data.upperCase}', then: 'text-uppercase')}">
+        {data.header}
+    </{data.headlines}>
+</f:section>
+
+<f:section name="Bodytext">
+    <div class="h5 {data.textColor}">
+        <f:format.raw>{data.bodytext}</f:format.raw>
+    </div>
+</f:section>

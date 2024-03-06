@@ -1,0 +1,86 @@
+{namespace twoh=TWOH\TwohKickstarter\ViewHelpers}
+
+<f:layout name="Boxed" />
+
+<f:section name="content">
+    <div class="atom-galerie p-0 ms-0 me-0 {f:if(condition: data.hideOnMobile, then: 'd-none d-md-block')} m{data.marginPos}{data.margin}">
+        <div class="row">
+            <f:if condition="{data.media}">
+                <div class="atom-galerie-container">
+                    <f:for each="{data.media}" as="image" iteration="iterator">
+                        <f:render section="Image" arguments="{_all}" />
+                    </f:for>
+                </div>
+            </f:if>
+        </div>
+        <f:render section="modal" arguments="{_all}"/>
+    </div>
+</f:section>
+
+<f:section name="Image">
+    <figure>
+        <picture class="atom-image-picture">
+            <source srcset="{f:uri.image(image: image, cropVariant: 'desktop')}"
+                    media="(min-width: 992px)">
+            <source srcset="{f:uri.image(image: image, cropVariant: 'tablet')}"
+                    media="(min-width: 768px)">
+            <source srcset="{f:uri.image(image: image, cropVariant: 'mobile')}"
+                    media="(max-width: 767px)">
+            <!---Fallback--->
+            <img class="hover-shadow {twoh:imageOrientation(imagePath: '{f:uri.image(image: image, maxWidth: settings.maxImgWidth)}')} atom-image-picture-fal{f:if(condition: '{flexform.ratio} == \'left\'', then: '-float', else: '')} img-fluid"
+                 src="{f:uri.image(image: image, cropVariant: 'desktop')}"
+                 alt="{image.alternative}" aria-description="{image.description}" title="{image.title}"
+                 onclick="openModal(this);currentSlide(<f:format.raw>{iterator.cycle}</f:format.raw>)">
+            <figcaption style="font-size: 1rem;">
+                {image.originalFile.properties.copyright}
+            </figcaption>
+        </picture>
+    </figure>
+</f:section>
+
+<f:section name="modal">
+    <div id="myModal" class="modal">
+        <span class="close cursor" onclick="closeModal()">&times;</span>
+        <div class="modal-content">
+
+            <f:for each="{data.media}" as="image">
+                <div class="mySlides">
+                    <div class="numbertext">
+                        {image.originalFile.properties.copyright}
+                    </div>
+                    <img class="{twoh:imageOrientation(imagePath: '{f:uri.image(image: image, maxWidth: settings.maxImgWidth)}')}"
+                         src="{f:uri.image(image: image, maxWidth: settings.maxImgWidth, cropVariant: 'desktop')}"
+                         alt="{image.alternative}" aria-description="{image.description}" title="{image.title}" style="width:100%">
+                </div>
+            </f:for>
+
+            <!-- Next/previous controls -->
+            <a class="prev" onclick="prevSlides(1)">
+                <twoh:svg
+                        svgPath="arrow_back_ios_FILL0_wght400_GRAD0_opsz24.svg"/>
+            </a>
+            <a class="next" onclick="plusSlides(1)">
+                <twoh:svg
+                        svgPath="arrow_forward_ios_FILL0_wght400_GRAD0_opsz24.svg"/>
+            </a>
+
+            <!-- Caption text -->
+            <div class="caption-container">
+                <p id="caption"></p>
+            </div>
+
+            <f:if condition="{flexform.renderThumbnailImageControls}">
+                <!-- Thumbnail image controls -->
+                <div class="atom-galerie-container bg-black">
+                    <f:for each="{file}" as="image" iteration="iterator">
+                        <figure>
+                            <img class="demo img-fluid" onclick="currentSlide(<f:format.raw>{iterator.cycle}</f:format.raw>)"
+                                 src="{f:uri.image(image: image, maxWidth: settings.maxImgWidth, cropVariant: 'desktop')}"
+                                 alt="{image.alternative}">
+                        </figure>
+                    </f:for>
+                </div>
+            </f:if>
+        </div>
+    </div>
+</f:section>

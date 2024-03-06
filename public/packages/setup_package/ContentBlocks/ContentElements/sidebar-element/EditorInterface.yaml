@@ -1,0 +1,62 @@
+name: twoh/sidebar-element
+title: twoh/sidebar-element
+description: 'This is a basic Text Content Element'
+group: common
+prefixFields: false
+fields:
+  - identifier: hideOnMobile
+    type: Checkbox
+    renderType: checkboxToggle
+    default: 0
+
+  - identifier: marginPos
+    type: Select
+    renderType: selectSingle
+    size: 1
+    itemsProcFunc: TWOH\TwohKickstarter\UserFunctions\AtomElementRenderer->renderMarginPosValues
+    onChange: reload
+
+  - identifier: margin
+    type: Select
+    renderType: selectSingle
+    size: 1
+    itemsProcFunc: TWOH\TwohKickstarter\UserFunctions\AtomElementRenderer->renderMarginValues
+    displayCond: FIELD:marginPos:!=:0
+
+  - identifier: showImage
+    type: Checkbox
+    renderType: checkboxToggle
+    default: 0
+    onChange: reload
+
+  - identifier: header
+    useExistingField: true
+    displayCond: FIELD:showImage:=:0
+
+  - identifier: textColor
+    type: Select
+    renderType: selectSingle
+    size: 1
+    itemsProcFunc: TWOH\TwohKickstarter\UserFunctions\AtomElementRenderer->renderTextColors
+    displayCond: FIELD:showImage:=:0
+
+  - identifier: bodytext
+    type: textarea
+    enableRichtext: true
+    useExistingField: true
+    displayCond: FIELD:showImage:=:0
+
+  - identifier: aspectRatio
+    type: Select
+    renderType: selectSingle
+    size: 1
+    itemsProcFunc: TWOH\TwohKickstarter\UserFunctions\AtomElementRenderer->renderAspectRatioValues
+    default: '16 / 9'
+    displayCond: FIELD:showImage:=:1
+
+  - identifier: media
+    useExistingField: true
+    allowed: common-image-types
+    maxitems: 1
+    required: true
+    displayCond: FIELD:showImage:=:1

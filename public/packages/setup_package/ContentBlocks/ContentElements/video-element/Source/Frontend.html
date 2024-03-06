@@ -1,0 +1,18 @@
+{namespace twoh=TWOH\TwohKickstarter\ViewHelpers}
+
+<f:layout name="Boxed" />
+
+<f:section name="content">
+    <div class="ratio ratio-{data.aspectRatio} video-component {f:if(condition: data.hideOnMobile, then: 'd-none d-md-block')} m{data.marginPos}{data.margin}"
+    >
+        <f:render section="Video" arguments="{_all}" />
+    </div>
+</f:section>
+
+<f:section name="Video">
+    <f:if condition="{data.media}">
+        <f:for each="{data.media}" as="video">
+            <f:media file="{video}" class="embed-responsive-item" additionalConfig="{loop: '{data.loop}', autoplay: '{data.autoplay}'}" />
+        </f:for>
+    </f:if>
+</f:section>

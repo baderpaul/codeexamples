@@ -1,0 +1,17 @@
+<f:layout name="Boxed" />
+
+<f:section name="content">
+    <div class="text-module {f:if(condition: data.hideOnMobile, then: 'd-none d-md-block')} m{data.marginPos}{data.margin} d-flex w-100 {data.textAlignment}">
+        <f:if condition="{data.header} && {data.headlines}">
+            <div class="text-module-header mb-0">
+                <f:render section="Headline" arguments="{_all}" />
+            </div>
+        </f:if>
+    </div>
+</f:section>
+
+<f:section name="Headline">
+    <{data.headlines} class="{data.headlines} {data.textColor} mb-0 {f:if(condition: '{data.upperCase}', then: 'text-uppercase')}">
+        {data.header}
+    </{data.headlines}>
+</f:section>

@@ -1,0 +1,86 @@
+name: twoh/quote-element
+title: twoh/quote-element
+description: 'This is a basic Text Content Element'
+group: common
+prefixFields: false
+fields:
+  - identifier: hideOnMobile
+    type: Checkbox
+    renderType: checkboxToggle
+    default: 0
+
+  - identifier: boxed
+    type: Checkbox
+    renderType: checkboxToggle
+    default: 0
+
+  - identifier: marginPos
+    type: Select
+    renderType: selectSingle
+    size: 1
+    itemsProcFunc: TWOH\TwohKickstarter\UserFunctions\AtomElementRenderer->renderMarginPosValues
+    onChange: reload
+
+  - identifier: margin
+    type: Select
+    renderType: selectSingle
+    size: 1
+    itemsProcFunc: TWOH\TwohKickstarter\UserFunctions\AtomElementRenderer->renderMarginValues
+    displayCond: FIELD:marginPos:!=:0
+
+  - identifier: hasHeader
+    type: Checkbox
+    renderType: checkboxToggle
+    default: 1
+    onChange: reload
+
+  - identifier: header
+    useExistingField: true
+    displayCond: FIELD:hasHeader:!=:0
+
+  - identifier: author
+    type: Text
+    displayCond: FIELD:hasHeader:=:0
+
+  - identifier: linkTitle
+    type: Text
+    displayCond: FIELD:hasHeader:!=:0
+
+  - identifier: url
+    type: Link
+    autocomplete: true
+    allowedTypes:
+      - page
+      - url
+      - file
+    displayCond: FIELD:hasHeader:!=:0
+
+  - identifier: textColor
+    type: Select
+    renderType: selectSingle
+    size: 1
+    itemsProcFunc: TWOH\TwohKickstarter\UserFunctions\AtomElementRenderer->renderTextColors
+
+  - identifier: bodytext
+    type: textarea
+    enableRichtext: true
+    useExistingField: true
+
+  - identifier: bgColor
+    type: Select
+    renderType: selectSingle
+    size: 1
+    itemsProcFunc: TWOH\TwohKickstarter\UserFunctions\AtomElementRenderer->renderBackgroundColors
+
+  - identifier: aspectRatio
+    type: Select
+    renderType: selectSingle
+    size: 1
+    itemsProcFunc: TWOH\TwohKickstarter\UserFunctions\AtomElementRenderer->renderAspectRatioValues
+    default: '1 / 1'
+
+  - identifier: media
+    useExistingField: true
+    allowed: common-image-types
+    maxitems: 1
+    required: true
