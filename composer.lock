@@ -4,8 +4,99 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "4cbee38d06331acaeb3634cadcf93d7b",
+    "content-hash": "3c85618c098f9c8a721f2d70231705d7",
     "packages": [
+        {
+            "name": "autodudes/ai-suite",
+            "version": "12.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/autodudesde/ai-suite.git",
+                "reference": "79775da6d5ed2b66c012f3cefea3ebf399001f79"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/autodudesde/ai-suite/zipball/79775da6d5ed2b66c012f3cefea3ebf399001f79",
+                "reference": "79775da6d5ed2b66c012f3cefea3ebf399001f79",
+                "shasum": ""
+            },
+            "require": {
+                "ext-pdo": "*",
+                "ext-simplexml": "*",
+                "php": "~8.1 | ~8.2",
+                "typo3/cms-backend": "^12.4",
+                "typo3/cms-core": "^12.4",
+                "typo3/cms-extbase": "^12.4",
+                "typo3/cms-filelist": "^12.4",
+                "typo3/cms-fluid": "^12.4",
+                "typo3/cms-rte-ckeditor": "^12.4",
+                "typo3/cms-seo": "^12.4",
+                "typo3/cms-setup": "^12.4"
+            },
+            "require-dev": {
+                "bk2k/bootstrap-package": "^14.0",
+                "contentblocks/content-blocks": "^0.6",
+                "contentblocks/examples": "dev-main",
+                "friendsofphp/php-cs-fixer": "^3.27",
+                "georgringer/news": "^11.4",
+                "helhum/typo3-console": "^8.1",
+                "phpstan/phpstan": "^1.10.14",
+                "typo3/cms-beuser": "^12.4",
+                "typo3/cms-filemetadata": "^12.4",
+                "typo3/cms-fluid-styled-content": "^12.4",
+                "typo3/cms-frontend": "^12.4",
+                "typo3/cms-install": "^12.4",
+                "typo3/cms-lowlevel": "^12",
+                "typo3/cms-t3editor": "^12",
+                "typo3/cms-tstemplate": "^12.4",
+                "typo3/coding-standards": "^0.7"
+            },
+            "suggest": {
+                "bk2k/bootstrap-package": "^14.0"
+            },
+            "type": "typo3-cms-extension",
+            "extra": {
+                "typo3/cms": {
+                    "extension-key": "ai_suite",
+                    "app-dir": ".Build",
+                    "web-dir": ".Build/Web"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "AutoDudes\\AiSuite\\": "Classes/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "AutoDudes",
+                    "email": "service@autodudes.de",
+                    "homepage": "https://www.autodudes.de",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Adds a backend module as well as various helper functionalities and features to your TYPO3 backend, which are intended to make the daily work of editors easier and faster with the help of AI.",
+            "homepage": "https://www.autodudes.de",
+            "keywords": [
+                "AI Suite",
+                "AutoDudes",
+                "Content Automation",
+                "Content Creation",
+                "Content Generation",
+                "TYPO3 AI",
+                "TYPO3 CMS",
+                "artificial intelligence"
+            ],
+            "support": {
+                "issues": "https://github.com/krausandre/ai-suite/issues",
+                "source": "https://github.com/autodudesde/ai-suite/tree/v12.0.0"
+            },
+            "time": "2024-03-13T22:55:18+00:00"
+        },
         {
             "name": "b13/container",
             "version": "2.3.5",
