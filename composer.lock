@@ -8,16 +8,16 @@
     "packages": [
         {
             "name": "autodudes/ai-suite",
-            "version": "12.0.0",
+            "version": "12.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/autodudesde/ai-suite.git",
-                "reference": "79775da6d5ed2b66c012f3cefea3ebf399001f79"
+                "reference": "9e966189615b6a2f8158e6a8f06c9576a8dd56fc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/autodudesde/ai-suite/zipball/79775da6d5ed2b66c012f3cefea3ebf399001f79",
-                "reference": "79775da6d5ed2b66c012f3cefea3ebf399001f79",
+                "url": "https://api.github.com/repos/autodudesde/ai-suite/zipball/9e966189615b6a2f8158e6a8f06c9576a8dd56fc",
+                "reference": "9e966189615b6a2f8158e6a8f06c9576a8dd56fc",
                 "shasum": ""
             },
             "require": {
@@ -92,10 +92,10 @@
                 "artificial intelligence"
             ],
             "support": {
-                "issues": "https://github.com/krausandre/ai-suite/issues",
-                "source": "https://github.com/autodudesde/ai-suite/tree/v12.0.0"
+                "issues": "https://github.com/autodudesde/ai-suite/issues",
+                "source": "https://github.com/autodudesde/ai-suite/tree/v12.0.1"
             },
-            "time": "2024-03-13T22:55:18+00:00"
+            "time": "2024-03-15T01:25:52+00:00"
         },
         {
             "name": "b13/container",
@@ -1825,16 +1825,16 @@
         },
         {
             "name": "mask/mask",
-            "version": "v8.3.9",
+            "version": "v8.3.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Gernott/mask.git",
-                "reference": "d8fafa984e8bb89bd2a50c69b70f0a4468d0e19b"
+                "reference": "3db0df5bf0387991c5b644033227343e2893a0d2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Gernott/mask/zipball/d8fafa984e8bb89bd2a50c69b70f0a4468d0e19b",
-                "reference": "d8fafa984e8bb89bd2a50c69b70f0a4468d0e19b",
+                "url": "https://api.github.com/repos/Gernott/mask/zipball/3db0df5bf0387991c5b644033227343e2893a0d2",
+                "reference": "3db0df5bf0387991c5b644033227343e2893a0d2",
                 "shasum": ""
             },
             "require": {
@@ -1917,7 +1917,7 @@
                     "type": "WEBprofil - Gernot Ploiner e.U. (Founder)"
                 }
             ],
-            "time": "2024-02-29T11:35:11+00:00"
+            "time": "2024-03-14T09:31:15+00:00"
         },
         {
             "name": "masterminds/html5",
