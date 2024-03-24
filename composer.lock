@@ -4,43 +4,39 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3c85618c098f9c8a721f2d70231705d7",
+    "content-hash": "1e810eb2f8b2e58a4650b8066cb8506f",
     "packages": [
         {
             "name": "autodudes/ai-suite",
-            "version": "12.0.1",
+            "version": "12.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/autodudesde/ai-suite.git",
-                "reference": "9e966189615b6a2f8158e6a8f06c9576a8dd56fc"
+                "reference": "d94218391900bbbcac36350c2fdce842bcfba5ac"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/autodudesde/ai-suite/zipball/9e966189615b6a2f8158e6a8f06c9576a8dd56fc",
-                "reference": "9e966189615b6a2f8158e6a8f06c9576a8dd56fc",
+                "url": "https://api.github.com/repos/autodudesde/ai-suite/zipball/d94218391900bbbcac36350c2fdce842bcfba5ac",
+                "reference": "d94218391900bbbcac36350c2fdce842bcfba5ac",
                 "shasum": ""
             },
             "require": {
-                "ext-pdo": "*",
-                "ext-simplexml": "*",
                 "php": "~8.1 | ~8.2",
                 "typo3/cms-backend": "^12.4",
                 "typo3/cms-core": "^12.4",
                 "typo3/cms-extbase": "^12.4",
                 "typo3/cms-filelist": "^12.4",
                 "typo3/cms-fluid": "^12.4",
-                "typo3/cms-rte-ckeditor": "^12.4",
-                "typo3/cms-seo": "^12.4",
-                "typo3/cms-setup": "^12.4"
+                "typo3/cms-seo": "^12.4"
             },
             "require-dev": {
                 "bk2k/bootstrap-package": "^14.0",
                 "contentblocks/content-blocks": "^0.6",
                 "contentblocks/examples": "dev-main",
-                "friendsofphp/php-cs-fixer": "^3.27",
+                "friendsofphp/php-cs-fixer": "^3.52",
                 "georgringer/news": "^11.4",
                 "helhum/typo3-console": "^8.1",
-                "phpstan/phpstan": "^1.10.14",
+                "phpstan/phpstan": "^1.10",
                 "typo3/cms-beuser": "^12.4",
                 "typo3/cms-filemetadata": "^12.4",
                 "typo3/cms-fluid-styled-content": "^12.4",
@@ -52,7 +48,8 @@
                 "typo3/coding-standards": "^0.7"
             },
             "suggest": {
-                "bk2k/bootstrap-package": "^14.0"
+                "bk2k/bootstrap-package": "^14.0",
+                "contentblocks/content-blocks": "^0.6"
             },
             "type": "typo3-cms-extension",
             "extra": {
@@ -93,9 +90,9 @@
             ],
             "support": {
                 "issues": "https://github.com/autodudesde/ai-suite/issues",
-                "source": "https://github.com/autodudesde/ai-suite/tree/v12.0.1"
+                "source": "https://github.com/autodudesde/ai-suite/tree/v12.0.3"
             },
-            "time": "2024-03-15T01:25:52+00:00"
+            "time": "2024-03-24T20:20:19+00:00"
         },
         {
             "name": "b13/container",
@@ -2272,16 +2269,16 @@
         },
         {
             "name": "phpstan/phpdoc-parser",
-            "version": "1.26.0",
+            "version": "1.27.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpstan/phpdoc-parser.git",
-                "reference": "231e3186624c03d7e7c890ec662b81e6b0405227"
+                "reference": "86e4d5a4b036f8f0be1464522f4c6b584c452757"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpstan/phpdoc-parser/zipball/231e3186624c03d7e7c890ec662b81e6b0405227",
-                "reference": "231e3186624c03d7e7c890ec662b81e6b0405227",
+                "url": "https://api.github.com/repos/phpstan/phpdoc-parser/zipball/86e4d5a4b036f8f0be1464522f4c6b584c452757",
+                "reference": "86e4d5a4b036f8f0be1464522f4c6b584c452757",
                 "shasum": ""
             },
             "require": {
@@ -2313,9 +2310,9 @@
             "description": "PHPDoc parser with support for nullable, intersection and generic types",
             "support": {
                 "issues": "https://github.com/phpstan/phpdoc-parser/issues",
-                "source": "https://github.com/phpstan/phpdoc-parser/tree/1.26.0"
+                "source": "https://github.com/phpstan/phpdoc-parser/tree/1.27.0"
             },
-            "time": "2024-02-23T16:05:55+00:00"
+            "time": "2024-03-21T13:14:53+00:00"
         },
         {
             "name": "psr/cache",
