@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "1e810eb2f8b2e58a4650b8066cb8506f",
+    "content-hash": "a9d640f01c06b366e3251452048b35aa",
     "packages": [
         {
             "name": "autodudes/ai-suite",
@@ -96,16 +96,16 @@
         },
         {
             "name": "b13/container",
-            "version": "2.3.5",
+            "version": "2.3.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/b13/container.git",
-                "reference": "4a1654cb994d018f2226d75bef0a99229547e4b3"
+                "reference": "abaab9486ccc2a145080d2c604510aec3421914a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/b13/container/zipball/4a1654cb994d018f2226d75bef0a99229547e4b3",
-                "reference": "4a1654cb994d018f2226d75bef0a99229547e4b3",
+                "url": "https://api.github.com/repos/b13/container/zipball/abaab9486ccc2a145080d2c604510aec3421914a",
+                "reference": "abaab9486ccc2a145080d2c604510aec3421914a",
                 "shasum": ""
             },
             "require": {
@@ -153,9 +153,9 @@
             "homepage": "https://b13.com",
             "support": {
                 "issues": "https://github.com/b13/container/issues",
-                "source": "https://github.com/b13/container/tree/2.3.5"
+                "source": "https://github.com/b13/container/tree/2.3.6"
             },
-            "time": "2024-02-14T17:16:31+00:00"
+            "time": "2024-03-28T17:28:19+00:00"
         },
         {
             "name": "bacon/bacon-qr-code",
@@ -272,16 +272,16 @@
         },
         {
             "name": "contentblocks/content-blocks",
-            "version": "0.6.4",
+            "version": "0.7.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nhovratov/content-blocks.git",
-                "reference": "51fa6775e1dce6623d4b703277f756b67c7c0e8d"
+                "reference": "5e81a918b7aed6e5d83af1e805d013a4e9f65e30"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nhovratov/content-blocks/zipball/51fa6775e1dce6623d4b703277f756b67c7c0e8d",
-                "reference": "51fa6775e1dce6623d4b703277f756b67c7c0e8d",
+                "url": "https://api.github.com/repos/nhovratov/content-blocks/zipball/5e81a918b7aed6e5d83af1e805d013a4e9f65e30",
+                "reference": "5e81a918b7aed6e5d83af1e805d013a4e9f65e30",
                 "shasum": ""
             },
             "require": {
@@ -353,7 +353,7 @@
                 "issues": "https://forge.typo3.org",
                 "source": "https://github.com/typo3/typo3"
             },
-            "time": "2024-03-06T19:13:53+00:00"
+            "time": "2024-04-01T11:49:39+00:00"
         },
         {
             "name": "dasprid/enum",
