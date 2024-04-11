@@ -272,16 +272,16 @@
         },
         {
             "name": "contentblocks/content-blocks",
-            "version": "0.7.2",
+            "version": "0.7.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nhovratov/content-blocks.git",
-                "reference": "58b0581ae2247990abd58fef992b74db38112f22"
+                "reference": "2aa6e931429278d3a5f82d930cbf4841f1ea9b00"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nhovratov/content-blocks/zipball/58b0581ae2247990abd58fef992b74db38112f22",
-                "reference": "58b0581ae2247990abd58fef992b74db38112f22",
+                "url": "https://api.github.com/repos/nhovratov/content-blocks/zipball/2aa6e931429278d3a5f82d930cbf4841f1ea9b00",
+                "reference": "2aa6e931429278d3a5f82d930cbf4841f1ea9b00",
                 "shasum": ""
             },
             "require": {
@@ -353,7 +353,7 @@
                 "issues": "https://forge.typo3.org",
                 "source": "https://github.com/typo3/typo3"
             },
-            "time": "2024-04-09T14:18:39+00:00"
+            "time": "2024-04-11T10:49:58+00:00"
         },
         {
             "name": "dasprid/enum",
