@@ -1,19 +1,16 @@
 <?xml version="1.0"?>
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
-	<file datatype="plaintext" original="Labels.xlf" source-language="en" date="2024-01-29T13:43:08+00:00" product-name="example/imageslider">
+	<file datatype="plaintext" original="Labels.xlf" source-language="en" date="2024-01-30T18:23:22+00:00" product-name="example/text">
 		<header/>
 		<body>
 			<trans-unit id="title" resname="title">
-				<source>Imageslider</source>
+				<source>Text</source>
 			</trans-unit>
 			<trans-unit id="description" resname="description">
-				<source>Add an imageslider based on Swiffy Slider</source>
+				<source>Simple text element</source>
 			</trans-unit>
 			<trans-unit id="header.label" resname="header.label">
 				<source>Header</source>
-			</trans-unit>
-			<trans-unit id="assets.label" resname="assets.label">
-				<source>Assets</source>
 			</trans-unit>
 		</body>
 	</file>
