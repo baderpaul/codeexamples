@@ -9,3 +9,5 @@ var/
 !/vendor/
 /vendor/*
 !/vendor/techdivision/
+composer.json
+composer.lock
