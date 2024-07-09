@@ -1,0 +1,23 @@
+<cb:asset.css identifier="content-block-css-example-example/bt-slider" file="Frontend.css"/>
+<cb:asset.script identifier="content-block-js-example-example/bt-slider" file="Frontend.js"/>
+
+<f:debug>{_all}</f:debug>
+<f:layout />
+<f:section name="Header"/>
+<f:section name="Main">
+<div id="carouselExampleIndicators-{data.uid}"
+     class="carousel slide {f:if(condition: '{data.tx_mask_modus.0} == 2', then: 'carousel-fade')}"
+     style="border: solid red 1px;"
+     data-bs-ride="carousel">
+    <div class="carousel-inner">
+        <f:render partial="SliderItems" arguments="{_all}"/>
+    </div>
+    <f:if condition="{data.tx_mask_carouselindicator}==1">
+      <f:render partial="SliderIndicator" arguments="{_all}"/>
+    </f:if>
+    <f:if condition="{data.tx_mask_carouselcontrol}==1">
+       <f:render partial="SliderControl" arguments="{_all}"/>
+    </f:if>
+</div>
+</f:section>
+</html>

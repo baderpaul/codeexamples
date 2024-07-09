@@ -12,9 +12,9 @@ styles.content.textmedia {
 styles.content.image.lazyLoading = lazyload
 // overwrite paths for default fluid_styled_content elements
 styles.templates {
-    layoutRootPath = EXT:setup_package/Resources/Private/Templates/FluidStyledContent/Layouts/
-    templateRootPath = EXT:setup_package/Resources/Private/Templates/FluidStyledContent/Templates/
-    partialRootPath = EXT:setup_package/Resources/Private/Templates/FluidStyledContent/Partials/  
+    #layoutRootPath = EXT:setup_package/Resources/Private/Templates/FluidStyledContent/Layouts/
+    #templateRootPath = EXT:setup_package/Resources/Private/Templates/FluidStyledContent/Templates/
+    #partialRootPath = EXT:setup_package/Resources/Private/Templates/FluidStyledContent/Partials/  
 }
 
 styles.content.links {

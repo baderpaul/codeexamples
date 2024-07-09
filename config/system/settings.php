@@ -28,7 +28,11 @@ return [
         'ai_suite' => [
             'aiSuiteApiKey' => 'yWYbC5NC0jMwlMzTERiaho842VXSEpPQm4v82mpIM4bgCUdx7WYX5KBXUYrms71y',
             'aiSuiteServer' => 'https://api.autodudes.de/',
+            'googleTranslateApiKey' => '',
             'mediaStorageFolder' => '',
+            'midjourneyApiKey' => '',
+            'midjourneyId' => '',
+            'openAiApiKey' => '',
             'singleNewsDisplayPage' => '1',
             'useUrlForRequest' => '0',
         ],

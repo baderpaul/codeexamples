@@ -29,6 +29,3 @@ languages:
     languageId: 1
 rootPageId: 1
 websiteTitle: 'Codeexamples'
-settings:
-  extKey: setup_package
-  nameSpace: TechDivision\Typo3SetupPackage

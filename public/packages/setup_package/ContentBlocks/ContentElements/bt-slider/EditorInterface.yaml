@@ -1,0 +1,68 @@
+name: example/bt-slider
+typeName: tx_mask_slides
+title: Bt Slider
+basics:
+  - TYPO3/Appearance
+  #  - TYPO3/Links
+prefixFields: false
+
+fields:
+  - identifier: tab_1
+    type: Tab
+    label: Allgemein
+    description: My palette description
+  - identifier: header
+    useExistingField: true
+    description: Wird nur im Backend angezeigt
+  - identifier: tab_2
+    type: Tab
+    label: General
+  - identifier: tx_mask_modus
+    label: Modus wählen
+    description: fade oder slide
+    type: Select
+    renderType: selectMultipleSideBySide
+    items:
+      - label: 'slide'
+        value: 1
+      - label: 'fade'
+        value: 2
+  - identifier: tx_mask_carouselcontrol
+    label: Prev Next einblenden
+    type: Checkbox 
+  - identifier: tx_mask_carouselindicator
+    label: Buttons für die vorhandenen Bilder anzeigen
+    type: Checkbox
+  - identifier: tx_mask_indicatorthumbnail
+    label: Buttons als Thumbnail aus den Bildern generieren
+    type: Checkbox    
+  - identifier: tab_3
+    type: Tab
+    label: Slideelemente
+  - identifier: tx_mask_slideimages
+    type: Collection
+    label: Bilder
+    foreign_field: parentid
+    fields:
+      - identifier: tx_mask_header
+        label: Bildtitel im TYPO3 Backend
+        type: Text
+        max: 45
+      - identifier: tx_mask_slideitem
+        label: Bild
+        type: File
+        #allowed: common-image-types
+      - identifier: palette_1
+        type: Palette
+        label: Slogan zum Bild
+        description: Jede Zeile einzeln wird animiert eingeblendet.
+        fields:
+          - identifier: tx_mask_slogan_big
+            label: Slogantext groß
+            description: Text groß - wird einzeln animiert
+            type: Textarea
+          - identifier: tx_mask_slogan_small
+            label: Slogantext klein
+            description: Text klein - wird einzeln animiert
+            type: Textarea
+          - type: Linebreak
