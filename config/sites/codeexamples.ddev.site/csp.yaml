@@ -1,6 +1,18 @@
 inheritDefault: true
 mutations:
-  - mode: extend
-    directive: 'script-src'
+  - mode: set
+    directive: 'default-src'
     sources:
-      - "'nonce-proxy'"
+      - "'self'"
+
+  - mode: extend
+    directive: 'img-src'
+    sources:
+      - 'data:'
+      - 'http://*.example-13.ddev.site/'
+
+  - mode: extend
+    directive: 'font-src'
+    sources:
+      - 'fonts.gstatic.com'
+      - 'fonts.googleapis.com'
